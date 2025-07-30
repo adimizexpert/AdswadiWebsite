@@ -39,20 +39,25 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Partner Logos */}
-          <div className="text-center">
-            <p className="text-slate-700 mb-6 font-medium">Our Performance Marketing Services are Certified by</p>
-            <div className="flex flex-wrap justify-center items-center gap-8">
-              <div className="bg-white px-6 py-3 rounded-lg shadow-sm border border-slate-100">
-                <span className="text-blue-600 font-bold text-base">Meta Business Partner</span>
-              </div>
-              <div className="bg-white px-6 py-3 rounded-lg shadow-sm border border-slate-100">
-                <span className="text-green-600 font-bold text-base">Shopify Partners</span>
-              </div>
-              <div className="bg-white px-6 py-3 rounded-lg shadow-sm border border-slate-100">
-                <span className="text-blue-500 font-bold text-base">Google Partner</span>
-              </div>
-            </div>
-          </div>
+<div className="text-center">
+  <p className="text-slate-700 mb-6 font-medium">
+    Our Performance Marketing Services are Certified by
+  </p>
+  <div className="flex flex-wrap justify-center items-center gap-8">
+    <div className="bg-white px-6 py-3 rounded-lg shadow-sm border border-slate-100">
+      <img src="/assets/partners/meta.png" alt="Meta" style={{height: "32px", display: "inline", marginRight: "8px"}}/>
+      <span className="text-blue-600 font-bold text-base">Meta Business Partner</span>
+    </div>
+    <div className="bg-white px-6 py-3 rounded-lg shadow-sm border border-slate-100">
+      <img src="/assets/partners/shopify.png" alt="Shopify" style={{height: "32px", display: "inline", marginRight: "8px"}}/>
+      <span className="text-green-600 font-bold text-base">Shopify Partners</span>
+    </div>
+    <div className="bg-white px-6 py-3 rounded-lg shadow-sm border border-slate-100">
+      <img src="/assets/partners/google.png" alt="Google" style={{height: "32px", display: "inline", marginRight: "8px"}}/>
+      <span className="text-blue-500 font-bold text-base">Google Partner</span>
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </section>
