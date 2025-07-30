@@ -3,39 +3,39 @@ import { Linkedin, Twitter } from 'lucide-react';
 
 const founders = [
   {
-    name: 'Aditya Sharma',
+    name: 'Shadab',
     role: 'Co-Founder & Performance Lead',
     description: 'Drives the strategy behind every high-performing campaign.',
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: 'shadab.png'
   },
   {
-    name: 'Rohit Mehta',
+    name: 'Roushan',
     role: 'Co-Founder & Tech + Automation Head',
     description: 'Makes the systems behind your success run smoother than ever.',
-    image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: 'roushan.png'
   }
 ];
 
 const teamMembers = [
   {
-    name: 'Shruti',
+    name: '1',
     role: 'Ads Strategist',
-    image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '1.png'
   },
   {
-    name: 'Karan',
+    name: '2',
     role: 'Graphics Head',
-    image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '2.png'
   },
   {
-    name: 'Pooja',
+    name: '3',
     role: 'Landing Page Specialist',
-    image: 'https://images.pexels.com/photos/3756681/pexels-photo-3756681.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '3.png'
   },
   {
-    name: 'Mayank',
+    name: '4',
     role: 'Telegram Bot Dev',
-    image: 'https://images.pexels.com/photos/2182975/pexels-photo-2182975.jpeg?auto=compress&cs=tinysrgb&w=400'
+    image: '4.png'
   }
 ];
 
