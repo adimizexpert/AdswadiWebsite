@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
 
           {/* Subheading */}
           <p className="text-lg sm:text-xl text-slate-700 mb-4 max-w-3xl mx-auto font-medium">
-            5+ years | 250+ Campaigns | ₹80L+ Ad Spend
+            5+ years | 250+ Campaigns | ₹10L+ Ad Spend
           </p>
           <p className="text-base sm:text-lg text-slate-600 mb-8 max-w-3xl mx-auto">
             A dedicated team of specialists, delivering remarkable work to our clients worldwide!
