@@ -3,21 +3,21 @@ import { Star, TrendingUp, Users, Award, Target } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Sarah Johnson',
+    name: 'eg1',
     company: 'TechStart Inc.',
-    image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: 'eg.png',
     text: 'ADSWADi transformed our marketing completely. Our ROAS increased by 300% in just 3 months!'
   },
   {
-    name: 'Raj Patel',
+    name: 'eg2',
     company: 'E-commerce Plus',
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: 'eg2.png',
     text: 'The automation systems they built for us are incredible. We now generate leads 24/7 without any manual work.'
   },
   {
-    name: 'Maria Garcia',
+    name: 'eg3',
     company: 'Fashion Forward',
-    image: 'https://images.pexels.com/photos/3756681/pexels-photo-3756681.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: 'eg3.png',
     text: 'Their creative team knows exactly how to make ads that convert. Our cost per acquisition dropped by 60%.'
   }
 ];
