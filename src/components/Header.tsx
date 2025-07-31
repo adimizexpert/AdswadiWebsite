@@ -44,7 +44,7 @@ const Header: React.FC = () => {
             className="flex items-center"
           >
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center">
                 <span className="text-white font-bold text-lg">A</span>
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
@@ -63,10 +63,10 @@ const Header: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -2 }}
-                className="text-slate-700 hover:text-blue-600 font-medium transition-colors relative group"
+                className="text-slate-700 hover:text-purple-600 font-medium transition-colors relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </motion.a>
             ))}
           </nav>
@@ -80,7 +80,7 @@ const Header: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="hidden md:block bg-gradient-to-r from-slate-800 to-slate-900 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Get Started
           </motion.a>
@@ -114,7 +114,7 @@ const Header: React.FC = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => setIsOpen(false)}
-                  className="block text-slate-700 hover:text-blue-600 font-medium py-2 transition-colors"
+                  className="block text-slate-700 hover:text-purple-600 font-medium py-2 transition-colors"
                 >
                   {item.name}
                 </motion.a>
@@ -126,7 +126,7 @@ const Header: React.FC = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navItems.length * 0.1 }}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg text-center block"
+                className="w-full bg-gradient-to-r from-slate-800 to-slate-900 text-white px-6 py-3 rounded-xl font-semibold shadow-lg text-center block"
               >
                 Get Started
               </motion.a>
