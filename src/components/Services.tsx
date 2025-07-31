@@ -38,7 +38,8 @@ const Services: React.FC = () => {
   return (
     <section id="services" className="py-20 bg-gradient-to-br from-white via-gray-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        {/* Header with Fade In */}
+        <div className="text-center mb-16 scroll-fade-in">
           <div className="inline-block bg-gradient-to-r from-purple-100 to-blue-100 text-purple-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
             NEW!
           </div>
@@ -52,11 +53,12 @@ const Services: React.FC = () => {
           </p>
         </div>
 
+        {/* Services Grid with Staggered Animations */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-white p-8 rounded-2xl border border-slate-100 hover:border-purple-200 hover:shadow-xl transition-all duration-300 cursor-pointer"
+              className={`group bg-white p-8 rounded-2xl border border-slate-100 hover:border-purple-200 hover:shadow-xl transition-all duration-300 cursor-pointer scroll-scale-in scroll-delay-${(index + 1) * 100}`}
             >
               <div className="mb-6">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -75,11 +77,12 @@ const Services: React.FC = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/* CTA Section with Slide In */}
+        <div className="text-center mt-12 scroll-slide-left scroll-delay-800">
           <p className="text-slate-600 mb-4">Want to discuss your project?</p>
           <a
             href="#contact"
-            className="inline-block bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 transition-colors underline"
+            className="inline-block bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 transition-colors underline hover:scale-105 transform transition-transform"
           >
             Let's Schedule a Call
           </a>

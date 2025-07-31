@@ -4,7 +4,8 @@ const Features: React.FC = () => {
   return (
     <section id="work" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        {/* Header with Fade In */}
+        <div className="text-center mb-16 scroll-fade-in">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 bg-clip-text text-transparent">
               From Click to Conversion
@@ -16,8 +17,8 @@ const Features: React.FC = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Dashboard Mockup */}
-          <div className="relative">
+          {/* Dashboard Mockup with Slide In from Left */}
+          <div className="relative scroll-slide-left scroll-delay-200">
             <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl shadow-2xl p-6 transform rotate-2 hover:rotate-0 transition-transform duration-500">
               <div className="bg-white rounded-2xl p-8 border border-slate-100">
                 <div className="flex items-center gap-2 mb-4">
@@ -61,8 +62,8 @@ const Features: React.FC = () => {
             </div>
           </div>
 
-          {/* Content */}
-          <div className="space-y-8">
+          {/* Content with Slide In from Right */}
+          <div className="space-y-8 scroll-slide-right scroll-delay-400">
             <div className="space-y-4">
               <h3 className="text-3xl font-bold text-slate-900">
                 Ready to give your brand the spotlight it deserves?
@@ -74,26 +75,27 @@ const Features: React.FC = () => {
               </p>
             </div>
 
+            {/* Statistics with Staggered Scale In */}
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="space-y-2">
+              <div className="space-y-2 scroll-scale-in scroll-delay-500">
                 <div className="text-2xl font-bold text-blue-600">94%</div>
                 <div className="text-slate-600">Client Retention Rate</div>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 scroll-scale-in scroll-delay-600">
                 <div className="text-2xl font-bold text-green-600">3.2x</div>
                 <div className="text-slate-600">Average ROAS</div>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 scroll-scale-in scroll-delay-700">
                 <div className="text-2xl font-bold text-purple-600">70+</div>
                 <div className="text-slate-600">Funnels Delivered</div>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 scroll-scale-in scroll-delay-800">
                 <div className="text-2xl font-bold text-orange-600">24/7</div>
                 <div className="text-slate-600">Campaign Monitoring</div>
               </div>
             </div>
 
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg">
+            <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg hover:scale-105 transform transition-transform scroll-fade-in scroll-delay-900">
               Start Your Campaign
             </button>
           </div>
