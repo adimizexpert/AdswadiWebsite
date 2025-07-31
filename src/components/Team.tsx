@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Linkedin, Twitter } from 'lucide-react';
 
 const founders = [
@@ -43,8 +44,14 @@ const Team: React.FC = () => {
   return (
     <section id="team" className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header with Fade In */}
-        <div className="text-center mb-16 scroll-fade-in">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 bg-clip-text text-transparent">
               The Brains Behind the Brand
@@ -53,12 +60,19 @@ const Team: React.FC = () => {
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Built by a team of relentless creators and marketers who believe in smart ads and scalable growth.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Founders with Staggered Slide In */}
+        {/* Founders */}
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           {founders.map((founder, index) => (
-            <div key={index} className={`group text-center scroll-slide-${index === 0 ? 'left' : 'right'} scroll-delay-${(index + 1) * 200}`}>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: index === 0 ? -30 : 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="group text-center"
+            >
               <div className="relative mb-6">
                 <img
                   src={founder.image}
@@ -73,23 +87,44 @@ const Team: React.FC = () => {
                 "{founder.description}"
               </p>
               <div className="flex justify-center gap-4 mt-4">
-                <button className="p-2 rounded-full bg-slate-100 hover:bg-purple-100 transition-colors hover:scale-110 transform transition-transform">
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-2 rounded-full bg-slate-100 hover:bg-purple-100 transition-colors"
+                >
                   <Linkedin size={20} className="text-slate-600" />
-                </button>
-                <button className="p-2 rounded-full bg-slate-100 hover:bg-purple-100 transition-colors hover:scale-110 transform transition-transform">
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-2 rounded-full bg-slate-100 hover:bg-purple-100 transition-colors"
+                >
                   <Twitter size={20} className="text-slate-600" />
-                </button>
+                </motion.button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Team Members with Scale In */}
-        <div className="text-center mb-12 scroll-fade-in scroll-delay-600">
+        {/* Team Members */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mb-12"
+        >
           <h3 className="text-2xl font-bold text-slate-900 mb-8">Our Expert Team</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
-              <div key={index} className={`group scroll-scale-in scroll-delay-${700 + (index * 100)}`}>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                className="group"
+              >
                 <div className="relative mb-4">
                   <img
                     src={member.image}
@@ -99,10 +134,10 @@ const Team: React.FC = () => {
                 </div>
                 <h4 className="font-bold text-slate-900 mb-1">{member.name}</h4>
                 <p className="text-slate-600 text-sm">{member.role}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
