@@ -16,10 +16,10 @@ const Header: React.FC = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
-    { name: 'Work', href: '#work' },
+    { name: 'Case Studies', href: '#case-studies' },
     { name: 'Team', href: '#team' },
-    { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -33,7 +33,7 @@ const Header: React.FC = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-200/50' 
-          : 'bg-white'
+          : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,7 +45,7 @@ const Header: React.FC = () => {
           >
             <div className="flex items-center space-x-3">
               {/* Logo Image Placeholder */}
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center shadow-lg">
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex items-center justify-center shadow-lg">
                 <img 
                   src="/logo.png" 
                   alt="Adswadi Logo" 
@@ -77,7 +77,7 @@ const Header: React.FC = () => {
                 className="text-slate-700 hover:text-purple-600 font-medium transition-colors relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-pink-600 transition-all duration-300 group-hover:w-full"></span>
               </motion.a>
             ))}
           </nav>
@@ -91,9 +91,9 @@ const Header: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:block bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="hidden md:block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            Get Started
+            Book a Campaign
           </motion.a>
 
           {/* Mobile Menu Button */}
@@ -137,9 +137,9 @@ const Header: React.FC = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navItems.length * 0.1 }}
-                className="w-full bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg text-center block"
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg font-semibold shadow-lg text-center block"
               >
-                Get Started
+                Book a Campaign
               </motion.a>
             </div>
           </motion.div>
