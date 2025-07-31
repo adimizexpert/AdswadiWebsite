@@ -33,7 +33,7 @@ const Header: React.FC = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-200/50' 
-          : 'bg-transparent'
+          : 'bg-white'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,11 +43,11 @@ const Header: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center"
           >
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg">A</span>
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">A</span>
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
+              <span className="text-xl font-bold text-slate-900">
                 ADSWADi
               </span>
             </div>
@@ -80,7 +80,7 @@ const Header: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:block bg-gradient-to-r from-slate-800 to-slate-900 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+            className="hidden md:block bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Get Started
           </motion.a>
@@ -126,7 +126,7 @@ const Header: React.FC = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navItems.length * 0.1 }}
-                className="w-full bg-gradient-to-r from-slate-800 to-slate-900 text-white px-6 py-3 rounded-xl font-semibold shadow-lg text-center block"
+                className="w-full bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg text-center block"
               >
                 Get Started
               </motion.a>

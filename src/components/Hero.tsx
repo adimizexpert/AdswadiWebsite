@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
         
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(59, 130, 246, ${particle.opacity})`;
+        ctx.fillStyle = `rgba(147, 51, 234, ${particle.opacity})`;
         ctx.fill();
       });
       
@@ -67,11 +67,11 @@ const Hero: React.FC = () => {
       {/* Animated Background */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-20"
       />
       
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-blue-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-purple-50"></div>
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-100/20 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-100/30 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -98,34 +98,31 @@ const Hero: React.FC = () => {
             ease: "easeInOut",
             delay: 1
           }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-100/30 rounded-full blur-3xl"
         />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-50 to-blue-50 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-8 border border-purple-200/50"
-          >
-            <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-            Trusted by 50+ Businesses Worldwide
-          </motion.div>
-
           {/* Main Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight"
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-8 leading-tight"
           >
-            Optimize Your Ads{' '}
-            <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 bg-clip-text text-transparent">
-              For More Profit.
-            </span>
+            <div className="mb-2">
+              Optimize Your
+            </div>
+            <div className="mb-2">
+              Ads For More
+            </div>
+            <div className="relative">
+              <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 bg-clip-text text-transparent">
+                Profit.
+              </span>
+              <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 to-blue-600"></div>
+            </div>
           </motion.h1>
 
           {/* Company Stats */}
@@ -133,22 +130,27 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg sm:text-xl text-slate-700 mb-8 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl text-slate-800 mb-6 font-medium"
           >
-            <div className="font-semibold text-slate-800 mb-2">
-              5+ years | 511+ Brands | 60+ Crore Ad spent
-            </div>
-            <div className="text-slate-600">
-              A dedicated team of specialists, delivering remarkable work to our clients worldwide!
-            </div>
+            5+ years | 511+ Brands | 60+ Crore Ad spent
           </motion.div>
 
-          {/* CTA Buttons */}
+          {/* Description */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row justify-center gap-4 mb-12"
+            className="text-lg sm:text-xl text-slate-700 mb-12 max-w-3xl mx-auto leading-relaxed"
+          >
+            A dedicated team of specialists, delivering remarkable work to our clients worldwide!
+          </motion.div>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="flex justify-center mb-16"
           >
             <motion.a
               href={whatsappLink}
@@ -156,47 +158,68 @@ const Hero: React.FC = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-slate-800 to-slate-900 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+              className="bg-slate-800 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
             >
               Book a Strategy Call
               <ArrowRight size={20} />
             </motion.a>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-slate-700 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 flex items-center justify-center gap-2"
-            >
-              <Play size={20} />
-              Watch Demo
-            </motion.button>
           </motion.div>
 
           {/* Partner Logos */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
             className="text-center"
           >
-            <p className="text-slate-600 mb-6 font-medium">
+            <p className="text-slate-800 mb-8 font-medium text-lg">
               Our Performance Marketing Services are Certified by
             </p>
             <div className="flex flex-wrap justify-center items-center gap-8">
               {[
-                { name: 'Meta Business Partner', color: 'text-blue-600', img: '/assets/partners/meta.png' },
-                { name: 'Shopify Partners', color: 'text-green-600', img: '/assets/partners/shopify.png' },
-                { name: 'Google Partner', color: 'text-blue-500', img: '/assets/partners/google.png' }
+                { 
+                  name: 'Meta Business Partner', 
+                  logo: 'M', 
+                  color: 'text-blue-600',
+                  bgColor: 'bg-blue-100',
+                  subText: 'Business Partner'
+                },
+                { 
+                  name: 'Shopify Partners', 
+                  logo: 'S', 
+                  color: 'text-green-600',
+                  bgColor: 'bg-green-100',
+                  subText: 'partners'
+                },
+                { 
+                  name: 'Google Partner', 
+                  logo: 'G', 
+                  color: 'text-blue-600',
+                  bgColor: 'bg-blue-600',
+                  subText: 'Partner'
+                }
               ].map((partner, index) => (
                 <motion.div
                   key={partner.name}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
+                  transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-white px-6 py-3 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300"
+                  className="flex flex-col items-center gap-2"
                 >
-                  <img src={partner.img} alt={partner.name} style={{height: "32px", display: "inline", marginRight: "8px"}}/>
-                  <span className={`font-bold text-base ${partner.color}`}>{partner.name}</span>
+                  <div className={`w-12 h-12 rounded-lg ${partner.bgColor} flex items-center justify-center`}>
+                    <span className={`font-bold text-lg ${partner.color}`}>
+                      {partner.logo}
+                    </span>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-semibold text-slate-800 text-sm">
+                      {partner.name.split(' ')[0]}
+                    </div>
+                    <div className="text-xs text-slate-600">
+                      {partner.subText}
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
