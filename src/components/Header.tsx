@@ -24,7 +24,7 @@ const Header: React.FC = () => {
   ];
 
   // WhatsApp link with pre-filled message
-  const whatsappLink = `https://wa.me/918678830021?text=Hi%20ADSWADi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
+  const whatsappLink = `https://wa.me/918678830021?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
 
   return (
     <motion.header
@@ -44,11 +44,22 @@ const Header: React.FC = () => {
             className="flex items-center"
           >
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">A</span>
+              {/* Logo Image Placeholder */}
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center shadow-lg">
+                <img 
+                  src="/logo.png" 
+                  alt="Adswadi Logo" 
+                  className="w-8 h-8 object-contain"
+                  onError={(e) => {
+                    // Fallback to text if image fails to load
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                  }}
+                />
+                <span className="text-white font-bold text-sm hidden">A</span>
               </div>
               <span className="text-xl font-bold text-slate-900">
-                ADSWADi
+                Adswadi
               </span>
             </div>
           </motion.div>

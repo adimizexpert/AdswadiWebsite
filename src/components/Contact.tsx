@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
   ];
 
   // WhatsApp link with pre-filled message
-  const whatsappLink = `https://wa.me/918678830021?text=Hi%20ADSWADi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
+  const whatsappLink = `https://wa.me/918678830021?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
 
   return (
     <section id="contact" className="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50">
@@ -307,7 +307,7 @@ const Contact: React.FC = () => {
             >
               <h4 className="font-bold text-xl mb-3">Ready to get started?</h4>
               <p className="text-slate-300 mb-6 leading-relaxed">
-                Join 250+ businesses that trust ADSWADi for their marketing success. 
+                Join 250+ businesses that trust Adswadi for their marketing success. 
                 Let's create your success story together.
               </p>
               <motion.button

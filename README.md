@@ -1,4 +1,4 @@
-# ADSWADi Website
+# Adswadi Website
 
 A premium digital marketing agency website built with React, TypeScript, and Framer Motion.
 
