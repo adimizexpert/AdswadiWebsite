@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Edit3 } from 'lucide-react';
+import { ArrowRight, Edit3, Facebook, ShoppingBag, Search } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -192,21 +192,21 @@ const Hero: React.FC = () => {
               {[
                 { 
                   name: 'Meta Business Partner', 
-                  logo: 'M', 
+                  icon: Facebook,
                   color: 'text-blue-600',
                   bgColor: 'bg-white',
                   subText: 'Business Partner'
                 },
                 { 
                   name: 'Shopify Partners', 
-                  logo: 'S', 
+                  icon: ShoppingBag,
                   color: 'text-green-600',
                   bgColor: 'bg-white',
                   subText: 'partners'
                 },
                 { 
                   name: 'Google Partner', 
-                  logo: 'G', 
+                  icon: Search,
                   color: 'text-blue-600',
                   bgColor: 'bg-white',
                   subText: 'Partner'
@@ -221,9 +221,7 @@ const Hero: React.FC = () => {
                   className="flex flex-col items-center gap-2"
                 >
                   <div className={`w-12 h-12 rounded-lg ${partner.bgColor} flex items-center justify-center shadow-lg`}>
-                    <span className={`font-bold text-lg ${partner.color}`}>
-                      {partner.logo}
-                    </span>
+                    <partner.icon className={`w-6 h-6 ${partner.color}`} />
                   </div>
                   <div className="text-center">
                     <div className="font-semibold text-white text-sm">
