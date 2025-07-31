@@ -65,6 +65,9 @@ const Hero: React.FC = () => {
     { icon: Star, value: '94%', label: 'Client Retention' }
   ];
 
+  // WhatsApp link with pre-filled message
+  const whatsappLink = `https://wa.me/918678830021?text=Hi%20ADSWADi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
@@ -150,14 +153,17 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row justify-center gap-4 mb-12"
           >
-            <motion.button
+            <motion.a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
             >
               Book a Strategy Call
               <ArrowRight size={20} />
-            </motion.button>
+            </motion.a>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

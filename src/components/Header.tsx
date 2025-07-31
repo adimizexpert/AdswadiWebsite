@@ -23,6 +23,9 @@ const Header: React.FC = () => {
     { name: 'Contact', href: '#contact' }
   ];
 
+  // WhatsApp link with pre-filled message
+  const whatsappLink = `https://wa.me/918678830021?text=Hi%20ADSWADi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -69,7 +72,10 @@ const Header: React.FC = () => {
           </nav>
 
           {/* CTA Button */}
-          <motion.button
+          <motion.a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.05 }}
@@ -77,7 +83,7 @@ const Header: React.FC = () => {
             className="hidden md:block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Get Started
-          </motion.button>
+          </motion.a>
 
           {/* Mobile Menu Button */}
           <motion.button
@@ -113,14 +119,17 @@ const Header: React.FC = () => {
                   {item.name}
                 </motion.a>
               ))}
-              <motion.button
+              <motion.a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navItems.length * 0.1 }}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg text-center block"
               >
                 Get Started
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         )}

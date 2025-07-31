@@ -44,6 +44,9 @@ const Contact: React.FC = () => {
     { icon: Star, value: '4.9/5', label: 'Client Rating' }
   ];
 
+  // WhatsApp link with pre-filled message
+  const whatsappLink = `https://wa.me/918678830021?text=Hi%20ADSWADi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
+
   return (
     <section id="contact" className="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -255,8 +258,10 @@ const Contact: React.FC = () => {
 
             <div className="space-y-6">
               <motion.a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
-                href="https://wa.me/1234567890"
                 className="flex items-center gap-4 p-6 bg-green-50 rounded-2xl hover:bg-green-100 transition-all duration-300 group border border-green-200"
               >
                 <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -264,7 +269,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="flex-1">
                   <h4 className="font-bold text-slate-900">WhatsApp</h4>
-                  <p className="text-slate-600">Talk to us on WhatsApp</p>
+                  <p className="text-slate-600">+91 8678830021</p>
                 </div>
                 <ArrowRight className="w-5 h-5 text-green-600 group-hover:translate-x-1 transition-transform" />
               </motion.a>
@@ -278,7 +283,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="flex-1">
                   <h4 className="font-bold text-slate-900">Phone</h4>
-                  <p className="text-slate-600">+91 98765 43210</p>
+                  <p className="text-slate-600">+91 8678830021</p>
                 </div>
               </motion.div>
 
