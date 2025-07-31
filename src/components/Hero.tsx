@@ -112,17 +112,29 @@ const Hero: React.FC = () => {
             className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-8 leading-tight"
           >
             <div className="mb-2">
-              Optimize Your
+              Transform Your
             </div>
             <div className="mb-2">
-              Ads For More
+              Business With
             </div>
             <div className="relative">
               <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 bg-clip-text text-transparent">
-                Profit.
+                Smart Ads.
               </span>
-              <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 to-blue-600"></div>
-              <Edit3 className="absolute -bottom-1 right-0 w-6 h-6 text-slate-900" />
+              <motion.div 
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 1.5, delay: 1.0 }}
+                className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600"
+              />
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 2.5 }}
+                className="absolute -bottom-1 right-0"
+              >
+                <Edit3 className="w-6 h-6 text-slate-900" />
+              </motion.div>
             </div>
           </motion.h1>
 
