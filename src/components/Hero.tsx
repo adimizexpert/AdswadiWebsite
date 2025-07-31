@@ -63,34 +63,34 @@ const Hero: React.FC = () => {
   const whatsappLink = `https://wa.me/918678830021?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-50 via-white to-purple-50">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700">
       {/* Animated Background */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-10"
       />
       
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-purple-50"></div>
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/80 via-blue-600/80 to-indigo-700/80"></div>
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.2, 0.4, 0.2]
+            opacity: [0.3, 0.6, 0.3]
           }}
           transition={{
             duration: 4,
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
             scale: [1.2, 1, 1.2],
-            opacity: [0.3, 0.5, 0.3]
+            opacity: [0.4, 0.7, 0.4]
           }}
           transition={{
             duration: 5,
@@ -98,7 +98,7 @@ const Hero: React.FC = () => {
             ease: "easeInOut",
             delay: 1
           }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl"
         />
       </div>
 
@@ -109,7 +109,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-8 leading-tight"
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight"
           >
             <div className="mb-2">
               Transform Your
@@ -118,14 +118,14 @@ const Hero: React.FC = () => {
               Business With
             </div>
             <div className="relative">
-              <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-yellow-300 via-orange-300 to-yellow-300 bg-clip-text text-transparent">
                 Smart Ads.
               </span>
               <motion.div 
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 1.5, delay: 1.0 }}
-                className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600"
+                className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-yellow-300 to-orange-300"
               />
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -133,7 +133,7 @@ const Hero: React.FC = () => {
                 transition={{ duration: 0.5, delay: 2.5 }}
                 className="absolute -bottom-1 right-0"
               >
-                <Edit3 className="w-6 h-6 text-slate-900" />
+                <Edit3 className="w-6 h-6 text-white" />
               </motion.div>
             </div>
           </motion.h1>
@@ -143,7 +143,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg sm:text-xl text-slate-800 mb-6 font-medium"
+            className="text-lg sm:text-xl text-purple-100 mb-6 font-medium"
           >
             5+ years | 511+ Brands | 60+ Crore Ad spent
           </motion.div>
@@ -153,7 +153,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-lg sm:text-xl text-slate-700 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl text-purple-200 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
             A dedicated team of specialists, delivering remarkable work to our clients worldwide!
           </motion.div>
@@ -171,7 +171,7 @@ const Hero: React.FC = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-slate-800 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+              className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
             >
               Book a Strategy Call
               <ArrowRight size={20} />
@@ -185,7 +185,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.6, delay: 1.0 }}
             className="text-center"
           >
-            <p className="text-slate-800 mb-8 font-medium text-lg">
+            <p className="text-purple-100 mb-8 font-medium text-lg">
               Our Performance Marketing Services are Certified by
             </p>
             <div className="flex flex-wrap justify-center items-center gap-8">
@@ -194,21 +194,21 @@ const Hero: React.FC = () => {
                   name: 'Meta Business Partner', 
                   logo: 'M', 
                   color: 'text-blue-600',
-                  bgColor: 'bg-blue-100',
+                  bgColor: 'bg-white',
                   subText: 'Business Partner'
                 },
                 { 
                   name: 'Shopify Partners', 
                   logo: 'S', 
                   color: 'text-green-600',
-                  bgColor: 'bg-green-100',
+                  bgColor: 'bg-white',
                   subText: 'partners'
                 },
                 { 
                   name: 'Google Partner', 
                   logo: 'G', 
                   color: 'text-blue-600',
-                  bgColor: 'bg-blue-600',
+                  bgColor: 'bg-white',
                   subText: 'Partner'
                 }
               ].map((partner, index) => (
@@ -220,16 +220,16 @@ const Hero: React.FC = () => {
                   whileHover={{ scale: 1.05 }}
                   className="flex flex-col items-center gap-2"
                 >
-                  <div className={`w-12 h-12 rounded-lg ${partner.bgColor} flex items-center justify-center`}>
+                  <div className={`w-12 h-12 rounded-lg ${partner.bgColor} flex items-center justify-center shadow-lg`}>
                     <span className={`font-bold text-lg ${partner.color}`}>
                       {partner.logo}
                     </span>
                   </div>
                   <div className="text-center">
-                    <div className="font-semibold text-slate-800 text-sm">
+                    <div className="font-semibold text-white text-sm">
                       {partner.name.split(' ')[0]}
                     </div>
-                    <div className="text-xs text-slate-600">
+                    <div className="text-xs text-purple-200">
                       {partner.subText}
                     </div>
                   </div>
