@@ -39,8 +39,10 @@ const About: React.FC = () => {
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 bg-clip-text text-transparent">
-              Meet Our Team
+              The Brains Behind
             </span>
+            <br />
+            <span className="text-slate-900">the Brand</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             We're a team of passionate digital marketers and tech innovators who believe in delivering 
