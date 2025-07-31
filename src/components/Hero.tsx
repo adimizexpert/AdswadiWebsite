@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play, Star, TrendingUp, Users, Zap, Target, Award } from 'lucide-react';
+import { ArrowRight, Edit3 } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -16,16 +16,16 @@ const Hero: React.FC = () => {
     canvas.height = window.innerHeight;
 
     const particles: any[] = [];
-    const particleCount = 50;
+    const particleCount = 30;
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 2 + 1,
-        opacity: Math.random() * 0.5 + 0.2
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        size: Math.random() * 1.5 + 0.5,
+        opacity: Math.random() * 0.3 + 0.1
       });
     }
 
@@ -63,34 +63,34 @@ const Hero: React.FC = () => {
   const whatsappLink = `https://wa.me/918678830021?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-purple-900 to-black">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-50 via-white to-purple-50">
       {/* Animated Background */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-20"
       />
       
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-purple-900/30 to-black/50"></div>
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-purple-50"></div>
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3]
+            opacity: [0.2, 0.4, 0.2]
           }}
           transition={{
             duration: 4,
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
             scale: [1.2, 1, 1.2],
-            opacity: [0.4, 0.7, 0.4]
+            opacity: [0.3, 0.5, 0.3]
           }}
           transition={{
             duration: 5,
@@ -98,96 +98,60 @@ const Hero: React.FC = () => {
             ease: "easeInOut",
             delay: 1
           }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl"
         />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Animated Logo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="mb-12"
-          >
-            <motion.div
-              animate={{
-                rotate: [0, 5, -5, 0],
-                scale: [1, 1.05, 1]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="inline-block"
-            >
-              <div className="w-32 h-32 bg-gradient-to-br from-purple-600 via-pink-600 to-purple-800 rounded-3xl flex items-center justify-center shadow-2xl border border-purple-400/30">
-                <span className="text-white font-bold text-4xl">A</span>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Brand Name */}
+          {/* Main Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white mb-6"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-8 leading-tight"
           >
-            Adswadi
+            <div className="mb-2">
+              Optimize Your
+            </div>
+            <div className="mb-2">
+              Ads For More
+            </div>
+            <div className="relative">
+              <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 bg-clip-text text-transparent">
+                Profit.
+              </span>
+              <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 to-blue-600"></div>
+              <Edit3 className="absolute -bottom-1 right-0 w-6 h-6 text-slate-900" />
+            </div>
           </motion.h1>
 
-          {/* Slogan */}
+          {/* Company Stats */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mb-12"
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-lg sm:text-xl text-slate-800 mb-6 font-medium"
           >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-purple-200 mb-4">
-              Innovative Ads.
-            </h2>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-              Proven Results.
-            </h2>
+            5+ years | 511+ Brands | 60+ Crore Ad spent
           </motion.div>
 
-          {/* Stats */}
+          {/* Description */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12"
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="text-lg sm:text-xl text-slate-700 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            {[
-              { icon: Target, value: '30+', label: 'Brands Trust Us' },
-              { icon: Zap, value: '500%', label: 'Avg. ROI Increase' },
-              { icon: Award, value: '24h', label: 'Fast Execution' }
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
-                className="text-center"
-              >
-                <div className="flex items-center justify-center mb-2">
-                  <stat.icon className="w-6 h-6 text-purple-400 mr-2" />
-                  <span className="text-2xl font-bold text-white">{stat.value}</span>
-                </div>
-                <p className="text-purple-200 font-medium">{stat.label}</p>
-              </motion.div>
-            ))}
+            A dedicated team of specialists, delivering remarkable work to our clients worldwide!
           </motion.div>
 
           {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
-            className="flex justify-center"
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="flex justify-center mb-16"
           >
             <motion.a
               href={whatsappLink}
@@ -195,31 +159,71 @@ const Hero: React.FC = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-12 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center gap-3 group"
+              className="bg-slate-800 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
             >
-              Book a Campaign
-              <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+              Book a Strategy Call
+              <ArrowRight size={20} />
             </motion.a>
           </motion.div>
 
-          {/* Scroll Indicator */}
+          {/* Partner Logos */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.5 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+            className="text-center"
           >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-6 h-10 border-2 border-purple-400 rounded-full flex justify-center"
-            >
-              <motion.div
-                animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-1 h-3 bg-purple-400 rounded-full mt-2"
-              />
-            </motion.div>
+            <p className="text-slate-800 mb-8 font-medium text-lg">
+              Our Performance Marketing Services are Certified by
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-8">
+              {[
+                { 
+                  name: 'Meta Business Partner', 
+                  logo: 'M', 
+                  color: 'text-blue-600',
+                  bgColor: 'bg-blue-100',
+                  subText: 'Business Partner'
+                },
+                { 
+                  name: 'Shopify Partners', 
+                  logo: 'S', 
+                  color: 'text-green-600',
+                  bgColor: 'bg-green-100',
+                  subText: 'partners'
+                },
+                { 
+                  name: 'Google Partner', 
+                  logo: 'G', 
+                  color: 'text-blue-600',
+                  bgColor: 'bg-blue-600',
+                  subText: 'Partner'
+                }
+              ].map((partner, index) => (
+                <motion.div
+                  key={partner.name}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="flex flex-col items-center gap-2"
+                >
+                  <div className={`w-12 h-12 rounded-lg ${partner.bgColor} flex items-center justify-center`}>
+                    <span className={`font-bold text-lg ${partner.color}`}>
+                      {partner.logo}
+                    </span>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-semibold text-slate-800 text-sm">
+                      {partner.name.split(' ')[0]}
+                    </div>
+                    <div className="text-xs text-slate-600">
+                      {partner.subText}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>
