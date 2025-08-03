@@ -21,22 +21,26 @@ const teamMembers = [
   {
     name: '😎',
     role: 'Ads Strategist',
-    image: '1.png'
+    avatar: '👨‍💼',
+    bgColor: 'bg-blue-500'
   },
   {
     name: '🎨',
     role: 'Graphics Head',
-    image: '2.png'
+    avatar: '👩‍🎨',
+    bgColor: 'bg-purple-500'
   },
   {
     name: '💻',
     role: 'Landing Page Specialist',
-    image: '3.png'
+    avatar: '👨‍💻',
+    bgColor: 'bg-green-500'
   },
   {
     name: '🤖',
     role: 'Telegram Bot Dev',
-    image: '4.png'
+    avatar: '👩‍🔧',
+    bgColor: 'bg-orange-500'
   }
 ];
 
@@ -126,11 +130,9 @@ const Team: React.FC = () => {
                 className="group"
               >
                 <div className="relative mb-4">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-24 h-24 rounded-full mx-auto object-cover shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
-                  />
+                  <div className={`w-24 h-24 rounded-full mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center ${member.bgColor}`}>
+                    <span className="text-4xl">{member.avatar}</span>
+                  </div>
                 </div>
                 <h4 className="font-bold text-slate-900 mb-1 text-3xl">{member.name}</h4>
                 <p className="text-slate-600 text-sm">{member.role}</p>
