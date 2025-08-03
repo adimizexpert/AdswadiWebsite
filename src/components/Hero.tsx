@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Edit3, Facebook, ShoppingBag, Search } from 'lucide-react';
+import { ArrowRight, Edit3, Facebook, ShoppingBag, Search, MessageCircle } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -185,27 +185,27 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.6, delay: 1.0 }}
             className="text-center"
           >
-            <p className="text-purple-100 mb-8 font-medium text-lg">
+            <p className="text-white mb-8 font-medium text-lg">
               Our Performance Marketing Services are Certified by
             </p>
             <div className="flex flex-wrap justify-center items-center gap-8">
               {[
                 { 
-                  name: 'Meta Business Partner', 
+                  name: 'Meta', 
                   icon: Facebook,
                   color: 'text-blue-600',
                   bgColor: 'bg-white',
                   subText: 'Business Partner'
                 },
                 { 
-                  name: 'Shopify Partners', 
+                  name: 'Shopify', 
                   icon: ShoppingBag,
                   color: 'text-green-600',
                   bgColor: 'bg-white',
                   subText: 'partners'
                 },
                 { 
-                  name: 'Google Partner', 
+                  name: 'Google', 
                   icon: Search,
                   color: 'text-blue-600',
                   bgColor: 'bg-white',
@@ -217,17 +217,17 @@ const Hero: React.FC = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
-                  className="flex flex-col items-center gap-2"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="flex flex-col items-center gap-3"
                 >
-                  <div className={`w-12 h-12 rounded-lg ${partner.bgColor} flex items-center justify-center shadow-lg`}>
-                    <partner.icon className={`w-6 h-6 ${partner.color}`} />
+                  <div className={`w-16 h-16 rounded-xl ${partner.bgColor} flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300`}>
+                    <partner.icon className={`w-8 h-8 ${partner.color}`} />
                   </div>
                   <div className="text-center">
-                    <div className="font-semibold text-white text-sm">
-                      {partner.name.split(' ')[0]}
+                    <div className="font-bold text-white text-base">
+                      {partner.name}
                     </div>
-                    <div className="text-xs text-purple-200">
+                    <div className="text-xs text-white/80">
                       {partner.subText}
                     </div>
                   </div>
