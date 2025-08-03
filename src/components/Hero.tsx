@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Edit3, Facebook, ShoppingBag, Search, MessageCircle } from 'lucide-react';
+import { ArrowRight, Facebook, ShoppingBag, Search, MessageCircle, Sparkles, Zap, Target } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -78,10 +78,11 @@ const Hero: React.FC = () => {
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3]
+            opacity: [0.3, 0.6, 0.3],
+            rotate: [0, 180, 360]
           }}
           transition={{
-            duration: 4,
+            duration: 6,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -90,15 +91,44 @@ const Hero: React.FC = () => {
         <motion.div
           animate={{
             scale: [1.2, 1, 1.2],
-            opacity: [0.4, 0.7, 0.4]
+            opacity: [0.4, 0.7, 0.4],
+            rotate: [360, 180, 0]
           }}
           transition={{
-            duration: 5,
+            duration: 8,
             repeat: Infinity,
             ease: "easeInOut",
             delay: 1
           }}
           className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+        />
+        {/* Floating Animation Elements */}
+        <motion.div
+          animate={{
+            y: [0, -20, 0],
+            x: [0, 10, 0],
+            rotate: [0, 5, 0]
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/3 right-1/3 w-32 h-32 bg-gradient-to-r from-purple-400/20 to-blue-400/20 rounded-full blur-2xl"
+        />
+        <motion.div
+          animate={{
+            y: [0, 20, 0],
+            x: [0, -15, 0],
+            rotate: [0, -5, 0]
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+          className="absolute bottom-1/3 left-1/3 w-40 h-40 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-2xl"
         />
       </div>
 
@@ -127,13 +157,30 @@ const Hero: React.FC = () => {
                 transition={{ duration: 1.5, delay: 1.0 }}
                 className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-yellow-300 to-orange-300"
               />
+              {/* Special Animation Elements */}
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 2.5 }}
-                className="absolute -bottom-1 right-0"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 2.0 }}
+                className="absolute -top-4 -right-4"
               >
-                <Edit3 className="w-6 h-6 text-white" />
+                <Sparkles className="w-8 h-8 text-yellow-300" />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 2.2 }}
+                className="absolute -bottom-4 -left-4"
+              >
+                <Zap className="w-6 h-6 text-orange-400" />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 2.4 }}
+                className="absolute top-2 -right-8"
+              >
+                <Target className="w-5 h-5 text-purple-300" />
               </motion.div>
             </div>
           </motion.h1>
@@ -169,12 +216,49 @@ const Hero: React.FC = () => {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+              animate={{
+                boxShadow: [
+                  "0 10px 25px rgba(0,0,0,0.2)",
+                  "0 15px 35px rgba(147, 51, 234, 0.3)",
+                  "0 10px 25px rgba(0,0,0,0.2)"
+                ]
+              }}
+              transition={{
+                boxShadow: {
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }
+              }}
+              className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 relative overflow-hidden"
             >
-              Book a Strategy Call
-              <ArrowRight size={20} />
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10"
+                animate={{
+                  x: ["-100%", "100%"]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <span className="relative z-10">Book a Strategy Call</span>
+              <motion.div
+                animate={{
+                  x: [0, 5, 0]
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="relative z-10"
+              >
+                <ArrowRight size={20} />
+              </motion.div>
             </motion.a>
           </motion.div>
 
