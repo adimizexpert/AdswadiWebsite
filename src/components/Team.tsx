@@ -19,22 +19,22 @@ const founders = [
 
 const teamMembers = [
   {
-    name: '1',
+    name: '😎',
     role: 'Ads Strategist',
     image: '1.png'
   },
   {
-    name: '2',
+    name: '🎨',
     role: 'Graphics Head',
     image: '2.png'
   },
   {
-    name: '3',
+    name: '💻',
     role: 'Landing Page Specialist',
     image: '3.png'
   },
   {
-    name: '4',
+    name: '🤖',
     role: 'Telegram Bot Dev',
     image: '4.png'
   }
@@ -132,7 +132,7 @@ const Team: React.FC = () => {
                     className="w-24 h-24 rounded-full mx-auto object-cover shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
                   />
                 </div>
-                <h4 className="font-bold text-slate-900 mb-1">{member.name}</h4>
+                <h4 className="font-bold text-slate-900 mb-1 text-3xl">{member.name}</h4>
                 <p className="text-slate-600 text-sm">{member.role}</p>
               </motion.div>
             ))}
