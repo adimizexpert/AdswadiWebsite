@@ -32,8 +32,8 @@ const Header: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
+        staggerChildren: 0.08,
+        delayChildren: 0.1
       }
     }
   };
@@ -41,16 +41,31 @@ const Header: React.FC = () => {
   const letterVariants = {
     hidden: { 
       opacity: 0, 
-      y: 20,
-      scale: 0.8
+      y: 30,
+      scale: 0.5,
+      rotateX: -90
     },
     visible: { 
       opacity: 1, 
       y: 0,
       scale: 1,
+      rotateX: 0,
       transition: {
-        duration: 0.3,
+        duration: 0.4,
         ease: "easeOut" as const
+      }
+    }
+  };
+
+  const continuousVariants = {
+    animate: {
+      y: [0, -2, 0],
+      scale: [1, 1.05, 1],
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut" as const,
+        staggerChildren: 0.1
       }
     }
   };
@@ -102,20 +117,48 @@ const Header: React.FC = () => {
                 {logoText.split('').map((letter, index) => (
                   <motion.span
                     key={index}
-                    variants={letterVariants}
+                    animate="animate"
                     whileHover={{ 
-                      y: -3,
-                      scale: 1.2,
+                      y: -5,
+                      scale: 1.3,
                       color: "#7c3aed",
-                      transition: { duration: 0.2 }
+                      textShadow: "0 4px 8px rgba(124, 58, 237, 0.3)",
+                      transition: { duration: 0.3 }
                     }}
-                    className="text-xl font-bold text-slate-900 cursor-pointer inline-block"
+                    className="text-xl font-bold text-slate-900 cursor-pointer inline-block relative"
                     style={{ 
                       textShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                      transition: "all 0.2s ease"
+                      transition: "all 0.3s ease"
+                    }}
+                    custom={index}
+                    variants={{
+                      ...letterVariants,
+                      animate: {
+                        y: [0, -2, 0],
+                        scale: [1, 1.02, 1],
+                        transition: {
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut" as const,
+                          delay: index * 0.1
+                        }
+                      }
                     }}
                   >
                     {letter}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent opacity-0"
+                      animate={{
+                        opacity: [0, 1, 0]
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        delay: index * 0.2
+                      }}
+                    >
+                      {letter}
+                    </motion.div>
                   </motion.span>
                 ))}
               </motion.div>
