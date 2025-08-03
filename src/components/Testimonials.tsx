@@ -52,8 +52,63 @@ const stats = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="testimonials" className="py-20 bg-white relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.02, 0.08, 0.02]
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/3 left-1/3 w-80 h-80 bg-gradient-to-r from-blue-100/40 to-purple-100/40 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1.1, 1, 1.1],
+            opacity: [0.03, 0.1, 0.03]
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 6
+          }}
+          className="absolute bottom-1/3 right-1/3 w-72 h-72 bg-gradient-to-r from-purple-100/40 to-blue-100/40 rounded-full blur-3xl"
+        />
+        {/* Floating Elements */}
+        <motion.div
+          animate={{
+            y: [0, -8, 0],
+            rotate: [0, 2, 0]
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/4 right-1/4 w-2 h-2 bg-gradient-to-r from-blue-300 to-purple-300 rounded-full opacity-40"
+        />
+        <motion.div
+          animate={{
+            y: [0, 6, 0],
+            rotate: [0, -1, 0]
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 4
+          }}
+          className="absolute bottom-1/4 left-1/4 w-1 h-1 bg-gradient-to-r from-purple-300 to-blue-300 rounded-full opacity-60"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

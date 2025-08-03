@@ -43,8 +43,37 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-24 bg-white relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <motion.div
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.1, 0.2, 0.1]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-400/20 to-blue-400/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1.1, 1, 1.1],
+            opacity: [0.15, 0.25, 0.15]
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -76,11 +105,65 @@ const Services: React.FC = () => {
               className="group relative"
             >
               {/* Service Card */}
-              <div className={`${service.bgColor} rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-500 h-full`}>
+              <motion.div 
+                className={`${service.bgColor} rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-500 h-full relative overflow-hidden`}
+                whileHover={{ 
+                  y: -10, 
+                  scale: 1.02,
+                  boxShadow: "0 25px 50px rgba(0,0,0,0.15)"
+                }}
+              >
+                {/* Floating Elements */}
+                <motion.div
+                  animate={{
+                    y: [0, -5, 0],
+                    rotate: [0, 2, 0]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute top-4 right-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full opacity-60"
+                />
+                <motion.div
+                  animate={{
+                    y: [0, 5, 0],
+                    rotate: [0, -2, 0]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1
+                  }}
+                  className="absolute bottom-4 left-4 w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-40"
+                />
+                
                 {/* Icon */}
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4`}>
+                <motion.div 
+                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4`}
+                  whileHover={{ 
+                    scale: 1.1,
+                    rotate: 5
+                  }}
+                  animate={{
+                    boxShadow: [
+                      "0 4px 8px rgba(0,0,0,0.1)",
+                      "0 8px 16px rgba(0,0,0,0.2)",
+                      "0 4px 8px rgba(0,0,0,0.1)"
+                    ]
+                  }}
+                  transition={{
+                    boxShadow: {
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }
+                  }}
+                >
                   <service.icon className="w-6 h-6 text-white" />
-                </div>
+                </motion.div>
 
                 {/* Content */}
                 <h3 className="text-lg font-bold text-slate-900 mb-3">{service.title}</h3>
@@ -112,7 +195,7 @@ const Services: React.FC = () => {
                   Get Started
                   <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                 </motion.button>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>

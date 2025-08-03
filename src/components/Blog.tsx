@@ -73,8 +73,63 @@ const blogPosts = [
 
 const Blog: React.FC = () => {
   return (
-    <section id="blog" className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="blog" className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.03, 0.12, 0.03]
+          }}
+          transition={{
+            duration: 14,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-200/30 to-blue-200/30 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.05, 0.15, 0.05]
+          }}
+          transition={{
+            duration: 16,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 5
+          }}
+          className="absolute bottom-1/4 right-1/4 w-88 h-88 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"
+        />
+        {/* Floating Elements */}
+        <motion.div
+          animate={{
+            y: [0, -10, 0],
+            x: [0, 5, 0]
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/3 right-1/3 w-2 h-2 bg-gradient-to-r from-purple-300 to-blue-300 rounded-full opacity-50"
+        />
+        <motion.div
+          animate={{
+            y: [0, 8, 0],
+            x: [0, -3, 0]
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3
+          }}
+          className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-gradient-to-r from-blue-300 to-purple-300 rounded-full opacity-70"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
