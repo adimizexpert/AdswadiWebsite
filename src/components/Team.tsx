@@ -4,13 +4,13 @@ import { Linkedin, Twitter } from 'lucide-react';
 
 const founders = [
   {
-    name: 'Shadab',
+    name: 'Sadab Alam',
     role: 'Co-Founder & Performance Lead',
     description: 'Drives the strategy behind every high-performing campaign.',
     image: '02.png'
   },
   {
-    name: 'Roushan',
+    name: 'Raushan',
     role: 'Co-Founder & Tech + Automation Head',
     description: 'Makes the systems behind your success run smoother than ever.',
     image: '01.png'
