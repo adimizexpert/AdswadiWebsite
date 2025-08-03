@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter } from 'lucide-react';
+import { MessageCircle, Instagram } from 'lucide-react';
 
 const founders = [
   {
@@ -92,14 +92,14 @@ const Team: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                   className="p-2 rounded-full bg-slate-100 hover:bg-purple-100 transition-colors"
                 >
-                  <Linkedin size={20} className="text-slate-600" />
+                  <MessageCircle size={20} className="text-slate-600" />
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="p-2 rounded-full bg-slate-100 hover:bg-purple-100 transition-colors"
                 >
-                  <Twitter size={20} className="text-slate-600" />
+                  <Instagram size={20} className="text-slate-600" />
                 </motion.button>
               </div>
             </motion.div>
