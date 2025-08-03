@@ -108,21 +108,38 @@ const Header: React.FC = () => {
               </motion.div>
               
               {/* Animated Logo Text */}
-              <motion.div
-                variants={logoVariants}
-                initial="hidden"
-                animate="visible"
-                className="flex"
-              >
+              <motion.div className="flex">
                 {logoText.split('').map((letter, index) => (
                   <motion.span
                     key={index}
-                    animate="animate"
+                    initial={{ opacity: 0, y: 30, scale: 0.5, rotateX: -90 }}
+                    animate={{ 
+                      opacity: 1, 
+                      y: [0, -3, 0], 
+                      scale: [1, 1.05, 1], 
+                      rotateX: 0
+                    }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.08,
+                      y: {
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: index * 0.1
+                      },
+                      scale: {
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: index * 0.1
+                      }
+                    }}
                     whileHover={{ 
-                      y: -5,
-                      scale: 1.3,
+                      y: -8,
+                      scale: 1.4,
                       color: "#7c3aed",
-                      textShadow: "0 4px 8px rgba(124, 58, 237, 0.3)",
+                      textShadow: "0 6px 12px rgba(124, 58, 237, 0.4)",
                       transition: { duration: 0.3 }
                     }}
                     className="text-xl font-bold text-slate-900 cursor-pointer inline-block relative"
@@ -130,31 +147,17 @@ const Header: React.FC = () => {
                       textShadow: "0 2px 4px rgba(0,0,0,0.1)",
                       transition: "all 0.3s ease"
                     }}
-                    custom={index}
-                    variants={{
-                      ...letterVariants,
-                      animate: {
-                        y: [0, -2, 0],
-                        scale: [1, 1.02, 1],
-                        transition: {
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut" as const,
-                          delay: index * 0.1
-                        }
-                      }
-                    }}
                   >
                     {letter}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent opacity-0"
                       animate={{
-                        opacity: [0, 1, 0]
+                        opacity: [0, 0.8, 0]
                       }}
                       transition={{
-                        duration: 3,
+                        duration: 2.5,
                         repeat: Infinity,
-                        delay: index * 0.2
+                        delay: index * 0.15
                       }}
                     >
                       {letter}
