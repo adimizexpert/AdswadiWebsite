@@ -25,6 +25,36 @@ const Header: React.FC = () => {
   // WhatsApp link with pre-filled message
   const whatsappLink = `https://wa.me/918678830021?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
 
+  // Animated logo text
+  const logoText = "Adswadi";
+  const logoVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const letterVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 20,
+      scale: 0.8
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut" as const
+      }
+    }
+  };
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -40,12 +70,55 @@ const Header: React.FC = () => {
           >
             <div className="flex items-center space-x-3">
               {/* Logo Icon */}
-              <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                <div className="w-4 h-4 bg-white rounded-sm"></div>
-              </div>
-              <span className="text-xl font-bold text-slate-900">
-                Adswadi
-              </span>
+              <motion.div 
+                className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center"
+                whileHover={{ 
+                  scale: 1.1,
+                  rotate: 5,
+                  transition: { duration: 0.2 }
+                }}
+              >
+                <motion.div 
+                  className="w-4 h-4 bg-white rounded-sm"
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 5, 0]
+                  }}
+                  transition={{ 
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                ></motion.div>
+              </motion.div>
+              
+              {/* Animated Logo Text */}
+              <motion.div
+                variants={logoVariants}
+                initial="hidden"
+                animate="visible"
+                className="flex"
+              >
+                {logoText.split('').map((letter, index) => (
+                  <motion.span
+                    key={index}
+                    variants={letterVariants}
+                    whileHover={{ 
+                      y: -3,
+                      scale: 1.2,
+                      color: "#7c3aed",
+                      transition: { duration: 0.2 }
+                    }}
+                    className="text-xl font-bold text-slate-900 cursor-pointer inline-block"
+                    style={{ 
+                      textShadow: "0 2px 4px rgba(0,0,0,0.1)",
+                      transition: "all 0.2s ease"
+                    }}
+                  >
+                    {letter}
+                  </motion.span>
+                ))}
+              </motion.div>
             </div>
           </motion.div>
 
