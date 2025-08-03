@@ -7,13 +7,13 @@ const founders = [
     name: 'Shadab',
     role: 'Co-Founder & Performance Lead',
     description: 'Drives the strategy behind every high-performing campaign.',
-    image: 'shadab.png'
+    image: '02.png'
   },
   {
     name: 'Roushan',
     role: 'Co-Founder & Tech + Automation Head',
     description: 'Makes the systems behind your success run smoother than ever.',
-    image: 'roushan.png'
+    image: '01.png'
   }
 ];
 
