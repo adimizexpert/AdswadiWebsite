@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Facebook, ShoppingBag, Search, MessageCircle, Sparkles, Zap, Target } from 'lucide-react';
+import { ArrowRight, Sparkles, Zap, Target } from 'lucide-react';
 
-const Hero: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+const Hero = () => {
+  const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -15,17 +15,18 @@ const Hero: React.FC = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const particles: any[] = [];
-    const particleCount = 30;
+    const particles = [];
+    const particleCount = 50;
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        size: Math.random() * 1.5 + 0.5,
-        opacity: Math.random() * 0.3 + 0.1
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        size: Math.random() * 2 + 0.5,
+        opacity: Math.random() * 0.4 + 0.1,
+        color: Math.random() > 0.5 ? '#8b5cf6' : '#3b82f6'
       });
     }
 
@@ -41,7 +42,7 @@ const Hero: React.FC = () => {
         
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(147, 51, 234, ${particle.opacity})`;
+        ctx.fillStyle = `${particle.color}${Math.floor(particle.opacity * 255).toString(16).padStart(2, '0')}`;
         ctx.fill();
       });
       
@@ -59,7 +60,6 @@ const Hero: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // WhatsApp link with pre-filled message
   const whatsappLink = `https://wa.me/918678830021?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
 
   return (
@@ -67,13 +67,13 @@ const Hero: React.FC = () => {
       {/* Animated Background */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-20"
       />
       
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-600/80 via-blue-600/80 to-indigo-700/80"></div>
       
-      {/* Animated Background Elements */}
+      {/* Floating Elements */}
       <div className="absolute inset-0">
         <motion.div
           animate={{
@@ -82,7 +82,7 @@ const Hero: React.FC = () => {
             rotate: [0, 180, 360]
           }}
           transition={{
-            duration: 6,
+            duration: 8,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -95,14 +95,14 @@ const Hero: React.FC = () => {
             rotate: [360, 180, 0]
           }}
           transition={{
-            duration: 8,
+            duration: 10,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 1
+            delay: 2
           }}
           className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl"
         />
-        {/* Floating Animation Elements */}
+        {/* Floating Icons */}
         <motion.div
           animate={{
             y: [0, -20, 0],
@@ -114,8 +114,10 @@ const Hero: React.FC = () => {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute top-1/3 right-1/3 w-32 h-32 bg-gradient-to-r from-purple-400/20 to-blue-400/20 rounded-full blur-2xl"
-        />
+          className="absolute top-1/3 right-1/3"
+        >
+          <Sparkles className="w-8 h-8 text-yellow-300" />
+        </motion.div>
         <motion.div
           animate={{
             y: [0, 20, 0],
@@ -126,10 +128,28 @@ const Hero: React.FC = () => {
             duration: 5,
             repeat: Infinity,
             ease: "easeInOut",
+            delay: 1
+          }}
+          className="absolute bottom-1/3 left-1/3"
+        >
+          <Zap className="w-6 h-6 text-orange-400" />
+        </motion.div>
+        <motion.div
+          animate={{
+            y: [0, -15, 0],
+            x: [0, 8, 0],
+            rotate: [0, 3, 0]
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
             delay: 2
           }}
-          className="absolute bottom-1/3 left-1/3 w-40 h-40 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-2xl"
-        />
+          className="absolute top-1/2 left-1/4"
+        >
+          <Target className="w-5 h-5 text-purple-300" />
+        </motion.div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -157,31 +177,6 @@ const Hero: React.FC = () => {
                 transition={{ duration: 1.5, delay: 1.0 }}
                 className="absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-yellow-300 to-orange-300"
               />
-              {/* Special Animation Elements */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 2.0 }}
-                className="absolute -top-4 -right-4"
-              >
-                <Sparkles className="w-8 h-8 text-yellow-300" />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 2.2 }}
-                className="absolute -bottom-4 -left-4"
-              >
-                <Zap className="w-6 h-6 text-orange-400" />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 2.4 }}
-                className="absolute top-2 -right-8"
-              >
-                <Target className="w-5 h-5 text-purple-300" />
-              </motion.div>
             </div>
           </motion.h1>
 
@@ -329,4 +324,4 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero;
+export default Hero; 

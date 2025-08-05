@@ -69,12 +69,12 @@ const CaseStudies: React.FC = () => {
       <div className="absolute inset-0">
         <motion.div
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.3, 0.1],
+            scale: [1, 1.3, 1],
+            opacity: [0.08, 0.25, 0.08],
             rotate: [0, 180, 360]
           }}
           transition={{
-            duration: 12,
+            duration: 18,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -82,44 +82,102 @@ const CaseStudies: React.FC = () => {
         />
         <motion.div
           animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.15, 0.25, 0.15],
+            scale: [1.3, 1, 1.3],
+            opacity: [0.12, 0.22, 0.12],
             rotate: [360, 180, 0]
+          }}
+          transition={{
+            duration: 22,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 4
+          }}
+          className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-full blur-3xl"
+        />
+        {/* Geometric Patterns */}
+        <motion.div
+          animate={{
+            rotate: [0, 360],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-1/4 right-1/4 w-40 h-40 border border-purple-400/20 rounded-full"
+        />
+        <motion.div
+          animate={{
+            rotate: [360, 0],
+            scale: [1.2, 1, 1.2]
+          }}
+          transition={{
+            duration: 35,
+            repeat: Infinity,
+            ease: "linear",
+            delay: 8
+          }}
+          className="absolute bottom-1/4 left-1/4 w-32 h-32 border border-pink-400/20 rounded-lg"
+        />
+        {/* Floating Particles */}
+        <motion.div
+          animate={{
+            y: [0, -25, 0],
+            x: [0, 12, 0],
+            opacity: [0.4, 0.8, 0.4]
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/4 right-1/3 w-3 h-3 bg-purple-400 rounded-full"
+        />
+        <motion.div
+          animate={{
+            y: [0, 18, 0],
+            x: [0, -10, 0],
+            opacity: [0.5, 0.9, 0.5]
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3
+          }}
+          className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-pink-400 rounded-full"
+        />
+        {/* Star Effects */}
+        <motion.div
+          animate={{
+            rotate: [0, 180, 360],
+            scale: [0.8, 1.2, 0.8]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/2 left-1/3 text-purple-300 text-2xl"
+        >
+          ⭐
+        </motion.div>
+        <motion.div
+          animate={{
+            rotate: [360, 180, 0],
+            scale: [1.2, 0.8, 1.2]
           }}
           transition={{
             duration: 15,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 3
+            delay: 6
           }}
-          className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-full blur-3xl"
-        />
-        {/* Floating Particles */}
-        <motion.div
-          animate={{
-            y: [0, -20, 0],
-            x: [0, 10, 0]
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-1/4 right-1/3 w-2 h-2 bg-purple-400 rounded-full opacity-60"
-        />
-        <motion.div
-          animate={{
-            y: [0, 15, 0],
-            x: [0, -8, 0]
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2
-          }}
-          className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-pink-400 rounded-full opacity-80"
-        />
+          className="absolute bottom-1/2 right-1/3 text-pink-300 text-xl"
+        >
+          ✨
+        </motion.div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

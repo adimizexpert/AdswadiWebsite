@@ -51,11 +51,12 @@ const Team: React.FC = () => {
       <div className="absolute inset-0">
         <motion.div
           animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.05, 0.15, 0.05]
+            scale: [1, 1.15, 1],
+            opacity: [0.03, 0.12, 0.03],
+            rotate: [0, 45, 90]
           }}
           transition={{
-            duration: 10,
+            duration: 14,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -63,42 +64,75 @@ const Team: React.FC = () => {
         />
         <motion.div
           animate={{
-            scale: [1.1, 1, 1.1],
-            opacity: [0.08, 0.18, 0.08]
+            scale: [1.15, 1, 1.15],
+            opacity: [0.05, 0.15, 0.05],
+            rotate: [90, 45, 0]
           }}
           transition={{
-            duration: 12,
+            duration: 16,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 4
+            delay: 6
           }}
           className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-gradient-to-r from-blue-300/20 to-purple-300/20 rounded-full blur-3xl"
         />
-        {/* Floating Elements */}
+        {/* Team Icons */}
         <motion.div
           animate={{
-            y: [0, -15, 0],
-            rotate: [0, 5, 0]
+            y: [0, -20, 0],
+            rotate: [0, 10, 0],
+            scale: [1, 1.1, 1]
           }}
           transition={{
-            duration: 5,
+            duration: 6,
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute top-1/4 left-1/3 w-3 h-3 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full opacity-40"
+          className="absolute top-1/4 left-1/3 text-2xl"
+        >
+          👥
+        </motion.div>
+        <motion.div
+          animate={{
+            y: [0, 15, 0],
+            rotate: [0, -8, 0],
+            scale: [1.1, 1, 1.1]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3
+          }}
+          className="absolute bottom-1/4 right-1/3 text-xl"
+        >
+          💼
+        </motion.div>
+        {/* Connection Lines */}
+        <motion.div
+          animate={{
+            scaleX: [0, 1, 0],
+            opacity: [0, 0.3, 0]
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/2 left-1/4 w-32 h-0.5 bg-gradient-to-r from-purple-400/30 to-blue-400/30"
         />
         <motion.div
           animate={{
-            y: [0, 12, 0],
-            rotate: [0, -3, 0]
+            scaleX: [0, 1, 0],
+            opacity: [0, 0.3, 0]
           }}
           transition={{
-            duration: 7,
+            duration: 4,
             repeat: Infinity,
             ease: "easeInOut",
             delay: 2
           }}
-          className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-60"
+          className="absolute bottom-1/2 right-1/4 w-24 h-0.5 bg-gradient-to-r from-blue-400/30 to-purple-400/30"
         />
       </div>
       

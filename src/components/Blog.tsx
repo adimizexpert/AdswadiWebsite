@@ -78,11 +78,12 @@ const Blog: React.FC = () => {
       <div className="absolute inset-0">
         <motion.div
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.03, 0.12, 0.03]
+            scale: [1, 1.25, 1],
+            opacity: [0.02, 0.1, 0.02],
+            rotate: [0, 45, 90]
           }}
           transition={{
-            duration: 14,
+            duration: 18,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -90,34 +91,67 @@ const Blog: React.FC = () => {
         />
         <motion.div
           animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.05, 0.15, 0.05]
+            scale: [1.25, 1, 1.25],
+            opacity: [0.03, 0.12, 0.03],
+            rotate: [90, 45, 0]
           }}
           transition={{
-            duration: 16,
+            duration: 20,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 5
+            delay: 7
           }}
-          className="absolute bottom-1/4 right-1/4 w-88 h-88 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"
         />
-        {/* Floating Elements */}
+        {/* Blog Icons */}
         <motion.div
           animate={{
-            y: [0, -10, 0],
-            x: [0, 5, 0]
+            y: [0, -20, 0],
+            rotate: [0, 10, 0],
+            scale: [1, 1.1, 1]
           }}
           transition={{
-            duration: 4,
+            duration: 8,
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute top-1/3 right-1/3 w-2 h-2 bg-gradient-to-r from-purple-300 to-blue-300 rounded-full opacity-50"
+          className="absolute top-1/4 right-1/4 text-2xl"
+        >
+          📝
+        </motion.div>
+        <motion.div
+          animate={{
+            y: [0, 16, 0],
+            rotate: [0, -8, 0],
+            scale: [1.1, 1, 1.1]
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 4
+          }}
+          className="absolute bottom-1/4 left-1/4 text-xl"
+        >
+          📚
+        </motion.div>
+        {/* Reading Lines */}
+        <motion.div
+          animate={{
+            scaleY: [0, 1, 0],
+            opacity: [0, 0.5, 0]
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/2 left-1/3 w-0.5 h-24 bg-gradient-to-b from-purple-400/50 to-blue-400/50"
         />
         <motion.div
           animate={{
-            y: [0, 8, 0],
-            x: [0, -3, 0]
+            scaleY: [0, 1, 0],
+            opacity: [0, 0.5, 0]
           }}
           transition={{
             duration: 6,
@@ -125,7 +159,7 @@ const Blog: React.FC = () => {
             ease: "easeInOut",
             delay: 3
           }}
-          className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-gradient-to-r from-blue-300 to-purple-300 rounded-full opacity-70"
+          className="absolute bottom-1/2 right-1/3 w-0.5 h-20 bg-gradient-to-b from-blue-400/50 to-purple-400/50"
         />
       </div>
       

@@ -43,16 +43,17 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-white relative overflow-hidden">
+    <section id="services" className="py-24 bg-gradient-to-br from-slate-50 via-white to-purple-50 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <motion.div
           animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.1, 0.2, 0.1]
+            scale: [1, 1.2, 1],
+            opacity: [0.05, 0.15, 0.05],
+            rotate: [0, 90, 180]
           }}
           transition={{
-            duration: 8,
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -60,16 +61,69 @@ const Services: React.FC = () => {
         />
         <motion.div
           animate={{
-            scale: [1.1, 1, 1.1],
-            opacity: [0.15, 0.25, 0.15]
+            scale: [1.2, 1, 1.2],
+            opacity: [0.08, 0.18, 0.08],
+            rotate: [180, 90, 0]
           }}
           transition={{
-            duration: 10,
+            duration: 15,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 2
+            delay: 3
           }}
           className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
+        />
+        {/* Geometric Shapes */}
+        <motion.div
+          animate={{
+            rotate: [0, 360],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute top-1/3 right-1/3 w-32 h-32 border-2 border-purple-300/30 rounded-full"
+        />
+        <motion.div
+          animate={{
+            rotate: [360, 0],
+            scale: [1.1, 1, 1.1]
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+            delay: 5
+          }}
+          className="absolute bottom-1/3 left-1/3 w-24 h-24 border-2 border-blue-300/30 rounded-lg"
+        />
+        {/* Floating Dots */}
+        <motion.div
+          animate={{
+            y: [0, -10, 0],
+            opacity: [0.3, 0.6, 0.3]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/4 right-1/4 w-2 h-2 bg-purple-400 rounded-full"
+        />
+        <motion.div
+          animate={{
+            y: [0, 8, 0],
+            opacity: [0.4, 0.7, 0.4]
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+          className="absolute bottom-1/4 left-1/4 w-1 h-1 bg-blue-400 rounded-full"
         />
       </div>
       
