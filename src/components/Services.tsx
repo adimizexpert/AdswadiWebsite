@@ -1,23 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle, Instagram, Facebook, Search, Palette } from 'lucide-react';
+import { ArrowRight, CheckCircle, Search, Palette, Globe, Code, Smartphone, Bot, BookOpen, TrendingUp } from 'lucide-react';
 
 const Services: React.FC = () => {
   const services = [
     {
-      icon: Instagram,
-      title: 'Instagram Ads',
-      description: 'Engage your audience with visually stunning Instagram campaigns that drive conversions.',
-      features: ['Story Ads', 'Feed Ads', 'Reels Ads', 'Shopping Ads'],
-      color: 'from-pink-500 to-purple-600',
-      bgColor: 'bg-gradient-to-br from-pink-50 to-purple-50',
-      iconColor: 'text-pink-600'
-    },
-    {
-      icon: Facebook,
-      title: 'Facebook Ads',
-      description: 'Reach millions of potential customers with targeted Facebook advertising campaigns.',
-      features: ['Lead Generation', 'Brand Awareness', 'Conversion Campaigns', 'Retargeting'],
+      icon: Search,
+      title: 'Meta Ads',
+      description: 'Comprehensive Meta advertising campaigns across Facebook, Instagram, and Messenger platforms.',
+      features: ['Facebook Ads', 'Instagram Ads', 'Messenger Ads', 'Audience Targeting'],
       color: 'from-blue-500 to-indigo-600',
       bgColor: 'bg-gradient-to-br from-blue-50 to-indigo-50',
       iconColor: 'text-blue-600'
@@ -32,13 +23,79 @@ const Services: React.FC = () => {
       iconColor: 'text-green-600'
     },
     {
+      icon: Globe,
+      title: 'Web Development',
+      description: 'Complete web development solutions from simple websites to complex applications.',
+      features: ['Websites', 'Funnels', 'Landing Pages', 'Custom Solutions'],
+      color: 'from-purple-500 to-pink-600',
+      bgColor: 'bg-gradient-to-br from-purple-50 to-pink-50',
+      iconColor: 'text-purple-600'
+    },
+    {
       icon: Palette,
       title: 'Branding',
       description: 'Create memorable brand experiences that resonate with your target audience.',
       features: ['Logo Design', 'Brand Identity', 'Visual Guidelines', 'Brand Strategy'],
-      color: 'from-purple-500 to-pink-600',
-      bgColor: 'bg-gradient-to-br from-purple-50 to-pink-50',
+      color: 'from-orange-500 to-red-600',
+      bgColor: 'bg-gradient-to-br from-orange-50 to-red-50',
+      iconColor: 'text-orange-600'
+    }
+  ];
+
+  const webDevelopmentServices = [
+    {
+      icon: Globe,
+      title: 'Websites',
+      description: 'Professional websites that convert visitors into customers.',
+      features: ['Responsive Design', 'SEO Optimized', 'Fast Loading', 'Mobile Friendly'],
+      color: 'from-blue-500 to-cyan-600',
+      bgColor: 'bg-gradient-to-br from-blue-50 to-cyan-50',
+      iconColor: 'text-blue-600'
+    },
+    {
+      icon: TrendingUp,
+      title: 'Funnels',
+      description: 'High-converting sales funnels that maximize your ROI.',
+      features: ['Lead Capture', 'Sales Pages', 'Email Sequences', 'Analytics'],
+      color: 'from-green-500 to-emerald-600',
+      bgColor: 'bg-gradient-to-br from-green-50 to-emerald-50',
+      iconColor: 'text-green-600'
+    },
+    {
+      icon: Smartphone,
+      title: 'Landing Pages',
+      description: 'Optimized landing pages that drive conversions and sales.',
+      features: ['A/B Testing', 'Conversion Focused', 'Fast Loading', 'Mobile Optimized'],
+      color: 'from-purple-500 to-violet-600',
+      bgColor: 'bg-gradient-to-br from-purple-50 to-violet-50',
       iconColor: 'text-purple-600'
+    },
+    {
+      icon: TrendingUp,
+      title: 'Crypto Trading Website',
+      description: 'Advanced cryptocurrency trading platforms with real-time data.',
+      features: ['Real-time Charts', 'Trading Tools', 'Portfolio Management', 'Security'],
+      color: 'from-yellow-500 to-orange-600',
+      bgColor: 'bg-gradient-to-br from-yellow-50 to-orange-50',
+      iconColor: 'text-yellow-600'
+    },
+    {
+      icon: Bot,
+      title: 'Telegram Bot',
+      description: 'Custom Telegram bots for automation and customer engagement.',
+      features: ['Auto Responses', 'Integration', 'Analytics', 'Custom Commands'],
+      color: 'from-cyan-500 to-blue-600',
+      bgColor: 'bg-gradient-to-br from-cyan-50 to-blue-50',
+      iconColor: 'text-cyan-600'
+    },
+    {
+      icon: BookOpen,
+      title: 'Betting Book Websites',
+      description: 'Professional betting and sports book platforms.',
+      features: ['Live Odds', 'User Management', 'Payment Integration', 'Mobile App'],
+      color: 'from-red-500 to-pink-600',
+      bgColor: 'bg-gradient-to-br from-red-50 to-pink-50',
+      iconColor: 'text-red-600'
     }
   ];
 
@@ -142,13 +199,139 @@ const Services: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            From social media campaigns to search engine optimization, we deliver results that drive your business forward.
+            From digital marketing to web development, we deliver comprehensive solutions that drive your business forward.
           </p>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Main Services Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="group relative"
+            >
+              {/* Service Card */}
+              <motion.div 
+                className={`${service.bgColor} rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-500 h-full relative overflow-hidden`}
+                whileHover={{ 
+                  y: -10, 
+                  scale: 1.02,
+                  boxShadow: "0 25px 50px rgba(0,0,0,0.15)"
+                }}
+              >
+                {/* Floating Elements */}
+                <motion.div
+                  animate={{
+                    y: [0, -5, 0],
+                    rotate: [0, 2, 0]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="absolute top-4 right-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full opacity-60"
+                />
+                <motion.div
+                  animate={{
+                    y: [0, 5, 0],
+                    rotate: [0, -2, 0]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1
+                  }}
+                  className="absolute bottom-4 left-4 w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-40"
+                />
+                
+                {/* Icon */}
+                <motion.div 
+                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4`}
+                  whileHover={{ 
+                    scale: 1.1,
+                    rotate: 5
+                  }}
+                  animate={{
+                    boxShadow: [
+                      "0 4px 8px rgba(0,0,0,0.1)",
+                      "0 8px 16px rgba(0,0,0,0.2)",
+                      "0 4px 8px rgba(0,0,0,0.1)"
+                    ]
+                  }}
+                  transition={{
+                    boxShadow: {
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }
+                  }}
+                >
+                  <service.icon className="w-6 h-6 text-white" />
+                </motion.div>
+
+                {/* Content */}
+                <h3 className="text-lg font-bold text-slate-900 mb-3">{service.title}</h3>
+                <p className="text-slate-600 mb-4 text-sm leading-relaxed">{service.description}</p>
+
+                {/* Features */}
+                <div className="space-y-2 mb-4">
+                  {service.features.map((feature, featureIndex) => (
+                    <motion.div
+                      key={feature}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.2 + featureIndex * 0.1 }}
+                      className="flex items-center gap-2"
+                    >
+                      <CheckCircle className={`w-4 h-4 ${service.iconColor}`} />
+                      <span className="text-slate-700 text-xs">{feature}</span>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* CTA Button */}
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`w-full bg-gradient-to-r ${service.color} text-white px-4 py-2 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group/btn text-sm`}
+                >
+                  Get Started
+                  <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                </motion.button>
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Web Development Services Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h3 className="text-3xl sm:text-4xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 bg-clip-text text-transparent">
+              Web Development Services
+            </span>
+          </h3>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Comprehensive web development solutions tailored to your specific needs.
+          </p>
+        </motion.div>
+
+        {/* Web Development Services Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {webDevelopmentServices.map((service, index) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 50 }}
