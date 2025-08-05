@@ -48,82 +48,30 @@ const Services: React.FC = () => {
       <div className="absolute inset-0">
         <motion.div
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.05, 0.15, 0.05],
+            scale: [1, 1.1, 1],
+            opacity: [0.03, 0.08, 0.03],
             rotate: [0, 90, 180]
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-400/20 to-blue-400/20 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.08, 0.18, 0.08],
-            rotate: [180, 90, 0]
           }}
           transition={{
             duration: 15,
             repeat: Infinity,
-            ease: "easeInOut",
-            delay: 3
-          }}
-          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
-        />
-        {/* Geometric Shapes */}
-        <motion.div
-          animate={{
-            rotate: [0, 360],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute top-1/3 right-1/3 w-32 h-32 border-2 border-purple-300/30 rounded-full"
-        />
-        <motion.div
-          animate={{
-            rotate: [360, 0],
-            scale: [1.1, 1, 1.1]
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-            delay: 5
-          }}
-          className="absolute bottom-1/3 left-1/3 w-24 h-24 border-2 border-blue-300/30 rounded-lg"
-        />
-        {/* Floating Dots */}
-        <motion.div
-          animate={{
-            y: [0, -10, 0],
-            opacity: [0.3, 0.6, 0.3]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute top-1/4 right-1/4 w-2 h-2 bg-purple-400 rounded-full"
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-purple-400/10 to-blue-400/10 rounded-full blur-2xl"
         />
         <motion.div
           animate={{
-            y: [0, 8, 0],
-            opacity: [0.4, 0.7, 0.4]
+            scale: [1.1, 1, 1.1],
+            opacity: [0.05, 0.1, 0.05],
+            rotate: [180, 90, 0]
           }}
           transition={{
-            duration: 4,
+            duration: 18,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 1
+            delay: 5
           }}
-          className="absolute bottom-1/4 left-1/4 w-1 h-1 bg-blue-400 rounded-full"
+          className="absolute bottom-1/4 right-1/4 w-56 h-56 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-2xl"
         />
       </div>
       
@@ -151,69 +99,28 @@ const Services: React.FC = () => {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              whileHover={{ y: -10, scale: 1.02 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -5, scale: 1.02 }}
               className="group relative"
             >
               {/* Service Card */}
               <motion.div 
-                className={`${service.bgColor} rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-500 h-full relative overflow-hidden`}
+                className={`${service.bgColor} rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 h-full relative overflow-hidden`}
                 whileHover={{ 
-                  y: -10, 
+                  y: -5, 
                   scale: 1.02,
-                  boxShadow: "0 25px 50px rgba(0,0,0,0.15)"
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
                 }}
               >
-                {/* Floating Elements */}
-                <motion.div
-                  animate={{
-                    y: [0, -5, 0],
-                    rotate: [0, 2, 0]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute top-4 right-4 w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full opacity-60"
-                />
-                <motion.div
-                  animate={{
-                    y: [0, 5, 0],
-                    rotate: [0, -2, 0]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1
-                  }}
-                  className="absolute bottom-4 left-4 w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-40"
-                />
-                
                 {/* Icon */}
                 <motion.div 
                   className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4`}
                   whileHover={{ 
                     scale: 1.1,
                     rotate: 5
-                  }}
-                  animate={{
-                    boxShadow: [
-                      "0 4px 8px rgba(0,0,0,0.1)",
-                      "0 8px 16px rgba(0,0,0,0.2)",
-                      "0 4px 8px rgba(0,0,0,0.1)"
-                    ]
-                  }}
-                  transition={{
-                    boxShadow: {
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }
                   }}
                 >
                   <service.icon className="w-6 h-6 text-white" />
@@ -228,10 +135,10 @@ const Services: React.FC = () => {
                   {service.features.map((feature, featureIndex) => (
                     <motion.div
                       key={feature}
-                      initial={{ opacity: 0, x: -20 }}
+                      initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.2 + featureIndex * 0.1 }}
+                      transition={{ duration: 0.3, delay: 0.1 + featureIndex * 0.05 }}
                       className="flex items-center gap-2"
                     >
                       <CheckCircle className={`w-4 h-4 ${service.iconColor}`} />
