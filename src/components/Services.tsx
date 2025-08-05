@@ -311,24 +311,6 @@ const Services: React.FC = () => {
           ))}
         </div>
 
-        {/* Web Development Services Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h3 className="text-3xl sm:text-4xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 bg-clip-text text-transparent">
-              Web Development Services
-            </span>
-          </h3>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Comprehensive web development solutions tailored to your specific needs.
-          </p>
-        </motion.div>
-
         {/* Web Development Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {webDevelopmentServices.map((service, index) => (
