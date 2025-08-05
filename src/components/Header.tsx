@@ -26,51 +26,6 @@ const Header: React.FC = () => {
   // WhatsApp link with pre-filled message
   const whatsappLink = `https://wa.me/918678830021?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
 
-  // Animated logo text
-  const logoText = "Adswadi";
-  const logoVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const letterVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 30,
-      scale: 0.5,
-      rotateX: -90
-    },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      scale: 1,
-      rotateX: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeOut" as const
-      }
-    }
-  };
-
-  const continuousVariants = {
-    animate: {
-      y: [0, -2, 0],
-      scale: [1, 1.05, 1],
-      transition: {
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut" as const,
-        staggerChildren: 0.1
-      }
-    }
-  };
-
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -84,89 +39,15 @@ const Header: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center"
           >
-            <div className="flex items-center space-x-3">
-              {/* Logo Icon */}
-              <motion.div 
-                className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center"
-                whileHover={{ 
-                  scale: 1.1,
-                  rotate: 5,
-                  transition: { duration: 0.2 }
-                }}
-              >
-                <motion.div 
-                  className="w-4 h-4 bg-white rounded-sm"
-                  animate={{ 
-                    scale: [1, 1.1, 1],
-                    rotate: [0, 5, 0]
-                  }}
-                  transition={{ 
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                ></motion.div>
-              </motion.div>
-              
-              {/* Animated Logo Text */}
-              <motion.div className="flex">
-                {logoText.split('').map((letter, index) => (
-                  <motion.span
-                    key={index}
-                    initial={{ opacity: 0, y: 30, scale: 0.5, rotateX: -90 }}
-                    animate={{ 
-                      opacity: 1, 
-                      y: [0, -3, 0], 
-                      scale: [1, 1.05, 1], 
-                      rotateX: 0
-                    }}
-                    transition={{
-                      duration: 0.4,
-                      delay: index * 0.08,
-                      y: {
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: index * 0.1
-                      },
-                      scale: {
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: index * 0.1
-                      }
-                    }}
-                    whileHover={{ 
-                      y: -8,
-                      scale: 1.4,
-                      color: "#7c3aed",
-                      textShadow: "0 6px 12px rgba(124, 58, 237, 0.4)",
-                      transition: { duration: 0.3 }
-                    }}
-                    className="text-xl font-bold text-slate-900 cursor-pointer inline-block relative"
-                    style={{ 
-                      textShadow: "0 2px 4px rgba(0,0,0,0.1)",
-                      transition: "all 0.3s ease"
-                    }}
-                  >
-                    {letter}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent opacity-0"
-                      animate={{
-                        opacity: [0, 0.8, 0]
-                      }}
-                      transition={{
-                        duration: 2.5,
-                        repeat: Infinity,
-                        delay: index * 0.15
-                      }}
-                    >
-                      {letter}
-                    </motion.div>
-                  </motion.span>
-                ))}
-              </motion.div>
-            </div>
+            <motion.img 
+              src="/adswadi-logo.svg"
+              alt="Adswadi Logo"
+              className="h-8 w-auto"
+              whileHover={{ 
+                scale: 1.1,
+                transition: { duration: 0.2 }
+              }}
+            />
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -221,17 +102,24 @@ const Header: React.FC = () => {
                   {item.name}
                 </motion.a>
               ))}
-              <motion.a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navItems.length * 0.1 }}
-                className="w-full bg-slate-800 text-white px-6 py-3 rounded-lg font-semibold shadow-lg text-center block"
+              
+              {/* Mobile CTA Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="pt-4"
               >
-                Book a Strategy Call
-              </motion.a>
+                <motion.a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileTap={{ scale: 0.95 }}
+                  className="block w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white text-center py-3 px-6 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  Get Started
+                </motion.a>
+              </motion.div>
             </div>
           </motion.div>
         )}

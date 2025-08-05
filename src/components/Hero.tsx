@@ -83,6 +83,15 @@ const Hero: React.FC = () => {
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-600/80 via-blue-600/80 to-indigo-700/80"></div>
       
+      {/* Logo Watermark */}
+      <div className="absolute top-8 left-8 opacity-10">
+        <img 
+          src="/adswadi-logo.svg"
+          alt="Adswadi"
+          className="h-16 w-auto"
+        />
+      </div>
+      
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <motion.div

@@ -63,10 +63,15 @@ const Footer: React.FC = () => {
               className="mb-6"
             >
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">A</span>
-                </div>
-                <span className="text-2xl font-bold">ADSWADi</span>
+                <motion.img 
+                  src="/adswadi-logo.svg"
+                  alt="Adswadi Logo"
+                  className="h-10 w-auto"
+                  whileHover={{ 
+                    scale: 1.05,
+                    transition: { duration: 0.2 }
+                  }}
+                />
               </div>
               <p className="text-slate-300 leading-relaxed mb-6">
                 Transforming businesses through data-driven digital marketing strategies. 
