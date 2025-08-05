@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import CaseStudies from './components/CaseStudies';
-import Team from './components/Team';
-import Blog from './components/Blog';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Header from './components/Header.tsx';
+import Hero from './components/Hero.tsx';
+import Services from './components/Services.tsx';
+import CaseStudies from './components/CaseStudies.tsx';
+import Team from './components/Team.tsx';
+import Blog from './components/Blog.tsx';
+import Testimonials from './components/Testimonials.tsx';
+import Contact from './components/Contact.tsx';
+import Footer from './components/Footer.tsx';
 
 function App() {
   return (
