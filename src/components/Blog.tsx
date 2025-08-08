@@ -2,6 +2,152 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, ArrowRight, TrendingUp, Target, BarChart3 } from 'lucide-react';
 
+// Blog content for the performance marketing guide
+const performanceMarketingContent = {
+  title: "The Ultimate Guide to Performance Marketing in 2024",
+  excerpt: "Master the art of performance marketing with our comprehensive guide covering the latest trends, tools, and strategies that are driving results in 2024.",
+  content: `
+    <h2>Introduction to Performance Marketing</h2>
+    <p>Performance marketing has evolved significantly in 2024, becoming the cornerstone of successful digital advertising strategies. Unlike traditional marketing approaches, performance marketing focuses on measurable, trackable results that directly impact your business's bottom line.</p>
+
+    <h2>What is Performance Marketing?</h2>
+    <p>Performance marketing is a results-driven approach where advertisers pay only for specific actions or results, such as clicks, conversions, or sales. This model ensures maximum ROI and accountability in your marketing spend.</p>
+
+    <h2>Key Components of Performance Marketing</h2>
+    <h3>1. Data-Driven Decision Making</h3>
+    <p>In 2024, successful performance marketing relies heavily on data analytics. Marketers must track and analyze:</p>
+    <ul>
+      <li>Conversion rates across different channels</li>
+      <li>Customer acquisition costs (CAC)</li>
+      <li>Return on ad spend (ROAS)</li>
+      <li>Customer lifetime value (CLV)</li>
+    </ul>
+
+    <h3>2. Multi-Channel Attribution</h3>
+    <p>Modern performance marketing requires understanding how different touchpoints contribute to conversions. Implement:</p>
+    <ul>
+      <li>Cross-channel tracking</li>
+      <li>Attribution modeling</li>
+      <li>Customer journey mapping</li>
+    </ul>
+
+    <h2>Top Performance Marketing Channels in 2024</h2>
+    <h3>1. Google Ads</h3>
+    <p>Google Ads remains the most effective performance marketing channel, offering:</p>
+    <ul>
+      <li>Search campaigns for high-intent users</li>
+      <li>Display campaigns for brand awareness</li>
+      <li>YouTube ads for video marketing</li>
+      <li>Shopping campaigns for e-commerce</li>
+    </ul>
+
+    <h3>2. Meta Ads (Facebook & Instagram)</h3>
+    <p>Meta's advertising platform excels in:</p>
+    <ul>
+      <li>Targeted audience segmentation</li>
+      <li>Visual content marketing</li>
+      <li>Retargeting campaigns</li>
+      <li>Lead generation</li>
+    </ul>
+
+    <h3>3. TikTok Ads</h3>
+    <p>The fastest-growing platform for:</p>
+    <ul>
+      <li>Gen Z and Millennial audiences</li>
+      <li>Creative video content</li>
+      <li>Viral marketing opportunities</li>
+    </ul>
+
+    <h2>Performance Marketing Strategies for 2024</h2>
+    <h3>1. AI-Powered Optimization</h3>
+    <p>Leverage artificial intelligence for:</p>
+    <ul>
+      <li>Automated bid management</li>
+      <li>Dynamic creative optimization</li>
+      <li>Predictive analytics</li>
+      <li>Real-time campaign adjustments</li>
+    </ul>
+
+    <h3>2. Personalization at Scale</h3>
+    <p>Use data to create personalized experiences:</p>
+    <ul>
+      <li>Dynamic content creation</li>
+      <li>Behavioral targeting</li>
+      <li>Custom audience segments</li>
+      <li>Personalized landing pages</li>
+    </ul>
+
+    <h3>3. Conversion Rate Optimization (CRO)</h3>
+    <p>Focus on improving conversion rates through:</p>
+    <ul>
+      <li>A/B testing</li>
+      <li>User experience optimization</li>
+      <li>Landing page design</li>
+      <li>Checkout process optimization</li>
+    </ul>
+
+    <h2>Measuring Success in Performance Marketing</h2>
+    <h3>Key Performance Indicators (KPIs)</h3>
+    <ul>
+      <li><strong>ROAS (Return on Ad Spend):</strong> Revenue generated per dollar spent on advertising</li>
+      <li><strong>CAC (Customer Acquisition Cost):</strong> Total cost to acquire a new customer</li>
+      <li><strong>CLV (Customer Lifetime Value):</strong> Total revenue expected from a customer</li>
+      <li><strong>Conversion Rate:</strong> Percentage of visitors who complete desired actions</li>
+      <li><strong>Click-Through Rate (CTR):</strong> Percentage of impressions that result in clicks</li>
+    </ul>
+
+    <h2>Tools and Technologies</h2>
+    <h3>Essential Performance Marketing Tools</h3>
+    <ul>
+      <li><strong>Google Analytics 4:</strong> Comprehensive web analytics</li>
+      <li><strong>Google Ads:</strong> Search and display advertising</li>
+      <li><strong>Meta Business Manager:</strong> Social media advertising</li>
+      <li><strong>Hotjar:</strong> User behavior analysis</li>
+      <li><strong>Optimizely:</strong> A/B testing platform</li>
+    </ul>
+
+    <h2>Future Trends in Performance Marketing</h2>
+    <h3>1. Privacy-First Marketing</h3>
+    <p>With increasing privacy regulations, marketers must adapt to:</p>
+    <ul>
+      <li>First-party data strategies</li>
+      <li>Privacy-compliant tracking</li>
+      <li>Consent management</li>
+    </ul>
+
+    <h3>2. Voice Search Optimization</h3>
+    <p>Optimize for voice search with:</p>
+    <ul>
+      <li>Natural language keywords</li>
+      <li>Local SEO strategies</li>
+      <li>Featured snippet optimization</li>
+    </ul>
+
+    <h3>3. Video Marketing Dominance</h3>
+    <p>Video content continues to dominate with:</p>
+    <ul>
+      <li>Short-form video ads</li>
+      <li>Live streaming commerce</li>
+      <li>Interactive video experiences</li>
+    </ul>
+
+    <h2>Best Practices for 2024</h2>
+    <ol>
+      <li><strong>Start with Clear Goals:</strong> Define specific, measurable objectives</li>
+      <li><strong>Know Your Audience:</strong> Create detailed buyer personas</li>
+      <li><strong>Test Continuously:</strong> Implement ongoing A/B testing</li>
+      <li><strong>Optimize for Mobile:</strong> Ensure mobile-first experiences</li>
+      <li><strong>Focus on Quality Score:</strong> Improve ad relevance and landing page quality</li>
+      <li><strong>Monitor and Adjust:</strong> Regular campaign analysis and optimization</li>
+    </ol>
+
+    <h2>Conclusion</h2>
+    <p>Performance marketing in 2024 requires a data-driven, multi-channel approach that prioritizes measurable results. By implementing the strategies outlined in this guide, businesses can achieve sustainable growth and maximize their marketing ROI.</p>
+
+    <p>At Adswadi, we specialize in performance marketing strategies that drive real results. Our team of experts helps businesses navigate the complex digital advertising landscape to achieve their growth objectives.</p>
+  `
+};
+
 const blogPosts = [
   {
     id: 1,
@@ -11,7 +157,8 @@ const blogPosts = [
     readTime: "8 min read",
     date: "March 20, 2024",
     color: "bg-purple-500",
-    tags: ["Performance Marketing", "2024", "Strategy"]
+    tags: ["Performance Marketing", "2024", "Strategy"],
+    fullContent: performanceMarketingContent.content
   },
   {
     id: 2,
