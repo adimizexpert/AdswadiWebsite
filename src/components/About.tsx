@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Instagram, Award, Users, TrendingUp } from 'lucide-react';
+import { Instagram, Award, Users, TrendingUp } from 'lucide-react';
 
 const About: React.FC = () => {
   const founders = [
@@ -108,7 +108,7 @@ const About: React.FC = () => {
                     whileTap={{ scale: 0.95 }}
                     className="p-2 rounded-full bg-slate-100 hover:bg-purple-100 transition-colors"
                   >
-                    <Linkedin size={18} className="text-slate-600" />
+    
                   </motion.button>
                   <motion.button
                     whileHover={{ scale: 1.1, y: -2 }}
