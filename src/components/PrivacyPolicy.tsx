@@ -59,8 +59,10 @@ const PrivacyPolicy: React.FC = () => {
             </motion.div>
             <p className="text-slate-600 leading-relaxed text-lg">
               At Adswadi, we are committed to protecting your privacy and ensuring the security of your personal information. 
-              This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website 
-              or use our services.
+              This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, 
+              use our digital marketing services, or interact with our advertising campaigns. As a performance marketing agency 
+              specializing in Meta Ads, Google Ads, and lead generation, we handle sensitive business data and are committed to 
+              maintaining the highest standards of data protection.
             </p>
           </div>
 
@@ -76,26 +78,30 @@ const PrivacyPolicy: React.FC = () => {
               Information We Collect
             </h3>
             <div className="space-y-4 text-slate-600">
-              <div>
-                <h4 className="font-semibold text-slate-800 mb-2">Personal Information</h4>
-                <p>We may collect personal information such as:</p>
-                <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
-                  <li>Name and contact information (email, phone number)</li>
-                  <li>Company name and job title</li>
-                  <li>Business information and requirements</li>
-                  <li>Communication preferences</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold text-slate-800 mb-2">Technical Information</h4>
-                <p>We automatically collect certain technical information including:</p>
-                <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
-                  <li>IP address and device information</li>
-                  <li>Browser type and version</li>
-                  <li>Pages visited and time spent</li>
-                  <li>Referring website information</li>
-                </ul>
-              </div>
+                             <div>
+                 <h4 className="font-semibold text-slate-800 mb-2">Personal Information</h4>
+                 <p>We may collect personal information such as:</p>
+                 <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
+                   <li>Name and contact information (email, phone number)</li>
+                   <li>Company name, job title, and business details</li>
+                   <li>Marketing budget and campaign requirements</li>
+                   <li>Business goals and target audience information</li>
+                   <li>Communication preferences and service history</li>
+                   <li>Payment and billing information for services</li>
+                 </ul>
+               </div>
+                             <div>
+                 <h4 className="font-semibold text-slate-800 mb-2">Technical Information</h4>
+                 <p>We automatically collect certain technical information including:</p>
+                 <ul className="list-disc list-inside mt-2 space-y-1 ml-4">
+                   <li>IP address and device information</li>
+                   <li>Browser type and version</li>
+                   <li>Pages visited and time spent on our website</li>
+                   <li>Referring website information and traffic sources</li>
+                   <li>Campaign performance data and conversion tracking</li>
+                   <li>Ad interaction data and click-through rates</li>
+                 </ul>
+               </div>
             </div>
           </motion.section>
 
@@ -110,17 +116,20 @@ const PrivacyPolicy: React.FC = () => {
               <FileText className="w-5 h-5 text-purple-600" />
               How We Use Your Information
             </h3>
-            <div className="space-y-4 text-slate-600">
-              <p>We use the collected information for the following purposes:</p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Providing and improving our digital marketing services</li>
-                <li>Communicating with you about our services and updates</li>
-                <li>Personalizing your experience and content</li>
-                <li>Analyzing website usage and performance</li>
-                <li>Complying with legal obligations</li>
-                <li>Protecting against fraud and security threats</li>
-              </ul>
-            </div>
+                         <div className="space-y-4 text-slate-600">
+               <p>We use the collected information for the following purposes:</p>
+               <ul className="list-disc list-inside space-y-2 ml-4">
+                 <li>Providing and improving our digital marketing services (Meta Ads, Google Ads, lead generation)</li>
+                 <li>Creating and optimizing advertising campaigns for your business</li>
+                 <li>Analyzing campaign performance and providing detailed reports</li>
+                 <li>Communicating with you about campaign updates and results</li>
+                 <li>Personalizing your experience and content recommendations</li>
+                 <li>Analyzing website usage and conversion tracking</li>
+                 <li>Complying with legal obligations and platform policies</li>
+                 <li>Protecting against fraud and security threats</li>
+                 <li>Providing customer support and service improvements</li>
+               </ul>
+             </div>
           </motion.section>
 
           {/* Information Sharing */}
@@ -131,15 +140,17 @@ const PrivacyPolicy: React.FC = () => {
             className="mb-8"
           >
             <h3 className="text-2xl font-bold text-slate-900 mb-4">Information Sharing</h3>
-            <div className="space-y-4 text-slate-600">
-              <p>We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>With your explicit consent</li>
-                <li>To comply with legal requirements</li>
-                <li>To protect our rights and safety</li>
-                <li>With trusted service providers who assist in our operations</li>
-              </ul>
-            </div>
+                         <div className="space-y-4 text-slate-600">
+               <p>We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
+               <ul className="list-disc list-inside space-y-2 ml-4">
+                 <li>With your explicit consent for campaign management</li>
+                 <li>With Meta (Facebook) and Google for advertising platform access and campaign management</li>
+                 <li>With trusted service providers who assist in our operations (analytics, payment processing)</li>
+                 <li>To comply with legal requirements and platform policies</li>
+                 <li>To protect our rights and safety</li>
+                 <li>With your permission for case studies and testimonials (anonymized when possible)</li>
+               </ul>
+             </div>
           </motion.section>
 
           {/* Data Security */}
@@ -166,76 +177,108 @@ const PrivacyPolicy: React.FC = () => {
             </div>
           </motion.section>
 
-          {/* Cookies and Tracking */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="mb-8"
-          >
+                     {/* Campaign Data and Analytics */}
+           <motion.section
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.6, delay: 0.7 }}
+             className="mb-8"
+           >
+             <h3 className="text-2xl font-bold text-slate-900 mb-4">Campaign Data and Analytics</h3>
+             <div className="space-y-4 text-slate-600">
+               <p>As a digital marketing agency, we handle campaign-specific data including:</p>
+               <ul className="list-disc list-inside space-y-2 ml-4">
+                 <li><strong>Ad Performance Data:</strong> Click-through rates, conversion rates, and ROI metrics</li>
+                 <li><strong>Audience Insights:</strong> Demographics, interests, and behavior patterns (anonymized)</li>
+                 <li><strong>Campaign Budgets:</strong> Ad spend allocation and performance tracking</li>
+                 <li><strong>Lead Information:</strong> Contact details of potential customers generated through campaigns</li>
+                 <li><strong>Platform Access:</strong> Secure access to your Meta Ads and Google Ads accounts</li>
+                 <li><strong>Reporting Data:</strong> Custom reports and performance analytics</li>
+               </ul>
+               <p className="mt-4">
+                 All campaign data is handled with strict confidentiality and used solely for campaign optimization and reporting purposes.
+               </p>
+             </div>
+           </motion.section>
+
+           {/* Cookies and Tracking */}
+           <motion.section
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.6, delay: 0.8 }}
+             className="mb-8"
+           >
             <h3 className="text-2xl font-bold text-slate-900 mb-4">Cookies and Tracking</h3>
-            <div className="space-y-4 text-slate-600">
-              <p>We use cookies and similar tracking technologies to:</p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Remember your preferences and settings</li>
-                <li>Analyze website traffic and usage patterns</li>
-                <li>Improve our website functionality</li>
-                <li>Provide personalized content and advertisements</li>
-              </ul>
-              <p className="mt-4">
-                You can control cookie settings through your browser preferences. However, disabling cookies may affect website functionality.
-              </p>
-            </div>
+                         <div className="space-y-4 text-slate-600">
+               <p>We use cookies and similar tracking technologies to:</p>
+               <ul className="list-disc list-inside space-y-2 ml-4">
+                 <li>Remember your preferences and settings</li>
+                 <li>Analyze website traffic and usage patterns</li>
+                 <li>Track conversion events and campaign performance</li>
+                 <li>Improve our website functionality and user experience</li>
+                 <li>Provide personalized content and advertising recommendations</li>
+                 <li>Integrate with Meta Pixel and Google Analytics for campaign tracking</li>
+                 <li>Monitor lead generation and form submissions</li>
+               </ul>
+               <p className="mt-4">
+                 You can control cookie settings through your browser preferences. However, disabling cookies may affect website functionality 
+                 and our ability to provide accurate campaign performance data.
+               </p>
+             </div>
           </motion.section>
 
-          {/* Your Rights */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mb-8"
-          >
+                     {/* Your Rights */}
+           <motion.section
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.6, delay: 0.9 }}
+             className="mb-8"
+           >
             <h3 className="text-2xl font-bold text-slate-900 mb-4">Your Rights</h3>
-            <div className="space-y-4 text-slate-600">
-              <p>You have the following rights regarding your personal information:</p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>Access:</strong> Request a copy of your personal data</li>
-                <li><strong>Correction:</strong> Update or correct inaccurate information</li>
-                <li><strong>Deletion:</strong> Request deletion of your personal data</li>
-                <li><strong>Portability:</strong> Receive your data in a structured format</li>
-                <li><strong>Objection:</strong> Object to processing of your data</li>
-                <li><strong>Withdrawal:</strong> Withdraw consent at any time</li>
-              </ul>
-            </div>
+                         <div className="space-y-4 text-slate-600">
+               <p>You have the following rights regarding your personal information:</p>
+               <ul className="list-disc list-inside space-y-2 ml-4">
+                 <li><strong>Access:</strong> Request a copy of your personal data and campaign information</li>
+                 <li><strong>Correction:</strong> Update or correct inaccurate business and contact information</li>
+                 <li><strong>Deletion:</strong> Request deletion of your personal data (subject to legal requirements)</li>
+                 <li><strong>Portability:</strong> Receive your data in a structured format for campaign analysis</li>
+                 <li><strong>Objection:</strong> Object to processing of your data for marketing purposes</li>
+                 <li><strong>Withdrawal:</strong> Withdraw consent for campaign management at any time</li>
+                 <li><strong>Opt-out:</strong> Unsubscribe from marketing communications</li>
+                 <li><strong>Campaign Control:</strong> Request changes to your advertising campaigns</li>
+               </ul>
+             </div>
           </motion.section>
 
-          {/* Contact Information */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
-            className="mb-8"
-          >
+                     {/* Contact Information */}
+           <motion.section
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.6, delay: 1.0 }}
+             className="mb-8"
+           >
             <h3 className="text-2xl font-bold text-slate-900 mb-4">Contact Us</h3>
-            <div className="bg-slate-50 rounded-xl p-6">
-              <p className="text-slate-600 mb-4">
-                If you have any questions about this Privacy Policy or our data practices, please contact us:
-              </p>
-              <div className="space-y-2 text-slate-600">
-                <p><strong>Email:</strong> adswadiofficial@gmail.com</p>
-                <p><strong>Phone:</strong> +91 8678830021</p>
-                <p><strong>Address:</strong> Ranchi, India</p>
-              </div>
-            </div>
+                         <div className="bg-slate-50 rounded-xl p-6">
+               <p className="text-slate-600 mb-4">
+                 If you have any questions about this Privacy Policy, our data practices, or your advertising campaigns, please contact us:
+               </p>
+               <div className="space-y-2 text-slate-600">
+                 <p><strong>Email:</strong> adswadiofficial@gmail.com</p>
+                 <p><strong>Phone:</strong> +91 8678830021</p>
+                 <p><strong>WhatsApp:</strong> +91 9798440519</p>
+                 <p><strong>Address:</strong> Ranchi, India</p>
+                 <p><strong>Response Time:</strong> We typically respond within 24 hours</p>
+               </div>
+             </div>
           </motion.section>
 
-          {/* Updates to Policy */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            className="mb-8"
-          >
+                     {/* Updates to Policy */}
+           <motion.section
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.6, delay: 1.1 }}
+             className="mb-8"
+           >
             <h3 className="text-2xl font-bold text-slate-900 mb-4">Updates to This Policy</h3>
             <div className="space-y-4 text-slate-600">
               <p>
@@ -246,13 +289,13 @@ const PrivacyPolicy: React.FC = () => {
             </div>
           </motion.section>
 
-          {/* Back to Top Button */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.1 }}
-            className="text-center pt-8"
-          >
+                     {/* Back to Top Button */}
+           <motion.div
+             initial={{ opacity: 0 }}
+             animate={{ opacity: 1 }}
+             transition={{ duration: 0.6, delay: 1.2 }}
+             className="text-center pt-8"
+           >
             <motion.button
               onClick={scrollToTop}
               whileHover={{ scale: 1.05 }}
