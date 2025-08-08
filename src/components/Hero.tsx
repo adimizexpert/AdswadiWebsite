@@ -49,38 +49,25 @@ const Hero: React.FC = () => {
     });
   }, [phraseWidth, phraseHeight]);
 
-  // Advanced text splitting animation
+  // Advanced text splitting animation - disabled for now to fix visibility
   useEffect(() => {
     const headline = document.querySelector('.hero-headline');
     if (!headline) return;
 
-    // Split text into characters and words
-    const splitText = new SplitText(headline, { 
-      type: "chars, words",
-      charsClass: "char",
-      wordsClass: "word"
-    });
-
-    // Animate characters in
-    gsap.from(splitText.chars, {
-      opacity: 0,
-      y: 50,
-      rotationX: -90,
-      stagger: 0.02,
-      duration: 0.8,
-      ease: "back.out(1.7)",
-      delay: 0.3
-    });
-
-    // Animate words with different timing
-    gsap.from(splitText.words, {
-      opacity: 0,
-      y: 30,
-      stagger: 0.1,
-      duration: 0.6,
-      ease: "power2.out",
-      delay: 0.5
-    });
+    // Ensure text is visible first
+    gsap.set(headline, { opacity: 1 });
+    
+    // Simple fade-in animation instead of complex splitting
+    gsap.fromTo(headline, 
+      { opacity: 0, y: 30 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.8, 
+        ease: "power2.out",
+        delay: 0.3
+      }
+    );
   }, []);
 
   // Scroll-triggered animations for partner logos
