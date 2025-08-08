@@ -4,22 +4,40 @@ import { Star, TrendingUp, Users, Award, Target } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'eg1',
-    company: 'TechStart Inc.',
-    image: 'eg.png',
+    name: 'Priya Sharma',
+    company: 'TechStart Solutions',
+    image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face',
     text: 'ADSWADi transformed our marketing completely. Our ROAS increased by 300% in just 3 months!'
   },
   {
-    name: 'eg2',
+    name: 'Rajesh Kumar',
     company: 'E-commerce Plus',
-    image: 'eg2.png',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
     text: 'The automation systems they built for us are incredible. We now generate leads 24/7 without any manual work.'
   },
   {
-    name: 'eg3',
+    name: 'Anjali Patel',
     company: 'Fashion Forward',
-    image: 'eg3.png',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
     text: 'Their creative team knows exactly how to make ads that convert. Our cost per acquisition dropped by 60%.'
+  },
+  {
+    name: 'Amit Singh',
+    company: 'Digital Dynamics',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+    text: 'Working with ADSWADi has been a game-changer. Our conversion rates improved by 200% in the first quarter!'
+  },
+  {
+    name: 'Meera Reddy',
+    company: 'Startup Ventures',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face',
+    text: 'Their data-driven approach helped us scale from 0 to 10,000 customers in just 6 months. Incredible results!'
+  },
+  {
+    name: 'Vikram Malhotra',
+    company: 'Growth Labs',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face',
+    text: 'The ROI we achieved with ADSWADi exceeded all expectations. Highly recommend their services!'
   }
 ];
 
@@ -128,7 +146,7 @@ const Testimonials: React.FC = () => {
         </motion.div>
 
         {/* Testimonials */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -136,7 +154,7 @@ const Testimonials: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <div className="flex items-center mb-4">
                 {[...Array(5)].map((_, i) => (
