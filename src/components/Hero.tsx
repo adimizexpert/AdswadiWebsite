@@ -346,19 +346,19 @@ const Hero: React.FC = () => {
             {[
               { 
                 name: 'Meta', 
-                image: '/facebook.png',
+                image: '/partners/meta-logo.png',
                 alt: 'Meta Business Partner Logo',
                 subText: 'Business Partner'
               },
               { 
                 name: 'Shopify', 
-                image: '/shopify.png',
+                image: '/partners/shopify-logo.png',
                 alt: 'Shopify Partner Logo',
                 subText: 'Partner'
               },
               { 
                 name: 'Google', 
-                image: '/google.png',
+                image: '/partners/google-logo.png',
                 alt: 'Google Partner Logo',
                 subText: 'Partner'
               }
