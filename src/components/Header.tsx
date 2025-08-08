@@ -37,7 +37,7 @@ const Header: React.FC = () => {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center"
+            className="flex items-center gap-3"
           >
             <motion.img 
               src="/logos/adswadi-logo.svg"
@@ -48,6 +48,53 @@ const Header: React.FC = () => {
                 transition: { duration: 0.2 }
               }}
             />
+            
+            {/* Animated Typography */}
+            <motion.div className="flex">
+              {'Adswadi'.split('').map((letter, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, y: 20, scale: 0.5 }}
+                  animate={{ 
+                    opacity: 1, 
+                    y: 0, 
+                    scale: 1,
+                    transition: {
+                      duration: 0.3,
+                      delay: index * 0.05,
+                      ease: "easeOut"
+                    }
+                  }}
+                  whileHover={{ 
+                    y: -3,
+                    scale: 1.2,
+                    color: "#7c3aed",
+                    textShadow: "0 4px 8px rgba(124, 58, 237, 0.3)",
+                    transition: { duration: 0.2 }
+                  }}
+                  className="text-xl font-bold text-slate-900 cursor-pointer inline-block relative"
+                  style={{ 
+                    textShadow: "0 1px 2px rgba(0,0,0,0.1)",
+                    transition: "all 0.3s ease"
+                  }}
+                >
+                  {letter}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent opacity-0"
+                    animate={{
+                      opacity: [0, 0.8, 0]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: index * 0.1
+                    }}
+                  >
+                    {letter}
+                  </motion.div>
+                </motion.span>
+              ))}
+            </motion.div>
           </motion.div>
 
           {/* Desktop Navigation */}
