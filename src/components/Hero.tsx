@@ -342,7 +342,7 @@ const Hero: React.FC = () => {
           <h2 className="text-slate-700 mb-8 font-semibold text-lg">
             Our Performance Marketing Services are Certified by
           </h2>
-          <div className="partners flex flex-wrap justify-center items-center gap-4 max-w-4xl mx-auto">
+          <div className="partners flex flex-nowrap justify-center items-center gap-3 max-w-6xl mx-auto overflow-x-auto">
             {[
               { 
                 name: 'Meta', 
@@ -354,13 +354,19 @@ const Hero: React.FC = () => {
                 name: 'Shopify', 
                 image: '/partners/shopify-logo.png',
                 alt: 'Shopify Partner Logo',
-                subText: 'Partner'
+                subText: 'Business Partner'
               },
               { 
                 name: 'Google', 
                 image: '/partners/google-logo.png',
                 alt: 'Google Partner Logo',
-                subText: 'Partner'
+                subText: 'Business Partner'
+              },
+              { 
+                name: 'YouTube', 
+                image: '/partners/youtube-logo.png',
+                alt: 'YouTube Business Partner Logo',
+                subText: 'Business Partner'
               }
             ].map((partner, index) => (
               <motion.div
@@ -369,7 +375,7 @@ const Hero: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="partner flex items-center gap-3 p-4 rounded-xl bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300"
+                className="partner flex items-center gap-2 p-3 rounded-lg bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300 min-w-fit"
               >
                 <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden p-2">
                   <img 
@@ -380,7 +386,7 @@ const Hero: React.FC = () => {
                   />
                 </div>
                 <div className="text-left">
-                  <h3 className="font-bold text-slate-900 text-sm">
+                  <h3 className="font-bold text-slate-900 text-xs">
                     {partner.name}
                   </h3>
                   <p className="text-xs text-slate-600 font-medium">
