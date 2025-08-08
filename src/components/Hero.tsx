@@ -167,7 +167,7 @@ const Hero: React.FC = () => {
   const whatsappLink = `https://wa.me/918678830021?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-fuchsia-50 via-indigo-50 to-cyan-50">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-fuchsia-50 via-indigo-50 to-cyan-50 pt-20 sm:pt-24 lg:pt-32" style={{ minHeight: 'calc(100vh - 4rem)' }}>
       {/* Animated Background */}
       <canvas
         ref={canvasRef}
@@ -183,7 +183,7 @@ const Hero: React.FC = () => {
       />
       
       {/* Logo Watermark */}
-      <div className="absolute top-8 left-8 opacity-10">
+      <div className="absolute top-28 sm:top-32 lg:top-40 left-8 opacity-10">
         <img 
           src="/adswadi-logo.svg"
           alt="Adswadi"
