@@ -1,6 +1,11 @@
 import React, { useEffect, useRef, useCallback, useLayoutEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Pencil } from 'lucide-react';
+import { gsap } from "gsap";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { EasePack } from "gsap/EasePack";
+
+gsap.registerPlugin(DrawSVGPlugin, EasePack);
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -23,15 +28,20 @@ const Hero: React.FC = () => {
     return () => window.removeEventListener('resize', update);
   }, []);
 
-  // After render, compute actual SVG path length for perfect dash animation
+  // GSAP DrawSVG animation for the underline
   useEffect(() => {
-    if (!underlinePathRef.current) return;
-    try {
-      const len = underlinePathRef.current.getTotalLength();
-      setDash(len);
-    } catch {
-      // noop
-    }
+    if (!underlinePathRef.current || !phraseWidth) return;
+    
+    // Reset the path
+    gsap.set(underlinePathRef.current, { drawSVG: "0%" });
+    
+    // Animate the path drawing
+    gsap.to(underlinePathRef.current, {
+      drawSVG: "100%",
+      duration: 2,
+      ease: "power2.out",
+      delay: 0.6
+    });
   }, [phraseWidth, phraseHeight]);
 
   const animate = useCallback(() => {
@@ -212,6 +222,7 @@ const Hero: React.FC = () => {
                 </defs>
                 <path
                   ref={underlinePathRef}
+                  id="underlinePath"
                   d={`M2 ${Math.max(Math.round(phraseHeight * 0.35), 8)} C ${
                     phraseWidth * 0.25
                   } ${Math.max(Math.round(phraseHeight * 0.65), 12)}, ${
@@ -223,8 +234,6 @@ const Hero: React.FC = () => {
                   stroke="url(#pencilGradient2)"
                   strokeWidth="7"
                   strokeLinecap="round"
-                  className="underline-draw"
-                  style={{ ['--dash' as any]: dash }}
                 />
                 {/* Moving pencil icon */}
                 <motion.g
