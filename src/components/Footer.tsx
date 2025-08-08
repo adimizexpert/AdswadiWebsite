@@ -8,14 +8,6 @@ const Footer: React.FC = () => {
   };
 
   const footerLinks = {
-    services: [
-      'Performance Marketing',
-      'Paid Ad Campaigns',
-      'Landing Page Creation',
-      'Ad Creatives & Graphics',
-      'WhatsApp & Telegram Bots',
-      'Website & Sales Funnels'
-    ],
     company: [
       'About Us',
       'Our Team',
@@ -23,14 +15,6 @@ const Footer: React.FC = () => {
       'Testimonials',
       'Careers',
       'Contact'
-    ],
-    resources: [
-      'Blog',
-      'Marketing Guide',
-      'ROI Calculator',
-      'Free Tools',
-      'Webinars',
-      'Support'
     ],
     legal: [
       'Privacy Policy',
@@ -133,25 +117,20 @@ const Footer: React.FC = () => {
       {/* Middle info panels (optional quick links) */}
       <div className="bg-white">
         <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="rounded-2xl border border-slate-200 shadow-sm p-6">
               <h4 className="font-semibold text-slate-900 mb-2">Contact</h4>
               <div className="space-y-2 text-slate-600">
                 <div className="flex items-center gap-3"><Mail className="w-4 h-4" /> hello@adswadi.com</div>
-                <div className="flex items-center gap-3"><Phone className="w-4 h-4" /> +91 98765 43210</div>
+                <div className="flex items-center gap-3"><Mail className="w-4 h-4" /> adswadiofficial@gmail.com</div>
+                <div className="flex items-center gap-3"><Phone className="w-4 h-4" /> +91 8678830021</div>
                 <div className="flex items-center gap-3"><MapPin className="w-4 h-4" /> Mumbai, India</div>
               </div>
             </div>
             <div className="rounded-2xl border border-slate-200 shadow-sm p-6">
-              <h4 className="font-semibold text-slate-900 mb-2">Services</h4>
+              <h4 className="font-semibold text-slate-900 mb-2">Company</h4>
               <ul className="text-slate-600 space-y-1">
-                {footerLinks.services.slice(0,4).map((s) => (<li key={s}>{s}</li>))}
-              </ul>
-            </div>
-            <div className="rounded-2xl border border-slate-200 shadow-sm p-6">
-              <h4 className="font-semibold text-slate-900 mb-2">Resources</h4>
-              <ul className="text-slate-600 space-y-1">
-                {footerLinks.resources.slice(0,4).map((s) => (<li key={s}>{s}</li>))}
+                {footerLinks.company.slice(0,4).map((s) => (<li key={s}>{s}</li>))}
               </ul>
             </div>
           </div>
@@ -162,7 +141,7 @@ const Footer: React.FC = () => {
       <div className="bg-white border-t border-slate-200">
         <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-600 text-sm text-center md:text-left">
-            © 2025 [Your Company Name] Private Limited | Privacy Policy
+            © 2025 Adswadi Private Limited | Privacy Policy
           </p>
           <motion.button
             onClick={scrollToTop}
