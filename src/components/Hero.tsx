@@ -102,15 +102,20 @@ const Hero: React.FC = () => {
   const whatsappLink = `https://wa.me/918678830021?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-fuchsia-50 via-indigo-50 to-cyan-50">
       {/* Animated Background */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-10"
       />
-      
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/80 via-blue-600/80 to-indigo-700/80"></div>
+      {/* Mesh Gradient Overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(1200px 600px at 20% 20%, rgba(168,85,247,0.35), transparent 60%), radial-gradient(1000px 500px at 80% 30%, rgba(99,102,241,0.30), transparent 55%), radial-gradient(900px 500px at 40% 80%, rgba(236,72,153,0.25), transparent 55%)'
+        }}
+      />
       
       {/* Logo Watermark */}
       <div className="absolute top-8 left-8 opacity-10">
@@ -169,7 +174,7 @@ const Hero: React.FC = () => {
               show: { opacity: 1, transition: { staggerChildren: 0.06, delayChildren: 0.15 } }
             }}
           >
-            {['Optimize', 'Your', 'Ads'].map((word, idx) => (
+            {['Unlock', 'Greater', 'Profits'].map((word, idx) => (
               <motion.span
                 key={`w1-${idx}`}
                 className="inline-block bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent"
@@ -185,7 +190,7 @@ const Hero: React.FC = () => {
                 className="relative z-10 inline-block text-white"
                 variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
-                For More Profit
+                from Every Ad
               </motion.span>
               {/* Pencil underline (animated draw from left to right) */}
               <svg
