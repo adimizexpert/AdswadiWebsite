@@ -43,7 +43,7 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-gradient-to-br from-slate-50 via-white to-purple-50 relative overflow-hidden">
+    <section id="services" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-white to-purple-50 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <motion.div
@@ -82,20 +82,20 @@ const Services: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-700 bg-clip-text text-transparent">
               Our Services
             </span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             From digital marketing to web development, we deliver comprehensive solutions that drive your business forward.
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -108,7 +108,7 @@ const Services: React.FC = () => {
             >
               {/* Service Card */}
               <motion.div 
-                className={`${service.bgColor} rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 h-full relative overflow-hidden`}
+                className={`${service.bgColor} rounded-2xl p-4 sm:p-6 shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 h-full relative overflow-hidden`}
                 whileHover={{ 
                   y: -5, 
                   scale: 1.02,
@@ -117,7 +117,7 @@ const Services: React.FC = () => {
               >
                 {/* Icon */}
                 <motion.div 
-                  className={`w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-4 shadow-md`}
+                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white flex items-center justify-center mb-3 sm:mb-4 shadow-md`}
                   whileHover={{ 
                     scale: 1.1,
                     rotate: 5
@@ -126,16 +126,16 @@ const Services: React.FC = () => {
                   <img 
                     src={service.image} 
                     alt={`${service.title} logo`}
-                    className="w-8 h-8 object-contain"
+                    className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
                   />
                 </motion.div>
 
                 {/* Content */}
-                <h3 className="text-lg font-bold text-slate-900 mb-3">{service.title}</h3>
-                <p className="text-slate-600 mb-4 text-sm leading-relaxed">{service.description}</p>
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-2 sm:mb-3">{service.title}</h3>
+                <p className="text-slate-600 mb-3 sm:mb-4 text-xs sm:text-sm leading-relaxed">{service.description}</p>
 
                 {/* Features */}
-                <div className="space-y-2 mb-4">
+                <div className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
                   {service.features.map((feature, featureIndex) => (
                     <motion.div
                       key={feature}
@@ -145,7 +145,7 @@ const Services: React.FC = () => {
                       transition={{ duration: 0.3, delay: 0.1 + featureIndex * 0.05 }}
                       className="flex items-center gap-2"
                     >
-                      <CheckCircle className={`w-4 h-4 ${service.iconColor}`} />
+                      <CheckCircle className={`w-3 h-3 sm:w-4 sm:h-4 ${service.iconColor}`} />
                       <span className="text-slate-700 text-xs">{feature}</span>
                     </motion.div>
                   ))}

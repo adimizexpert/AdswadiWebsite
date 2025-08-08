@@ -40,7 +40,7 @@ const teamMembers = [
 
 const Team: React.FC = () => {
   return (
-    <section id="team" className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative overflow-hidden">
+    <section id="team" className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <motion.div

@@ -231,7 +231,7 @@ const Hero: React.FC = () => {
           className="mb-12"
         >
           <motion.h1
-            className="hero-headline text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black mb-8 leading-tight"
+            className="hero-headline text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black mb-6 leading-tight"
             initial="hidden"
             animate="show"
             variants={{
@@ -252,7 +252,7 @@ const Hero: React.FC = () => {
             <span className="relative inline-block align-bottom">
               <motion.span
                 ref={phraseRef}
-                className="relative z-10 inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black"
+                className="relative z-10 inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black"
                 variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
                 from Every Ad
@@ -303,7 +303,7 @@ const Hero: React.FC = () => {
           </motion.h1>
           
           <motion.p 
-            className="text-xl sm:text-2xl text-slate-700 max-w-3xl mx-auto mb-8 leading-relaxed"
+            className="text-lg sm:text-xl text-slate-700 max-w-3xl mx-auto mb-6 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -317,7 +317,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
         >
           <motion.a
             href={whatsappLink}
@@ -339,10 +339,10 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.6, delay: 1.0 }}
           className="certified-section text-center"
         >
-          <h2 className="text-slate-700 mb-8 font-semibold text-lg">
+          <h2 className="text-slate-700 mb-6 font-semibold text-base sm:text-lg">
             Our Performance Marketing Services are Certified by
           </h2>
-          <div className="partners grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+          <div className="partners grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-6xl mx-auto">
             {[
               { 
                 name: 'Meta', 
@@ -375,7 +375,7 @@ const Hero: React.FC = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="partner flex flex-col items-center gap-3 p-4 rounded-xl bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300"
+                className="partner flex flex-col items-center gap-2 p-3 rounded-xl bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden p-2">
                   <img 
