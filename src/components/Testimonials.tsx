@@ -6,37 +6,37 @@ const testimonials = [
   {
     name: 'Priya Sharma',
     company: 'TechStart Solutions',
-    image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face',
+    image: '/teams/testimonials.png',
     text: 'ADSWADi transformed our marketing completely. Our ROAS increased by 300% in just 3 months!'
   },
   {
     name: 'Rajesh Kumar',
     company: 'E-commerce Plus',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+    image: '/teams/testimonials.png',
     text: 'The automation systems they built for us are incredible. We now generate leads 24/7 without any manual work.'
   },
   {
     name: 'Anjali Patel',
     company: 'Fashion Forward',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
+    image: '/teams/testimonials.png',
     text: 'Their creative team knows exactly how to make ads that convert. Our cost per acquisition dropped by 60%.'
   },
   {
     name: 'Amit Singh',
     company: 'Digital Dynamics',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+    image: '/teams/testimonials.png',
     text: 'Working with ADSWADi has been a game-changer. Our conversion rates improved by 200% in the first quarter!'
   },
   {
     name: 'Meera Reddy',
     company: 'Startup Ventures',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face',
+    image: '/teams/testimonials.png',
     text: 'Their data-driven approach helped us scale from 0 to 10,000 customers in just 6 months. Incredible results!'
   },
   {
     name: 'Vikram Malhotra',
     company: 'Growth Labs',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face',
+    image: '/teams/testimonials.png',
     text: 'The ROI we achieved with ADSWADi exceeded all expectations. Highly recommend their services!'
   }
 ];
