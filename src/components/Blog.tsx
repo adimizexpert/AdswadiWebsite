@@ -324,7 +324,7 @@ const Blog: React.FC = () => {
             className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
             onClick={closeModal}
           >
-            <motion.div
+        <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -369,18 +369,18 @@ const Blog: React.FC = () => {
                 )}
                 
                 <div className="mt-8 pt-6 border-t border-slate-200">
-                  <motion.button
+            <motion.button
                     onClick={closeModal}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
                     className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
-                  >
+            >
                     Close Article
-                  </motion.button>
-                </div>
+            </motion.button>
+          </div>
               </div>
             </motion.div>
-          </motion.div>
+        </motion.div>
         )}
       </div>
     </section>
