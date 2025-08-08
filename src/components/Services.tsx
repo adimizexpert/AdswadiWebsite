@@ -32,7 +32,7 @@ const Services: React.FC = () => {
       iconColor: 'text-purple-600'
     },
     {
-      image: '/partners/facebook-logo.png',
+      image: '/partners/branding.png',
       title: 'Branding',
       description: 'Create memorable brand experiences that resonate with your target audience.',
       features: ['Logo Design', 'Brand Identity', 'Visual Guidelines', 'Brand Strategy'],
