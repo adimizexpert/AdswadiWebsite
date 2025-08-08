@@ -148,36 +148,7 @@ const CaseStudies: React.FC = () => {
           }}
           className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-pink-400 rounded-full"
         />
-        {/* Star Effects */}
-        <motion.div
-          animate={{
-            rotate: [0, 180, 360],
-            scale: [0.8, 1.2, 0.8]
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-1/2 left-1/3 text-purple-300 text-2xl"
-        >
-          ⭐
-        </motion.div>
-        <motion.div
-          animate={{
-            rotate: [360, 180, 0],
-            scale: [1.2, 0.8, 1.2]
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 6
-          }}
-          className="absolute bottom-1/2 right-1/3 text-pink-300 text-xl"
-        >
-          ✨
-        </motion.div>
+
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

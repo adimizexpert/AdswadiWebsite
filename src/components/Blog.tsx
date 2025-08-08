@@ -10,7 +10,7 @@ const blogPosts = [
     category: "Facebook Ads",
     readTime: "5 min read",
     date: "March 15, 2024",
-    image: "📈",
+
     color: "bg-blue-500",
     tags: ["Facebook Ads", "ROI", "Conversion"]
   },
@@ -21,7 +21,7 @@ const blogPosts = [
     category: "Digital Marketing",
     readTime: "7 min read",
     date: "March 12, 2024",
-    image: "🎯",
+
     color: "bg-purple-500",
     tags: ["Google Ads", "Facebook Ads", "Strategy"]
   },
@@ -32,7 +32,7 @@ const blogPosts = [
     category: "Instagram Ads",
     readTime: "6 min read",
     date: "March 10, 2024",
-    image: "📱",
+
     color: "bg-pink-500",
     tags: ["Instagram", "E-commerce", "Sales"]
   },
@@ -43,7 +43,7 @@ const blogPosts = [
     category: "Campaign Optimization",
     readTime: "8 min read",
     date: "March 8, 2024",
-    image: "🚀",
+
     color: "bg-green-500",
     tags: ["Scaling", "Budget", "Optimization"]
   },
@@ -54,7 +54,7 @@ const blogPosts = [
     category: "AI & Automation",
     readTime: "9 min read",
     date: "March 5, 2024",
-    image: "🤖",
+
     color: "bg-orange-500",
     tags: ["AI", "Automation", "Future"]
   },
@@ -65,7 +65,7 @@ const blogPosts = [
     category: "Landing Pages",
     readTime: "10 min read",
     date: "March 3, 2024",
-    image: "💻",
+
     color: "bg-indigo-500",
     tags: ["Landing Pages", "Conversion", "Design"]
   }
@@ -103,38 +103,7 @@ const Blog: React.FC = () => {
           }}
           className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"
         />
-        {/* Blog Icons */}
-        <motion.div
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 10, 0],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-1/4 right-1/4 text-2xl"
-        >
-          📝
-        </motion.div>
-        <motion.div
-          animate={{
-            y: [0, 16, 0],
-            rotate: [0, -8, 0],
-            scale: [1.1, 1, 1.1]
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 4
-          }}
-          className="absolute bottom-1/4 left-1/4 text-xl"
-        >
-          📚
-        </motion.div>
+
         {/* Reading Lines */}
         <motion.div
           animate={{
@@ -226,7 +195,6 @@ const Blog: React.FC = () => {
               </div>
               <div className="bg-gradient-to-br from-purple-600 to-blue-600 p-8 flex items-center justify-center">
                 <div className="text-center text-white">
-                  <div className="text-6xl mb-4">📊</div>
                   <h4 className="text-xl font-semibold mb-2">Performance Marketing</h4>
                   <p className="text-purple-100">Expert insights & strategies</p>
                 </div>
@@ -247,7 +215,7 @@ const Blog: React.FC = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
             >
               <div className={`${post.color} p-6 flex items-center justify-center`}>
-                <span className="text-4xl">{post.image}</span>
+                <TrendingUp className="text-white w-8 h-8" />
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">

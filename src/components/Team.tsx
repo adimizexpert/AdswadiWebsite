@@ -70,38 +70,7 @@ const Team: React.FC = () => {
           }}
           className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-gradient-to-r from-blue-300/20 to-purple-300/20 rounded-full blur-3xl"
         />
-        {/* Team Icons */}
-        <motion.div
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 10, 0],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-1/4 left-1/3 text-2xl"
-        >
-          👥
-        </motion.div>
-        <motion.div
-          animate={{
-            y: [0, 15, 0],
-            rotate: [0, -8, 0],
-            scale: [1.1, 1, 1.1]
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 3
-          }}
-          className="absolute bottom-1/4 right-1/3 text-xl"
-        >
-          💼
-        </motion.div>
+
         {/* Connection Lines */}
         <motion.div
           animate={{
