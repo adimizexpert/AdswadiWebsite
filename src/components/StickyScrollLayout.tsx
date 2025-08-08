@@ -74,12 +74,12 @@ const StickyScrollLayout: React.FC = () => {
   return (
     <div ref={sectionsRef} className="relative">
       {/* Hero Section */}
-      <section className="sticky-section min-h-screen w-full">
+      <section id="home" className="sticky-section min-h-screen w-full">
         <Hero />
       </section>
 
       {/* Services Section */}
-      <section className="sticky-section min-h-screen w-full bg-gradient-to-br from-slate-50 to-slate-100">
+      <section id="services" className="sticky-section min-h-screen w-full bg-gradient-to-br from-slate-50 to-slate-100">
         <div className="h-full flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <Services />
@@ -88,7 +88,7 @@ const StickyScrollLayout: React.FC = () => {
       </section>
 
       {/* Case Studies Section */}
-      <section className="sticky-section min-h-screen w-full bg-gradient-to-br from-purple-50 to-indigo-50">
+      <section id="case-studies" className="sticky-section min-h-screen w-full bg-gradient-to-br from-purple-50 to-indigo-50">
         <div className="h-full flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <CaseStudies />
@@ -97,7 +97,7 @@ const StickyScrollLayout: React.FC = () => {
       </section>
 
       {/* Team Section */}
-      <section className="sticky-section min-h-screen w-full bg-gradient-to-br from-blue-50 to-cyan-50">
+      <section id="team" className="sticky-section min-h-screen w-full bg-gradient-to-br from-blue-50 to-cyan-50">
         <div className="h-full flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <Team />
@@ -106,7 +106,7 @@ const StickyScrollLayout: React.FC = () => {
       </section>
 
       {/* Blog Section */}
-      <section className="sticky-section min-h-screen w-full bg-gradient-to-br from-green-50 to-emerald-50">
+      <section id="blog" className="sticky-section min-h-screen w-full bg-gradient-to-br from-green-50 to-emerald-50">
         <div className="h-full flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <Blog />
@@ -115,7 +115,7 @@ const StickyScrollLayout: React.FC = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="sticky-section min-h-screen w-full bg-gradient-to-br from-orange-50 to-red-50">
+      <section id="testimonials" className="sticky-section min-h-screen w-full bg-gradient-to-br from-orange-50 to-red-50">
         <div className="h-full flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <Testimonials />
@@ -126,7 +126,7 @@ const StickyScrollLayout: React.FC = () => {
 
 
       {/* Contact Section */}
-      <section className="sticky-section min-h-screen w-full bg-gradient-to-br from-violet-50 to-purple-50">
+      <section id="contact" className="sticky-section min-h-screen w-full bg-gradient-to-br from-violet-50 to-purple-50">
         <div className="h-full flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <Contact />
