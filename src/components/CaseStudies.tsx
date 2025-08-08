@@ -317,29 +317,7 @@ const CaseStudies: React.FC = () => {
           </div>
         </div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-3xl p-8 border border-purple-400/30">
-            <h3 className="text-2xl font-bold text-white mb-4">Ready to Join Our Success Stories?</h3>
-            <p className="text-purple-200 mb-6">
-              Let's create your own success story with data-driven campaigns that deliver real results.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-purple-500/25 transition-all duration-300 flex items-center gap-3 mx-auto"
-            >
-              Start Your Success Story
-              <ArrowRight size={24} />
-            </motion.button>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );
