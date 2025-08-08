@@ -22,22 +22,19 @@ const teamMembers = [
     name: 'Md Sam',
     role: 'Dropshipping Ads Expert',
     description: 'Specializes in creating high-converting dropshipping ad campaigns that drive sales and maximize ROI.',
-    avatar: '👨‍💼',
-    bgColor: 'bg-blue-500'
+    image: '/team/team-member-1.png'
   },
   {
     name: 'Ayubh',
     role: 'Graphic Designer & Video Editor',
     description: 'Creates stunning visuals and compelling video content that captures attention and converts.',
-    avatar: '👩‍🎨',
-    bgColor: 'bg-purple-500'
+    image: '/team/team-member-2.png'
   },
   {
     name: 'Aditya',
     role: 'Website Developer & Landing Page Expert',
     description: 'Builds high-converting websites and landing pages that turn visitors into customers.',
-    avatar: '👨‍💻',
-    bgColor: 'bg-green-500'
+    image: '/team/team-member-3.png'
   }
 ];
 
@@ -216,9 +213,12 @@ const Team: React.FC = () => {
                 className="group text-center"
               >
                 <div className="relative mb-6">
-                  <div className={`w-32 h-32 rounded-full mx-auto shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center ${member.bgColor}`}>
-                    <span className="text-5xl">{member.avatar}</span>
-                  </div>
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-32 h-32 rounded-full mx-auto object-cover shadow-xl group-hover:shadow-2xl transition-shadow duration-300 hover:scale-105 transform transition-transform"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent rounded-full"></div>
                 </div>
                 <h4 className="font-bold text-slate-900 mb-2 text-xl">{member.name}</h4>
                 <p className="text-purple-600 font-semibold mb-3">{member.role}</p>
