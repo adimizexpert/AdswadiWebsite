@@ -4,8 +4,13 @@ import { ArrowRight, Pencil } from 'lucide-react';
 import { gsap } from "gsap";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { EasePack } from "gsap/EasePack";
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// ScrollSmoother requires ScrollTrigger
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(DrawSVGPlugin, EasePack);
+gsap.registerPlugin(DrawSVGPlugin, EasePack, MorphSVGPlugin, ScrollTrigger, ScrollSmoother, SplitText);
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
