@@ -13,8 +13,8 @@ const CaseStudies: React.FC = () => {
       description: 'Increased online sales by 400% through targeted Instagram and Facebook campaigns.',
       before: { sales: '₹2L/month', roas: '2.1x', cpa: '₹450' },
       after: { sales: '₹8L/month', roas: '4.8x', cpa: '₹180' },
-      image: '/case-studies/fashion.avif',
-      fallbackImage: '/case-studies/fashion.jpg',
+      image: '/E-commerce-Fashion-Brand.avif',
+      fallbackImage: '/E-commerce-Fashion-Brand.jpg',
       color: 'from-pink-500 to-purple-600'
     },
     {
@@ -23,8 +23,8 @@ const CaseStudies: React.FC = () => {
       description: 'Generated 500+ qualified leads in 3 months with Google Ads and retargeting campaigns.',
       before: { leads: '50/month', cpl: '₹800', conversion: '2.1%' },
       after: { leads: '180/month', cpl: '₹320', conversion: '6.8%' },
-      image: '/case-studies/saas.avif',
-      fallbackImage: '/case-studies/saas.jpg',
+      image: '/SaaS-Product-Launch.avif',
+      fallbackImage: '/SaaS-Product-Launch.jpg',
       color: 'from-blue-500 to-indigo-600'
     },
     {
@@ -33,8 +33,8 @@ const CaseStudies: React.FC = () => {
       description: 'Sold 25 premium properties in 6 months through targeted display and video campaigns.',
       before: { sales: '5/month', cpl: '₹2,500', roi: '180%' },
       after: { sales: '12/month', cpl: '₹1,200', roi: '420%' },
-      image: '/case-studies/real-estate.avif',
-      fallbackImage: '/case-studies/real-estate.jpg',
+      image: '/Real-Estate-Developer.avif',
+      fallbackImage: '/Real-Estate-Developer.jpg',
       color: 'from-purple-500 to-pink-600'
     },
     {
@@ -43,8 +43,8 @@ const CaseStudies: React.FC = () => {
       description: 'Increased patient appointments by 250% with HIPAA-compliant Google Ads campaigns.',
       before: { patients: '30/week', cpa: '₹600', online: '20%' },
       after: { patients: '75/week', cpa: '₹240', online: '65%' },
-      image: '/case-studies/healthcare.avif',
-      fallbackImage: '/case-studies/healthcare.jpg',
+      image: '/Healthcare-Clinic.avif',
+      fallbackImage: '/Healthcare-Clinic.jpg',
       color: 'from-emerald-500 to-green-600'
     }
   ];
