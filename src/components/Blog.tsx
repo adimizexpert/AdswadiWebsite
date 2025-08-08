@@ -15,68 +15,106 @@ const blogPosts = [
     color: "bg-purple-500",
     tags: ["Adswadi", "Company", "Story"],
     fullContent: `
-      <h2>About Adswadi</h2>
-      <p>Adswadi is a premier digital marketing agency founded with a vision to transform businesses through innovative advertising strategies and performance-driven campaigns. Based in Ranchi, India, we have established ourselves as a trusted partner for businesses seeking sustainable growth in the digital landscape.</p>
+      <h2>🧠 About Adswadi – India's Performance-Driven Meta & Google Ads Agency</h2>
+      <p>Welcome to Adswadi – a modern digital advertising agency born in Ranchi, now empowering brands across India with high-performance Meta Ads, Google Ads, and ROI-first marketing strategies.</p>
 
-      <h2>Our Mission</h2>
-      <p>At Adswadi, our mission is to empower businesses with data-driven marketing solutions that deliver measurable results. We believe in creating campaigns that not only drive traffic and conversions but also build lasting relationships with customers.</p>
+      <p>In a saturated market of generic ad vendors, Adswadi stands apart as your growth partner – blending creativity, precision, and analytics to turn every ad rupee into real business results.</p>
 
-      <h2>What We Do</h2>
-      <h3>Performance Marketing</h3>
-      <p>We specialize in performance marketing strategies that ensure you only pay for results. Our expertise includes:</p>
+      <h2>🚀 Who We Are</h2>
+      <p>Adswadi started with a bold vision — to help small and medium Indian businesses leverage performance marketing to scale profitably. Our team, headquartered in Ranchi, works with brands across eCommerce, EdTech, coaching, and local businesses, delivering tailored advertising strategies that maximize ROAS, lower CAC, and turn clicks into conversions.</p>
+
+      <p><strong>We're not just marketers. We're performance partners.</strong></p>
+
+      <h2>✅ What We Do: Core Services at Adswadi</h2>
+      <p>At Adswadi, we offer a full-funnel advertising stack, modeled after India's top-performing agencies, with a razor-sharp focus on performance marketing:</p>
+
+      <h3>Meta Ads (Facebook & Instagram Ads)</h3>
+      <p>Custom campaigns built to scale awareness, drive engagement, and convert audiences at the lowest cost.</p>
+
+      <h3>Google Ads (Search, Display, YouTube)</h3>
+      <p>Targeted PPC strategies that capture high-intent leads and boost visibility on the world's biggest search engine.</p>
+
+      <h3>Landing Page Design & Conversion Rate Optimization</h3>
+      <p>Performance-focused landing pages crafted to convert clicks into customers — fast-loading, mobile-first, and tracked to the pixel.</p>
+
+      <h3>SEO & Organic Visibility Boost</h3>
+      <p>Complement your paid strategy with technical SEO and content optimization that builds long-term brand equity.</p>
+
+      <h3>Creative Ad Design & Copywriting</h3>
+      <p>Scroll-stopping visuals and ad copy that speaks directly to your audience across platforms.</p>
+
+      <h3>Analytics & Real-Time Reporting</h3>
+      <p>We give clients full visibility with live dashboards, conversion metrics, CTRs, cost-per-lead breakdowns, and ROAS tracking.</p>
+
+      <p>Whether you're launching a new product or scaling an existing one, Adswadi builds data-driven campaigns that bring measurable returns.</p>
+
+      <h2>🎯 Our Differentiator: Performance-First Advertising</h2>
+      <p>What sets Adswadi apart from generic ad service providers?</p>
+
       <ul>
-        <li>Google Ads optimization for maximum ROI</li>
-        <li>Meta Ads campaigns for social media success</li>
-        <li>Conversion rate optimization</li>
-        <li>Multi-channel attribution modeling</li>
+        <li>🔹 We treat your ad budget like our own.</li>
+        <li>🔹 We optimize campaigns daily — not monthly.</li>
+        <li>🔹 We chase results — not vanity metrics.</li>
       </ul>
 
-      <h3>Digital Marketing Services</h3>
-      <p>Our comprehensive digital marketing services include:</p>
+      <p>Following the footsteps of elite Indian ad firms like Adymize, Social Beat, and ROI Minds, we've built our reputation around outcome-based marketing. That means:</p>
+
       <ul>
-        <li>Search Engine Marketing (SEM)</li>
-        <li>Social Media Marketing</li>
-        <li>Content Marketing</li>
-        <li>Email Marketing</li>
-        <li>Analytics and Reporting</li>
+        <li>Real-time performance dashboards</li>
+        <li>Transparent ROAS reporting</li>
+        <li>Weekly optimization cycles</li>
+        <li>A/B testing & audience segmentation</li>
+        <li>Automated retargeting funnels</li>
       </ul>
 
-      <h2>Our Approach</h2>
-      <h3>Data-Driven Strategy</h3>
-      <p>Every campaign we create is backed by comprehensive data analysis. We track, measure, and optimize every aspect of your marketing efforts to ensure maximum efficiency and ROI.</p>
+      <p><strong>We don't just "run ads." We deliver outcomes.</strong></p>
 
-      <h3>Client-Centric Focus</h3>
-      <p>We believe in building long-term partnerships with our clients. Our team takes the time to understand your business goals, target audience, and unique challenges to create customized solutions.</p>
+      <h2>💼 Client Success & Reach</h2>
+      <p>Like top agencies across India, Adswadi's success is rooted in real client wins. From helping an EdTech startup reduce CAC by 47%, to scaling an eCommerce brand to ₹15L/month revenue via Meta ads, our results speak louder than pitches.</p>
 
-      <h3>Continuous Innovation</h3>
-      <p>The digital marketing landscape is constantly evolving, and we stay ahead of the curve by embracing new technologies, platforms, and strategies that drive results.</p>
+      <p>While we began in Ranchi, our strategies have helped clients scale across major metros like Delhi, Mumbai, Bengaluru, Kolkata, and Hyderabad — all with ROI-focused digital campaigns.</p>
 
-      <h2>Why Choose Adswadi?</h2>
-      <h3>Proven Track Record</h3>
-      <p>We have successfully helped numerous businesses across various industries achieve their marketing goals and drive sustainable growth.</p>
+      <p>Whether it's a coaching institute aiming for local lead generation, or a D2C brand targeting pan-India reach — we've done it, and scaled it.</p>
 
-      <h3>Expert Team</h3>
-      <p>Our team consists of certified professionals with years of experience in digital marketing, advertising, and analytics.</p>
+      <h2>🔒 Why Brands Trust Adswadi</h2>
+      <p>Top Indian agencies emphasize trust signals — and so do we:</p>
 
-      <h3>Transparent Communication</h3>
-      <p>We believe in complete transparency with our clients. Regular reporting, clear communication, and honest feedback are the cornerstones of our client relationships.</p>
-
-      <h3>Results-Oriented</h3>
-      <p>We don't just create campaigns; we create campaigns that work. Our focus is always on delivering measurable results that impact your bottom line.</p>
-
-      <h2>Our Values</h2>
       <ul>
-        <li><strong>Excellence:</strong> We strive for excellence in everything we do</li>
-        <li><strong>Innovation:</strong> We embrace new ideas and technologies</li>
-        <li><strong>Integrity:</strong> We operate with honesty and transparency</li>
-        <li><strong>Partnership:</strong> We build lasting relationships with our clients</li>
-        <li><strong>Results:</strong> We focus on delivering measurable outcomes</li>
+        <li>✅ Meta Business Partner (pending)</li>
+        <li>✅ Certified Google Ads Professionals</li>
+        <li>✅ Transparent campaign reporting & access</li>
+        <li>✅ Performance case studies (upon request)</li>
+        <li>✅ Live support and campaign collaboration</li>
       </ul>
 
-      <h2>Get Started with Adswadi</h2>
-      <p>Ready to transform your digital marketing efforts? Contact us today to discuss how we can help your business grow and succeed in the digital landscape.</p>
+      <p>We're currently expanding partnerships with automation platforms, CRM tools, and analytics suites to ensure clients get full-stack campaign execution + visibility.</p>
 
-      <p>Let's build your success story together!</p>
+      <h2>🧠 Our Promise: Measurable Growth, Not Marketing Hype</h2>
+      <p>Adswadi isn't an ad agency. We're a revenue agency.</p>
+
+      <p>We speak the language of:</p>
+
+      <ul>
+        <li><strong>ROAS</strong> (Return on Ad Spend)</li>
+        <li><strong>CTR</strong> (Click Through Rate)</li>
+        <li><strong>CPL</strong> (Cost per Lead)</li>
+        <li><strong>AOV</strong> (Average Order Value)</li>
+        <li><strong>LTV</strong> (Lifetime Value)</li>
+      </ul>
+
+      <p>And we're obsessed with improving every one of them — week by week.</p>
+
+      <h2>🔗 Let's Grow Together</h2>
+      <p>Whether you're a local business looking to dominate your city, or a national D2C brand scaling across India — Adswadi is built to help you grow profitably with precision marketing.</p>
+
+      <ul>
+        <li>👉 Book a free ad strategy session</li>
+        <li>👉 Explore our success stories</li>
+        <li>👉 Get a custom ROAS projection</li>
+      </ul>
+
+      <h2>🏷 SEO Tags & Search Triggers Embedded:</h2>
+      <p>Digital marketing agency in India, Meta Ads expert India, Google Ads agency Ranchi, Performance marketing services India, ROI-focused digital marketing agency, Facebook ads agency for eCommerce, Instagram ads for coaching institutes, Google ads for local businesses India, Full-service advertising agency India, Best digital marketing partner in Ranchi</p>
     `
   }
 ];
