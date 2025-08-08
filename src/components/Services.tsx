@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle, Search, Palette, Globe } from 'lucide-react';
 const Services: React.FC = () => {
   const services = [
     {
-      icon: Search,
+      image: '/partners/meta-logo.png',
       title: 'Meta Ads',
       description: 'Comprehensive Meta advertising campaigns across Facebook, Instagram, and Messenger platforms.',
       features: ['Facebook Ads', 'Instagram Ads', 'Messenger Ads', 'Audience Targeting'],
@@ -14,7 +14,7 @@ const Services: React.FC = () => {
       iconColor: 'text-blue-600'
     },
     {
-      icon: Search,
+      image: '/partners/google-logo.png',
       title: 'Google Ads',
       description: 'Dominate search results with strategic Google Ads campaigns that capture high-intent traffic.',
       features: ['Search Ads', 'Display Ads', 'Shopping Ads', 'Video Ads'],
@@ -23,7 +23,7 @@ const Services: React.FC = () => {
       iconColor: 'text-green-600'
     },
     {
-      icon: Globe,
+      image: '/partners/shopify-logo.png',
       title: 'Web Development',
       description: 'Complete web development solutions from simple websites to complex applications.',
       features: ['Websites', 'Funnels', 'Landing Pages', 'Custom Solutions'],
@@ -32,7 +32,7 @@ const Services: React.FC = () => {
       iconColor: 'text-purple-600'
     },
     {
-      icon: Palette,
+      image: '/partners/facebook-logo.png',
       title: 'Branding',
       description: 'Create memorable brand experiences that resonate with your target audience.',
       features: ['Logo Design', 'Brand Identity', 'Visual Guidelines', 'Brand Strategy'],
@@ -117,13 +117,17 @@ const Services: React.FC = () => {
               >
                 {/* Icon */}
                 <motion.div 
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-4`}
+                  className={`w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-4 shadow-md`}
                   whileHover={{ 
                     scale: 1.1,
                     rotate: 5
                   }}
                 >
-                  <service.icon className="w-6 h-6 text-white" />
+                  <img 
+                    src={service.image} 
+                    alt={`${service.title} logo`}
+                    className="w-8 h-8 object-contain"
+                  />
                 </motion.div>
 
                 {/* Content */}
