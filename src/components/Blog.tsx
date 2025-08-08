@@ -5,13 +5,13 @@ import { Calendar, Clock, ArrowRight, TrendingUp, Target, BarChart3 } from 'luci
 const blogPosts = [
   {
     id: 1,
-    title: "About Adswadi",
-    excerpt: "Discover the story behind Adswadi - a leading digital marketing agency dedicated to helping businesses grow through innovative advertising strategies and performance-driven campaigns.",
-    category: "Company",
-    readTime: "3 min read",
+    title: "The Ultimate Guide to Performance Marketing in 2024",
+    excerpt: "Master the art of performance marketing with our comprehensive guide covering the latest trends, tools, and strategies that are driving results in 2024.",
+    category: "Performance Marketing",
+    readTime: "8 min read",
     date: "March 20, 2024",
     color: "bg-purple-500",
-    tags: ["Adswadi", "Company", "Story"]
+    tags: ["Performance Marketing", "2024", "Strategy"]
   },
   {
     id: 2,
