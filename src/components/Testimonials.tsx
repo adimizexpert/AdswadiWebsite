@@ -44,7 +44,7 @@ const stats = [
   },
   {
     icon: TrendingUp,
-    number: '₹80L+',
+    number: '10L+',
     label: 'Ad Spent',
     color: 'text-green-600'
   },
