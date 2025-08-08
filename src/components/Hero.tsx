@@ -260,13 +260,13 @@ const Hero: React.FC = () => {
               {/* Pencil underline (animated draw from left to right) */}
               <svg
                 key={phraseWidth}
-                width={Math.max(phraseWidth, 10)}
-                height={Math.max(Math.round(phraseHeight * 0.6), 12)}
-                viewBox={`0 0 ${Math.max(phraseWidth, 10)} ${Math.max(
-                  Math.round(phraseHeight * 0.6),
-                  12
+                width={Math.max(phraseWidth + 40, 50)}
+                height={Math.max(Math.round(phraseHeight * 0.8), 20)}
+                viewBox={`0 0 ${Math.max(phraseWidth + 40, 50)} ${Math.max(
+                  Math.round(phraseHeight * 0.8),
+                  20
                 )}`}
-                className="absolute left-0 -bottom-2 overflow-visible"
+                className="absolute left-0 -bottom-3 overflow-visible"
               >
                 <defs>
                   <linearGradient id="pencilGradient2" x1="0" x2="1" y1="0" y2="0">
@@ -274,6 +274,9 @@ const Hero: React.FC = () => {
                     <stop offset="50%" stopColor="#7c3aed" />
                     <stop offset="100%" stopColor="#ec4899" />
                   </linearGradient>
+                  <filter id="pencilShadow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000000" floodOpacity="0.3"/>
+                  </filter>
                 </defs>
                 <path
                   ref={underlinePathRef}
@@ -287,16 +290,66 @@ const Hero: React.FC = () => {
                   } ${Math.max(Math.round(phraseHeight * 0.35), 8)}`}
                   fill="none"
                   stroke="url(#pencilGradient2)"
-                  strokeWidth="7"
+                  strokeWidth="8"
                   strokeLinecap="round"
+                  filter="url(#pencilShadow)"
                 />
-                {/* Moving pencil icon */}
+                {/* Enhanced moving pencil icon */}
                 <motion.g
-                  initial={{ x: -10, opacity: 0 }}
-                  animate={{ x: phraseWidth - 6, opacity: 1 }}
-                  transition={{ duration: 1.1, ease: 'easeInOut', delay: 0.6 }}
+                  initial={{ x: -20, opacity: 0, rotate: -15 }}
+                  animate={{ 
+                    x: phraseWidth - 8, 
+                    opacity: 1, 
+                    rotate: 0,
+                    y: [0, -2, 0]
+                  }}
+                  transition={{ 
+                    duration: 1.2, 
+                    ease: 'easeInOut', 
+                    delay: 0.6,
+                    y: {
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }
+                  }}
                 >
-                  <Pencil size={18} color="#7c3aed" fill="#7c3aed" />
+                  {/* Pencil body */}
+                  <rect
+                    x="0"
+                    y="0"
+                    width="16"
+                    height="4"
+                    rx="2"
+                    fill="#7c3aed"
+                    filter="url(#pencilShadow)"
+                  />
+                  {/* Pencil tip */}
+                  <polygon
+                    points="16,0 20,2 16,4"
+                    fill="#7c3aed"
+                    filter="url(#pencilShadow)"
+                  />
+                  {/* Pencil eraser */}
+                  <rect
+                    x="-2"
+                    y="0"
+                    width="2"
+                    height="4"
+                    rx="1"
+                    fill="#f59e0b"
+                    filter="url(#pencilShadow)"
+                  />
+                  {/* Pencil grip */}
+                  <rect
+                    x="2"
+                    y="0"
+                    width="8"
+                    height="4"
+                    rx="2"
+                    fill="#1e293b"
+                    opacity="0.8"
+                  />
                 </motion.g>
               </svg>
             </span>
@@ -310,6 +363,22 @@ const Hero: React.FC = () => {
           >
             We help businesses grow with data-driven digital marketing strategies that deliver real results.
           </motion.p>
+          
+          {/* Enhanced floating elements */}
+          <motion.div
+            animate={{
+              y: [0, -10, 0],
+              rotate: [0, 5, 0]
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute top-1/4 right-1/4 opacity-20"
+          >
+            <Pencil size={24} className="text-purple-400" />
+          </motion.div>
         </motion.div>
 
         {/* CTA Buttons */}
