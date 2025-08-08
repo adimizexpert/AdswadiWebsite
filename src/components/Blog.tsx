@@ -5,69 +5,33 @@ import { Calendar, Clock, ArrowRight, TrendingUp, Target, BarChart3 } from 'luci
 const blogPosts = [
   {
     id: 1,
-    title: "10 Proven Facebook Ad Strategies That Convert in 2024",
-    excerpt: "Discover the latest Facebook advertising techniques that are driving real results for businesses this year. Learn how to optimize your campaigns for maximum ROI.",
-    category: "Facebook Ads",
-    readTime: "5 min read",
-    date: "March 15, 2024",
-
-    color: "bg-blue-500",
-    tags: ["Facebook Ads", "ROI", "Conversion"]
+    title: "About Adswadi",
+    excerpt: "Discover the story behind Adswadi - a leading digital marketing agency dedicated to helping businesses grow through innovative advertising strategies and performance-driven campaigns.",
+    category: "Company",
+    readTime: "3 min read",
+    date: "March 20, 2024",
+    color: "bg-purple-500",
+    tags: ["Adswadi", "Company", "Story"]
   },
   {
     id: 2,
-    title: "Google Ads vs Facebook Ads: Which Platform Should You Choose?",
-    excerpt: "A comprehensive comparison of Google Ads and Facebook Ads to help you decide which platform is best for your business goals and budget.",
+    title: "Digital Marketing Trends in 2024",
+    excerpt: "Stay ahead of the curve with the latest digital marketing trends that are shaping the industry and driving business growth in 2024.",
     category: "Digital Marketing",
-    readTime: "7 min read",
-    date: "March 12, 2024",
-
-    color: "bg-purple-500",
-    tags: ["Google Ads", "Facebook Ads", "Strategy"]
+    readTime: "5 min read",
+    date: "March 18, 2024",
+    color: "bg-blue-500",
+    tags: ["Trends", "2024", "Marketing"]
   },
   {
     id: 3,
-    title: "The Complete Guide to Instagram Ads for E-commerce",
-    excerpt: "Learn how to create high-converting Instagram ad campaigns that drive sales and grow your e-commerce business effectively.",
-    category: "Instagram Ads",
-    readTime: "6 min read",
-    date: "March 10, 2024",
-
-    color: "bg-pink-500",
-    tags: ["Instagram", "E-commerce", "Sales"]
-  },
-  {
-    id: 4,
-    title: "How to Scale Your Ad Campaigns Without Increasing Budget",
-    excerpt: "Smart strategies to scale your advertising campaigns and reach more customers without significantly increasing your ad spend.",
-    category: "Campaign Optimization",
-    readTime: "8 min read",
-    date: "March 8, 2024",
-
+    title: "How to Choose the Right Marketing Agency",
+    excerpt: "Essential tips and insights to help you select the perfect marketing agency that aligns with your business goals and budget requirements.",
+    category: "Business",
+    readTime: "4 min read",
+    date: "March 15, 2024",
     color: "bg-green-500",
-    tags: ["Scaling", "Budget", "Optimization"]
-  },
-  {
-    id: 5,
-    title: "The Future of Digital Advertising: AI and Automation Trends",
-    excerpt: "Explore how artificial intelligence and automation are reshaping the digital advertising landscape and what it means for your business.",
-    category: "AI & Automation",
-    readTime: "9 min read",
-    date: "March 5, 2024",
-
-    color: "bg-orange-500",
-    tags: ["AI", "Automation", "Future"]
-  },
-  {
-    id: 6,
-    title: "Landing Page Optimization: 15 Elements That Drive Conversions",
-    excerpt: "Master the art of landing page design with these proven optimization techniques that will significantly improve your conversion rates.",
-    category: "Landing Pages",
-    readTime: "10 min read",
-    date: "March 3, 2024",
-
-    color: "bg-indigo-500",
-    tags: ["Landing Pages", "Conversion", "Design"]
+    tags: ["Agency", "Selection", "Business"]
   }
 ];
 
