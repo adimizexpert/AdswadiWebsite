@@ -167,7 +167,7 @@ const Hero: React.FC = () => {
   const whatsappLink = `https://wa.me/918678830021?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-fuchsia-50 via-indigo-50 to-cyan-50">
+    <div className="relative h-full w-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-fuchsia-50 via-indigo-50 to-cyan-50">
       {/* Animated Background */}
       <canvas
         ref={canvasRef}
@@ -392,7 +392,7 @@ const Hero: React.FC = () => {
           </div>
         </motion.section>
       </div>
-    </section>
+    </div>
   );
 };
 
