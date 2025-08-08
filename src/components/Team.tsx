@@ -189,7 +189,7 @@ const Team: React.FC = () => {
           className="text-center mb-12"
         >
           <h3 className="text-2xl font-bold text-slate-900 mb-8">Our Expert Team</h3>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={index}
@@ -197,20 +197,21 @@ const Team: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                className="group text-center"
+                className="group text-center flex-shrink-0"
+                style={{ minWidth: '200px', maxWidth: '250px' }}
               >
-                <div className="relative mb-6">
+                <div className="relative mb-4">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-32 h-32 rounded-full mx-auto object-cover shadow-xl group-hover:shadow-2xl transition-shadow duration-300 hover:scale-105 transform transition-transform"
+                    className="w-24 h-24 lg:w-28 lg:h-28 rounded-full mx-auto object-cover shadow-xl group-hover:shadow-2xl transition-shadow duration-300 hover:scale-105 transform transition-transform"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent rounded-full"></div>
                 </div>
-                <h4 className="font-bold text-slate-900 mb-2 text-xl">{member.name}</h4>
-                <p className="text-purple-600 font-semibold mb-2">{member.role}</p>
-                <p className="text-blue-600 font-medium mb-3 text-sm">{member.experience} Experience</p>
-                <p className="text-slate-600 max-w-sm mx-auto leading-relaxed text-sm">
+                <h4 className="font-bold text-slate-900 mb-1 text-lg">{member.name}</h4>
+                <p className="text-purple-600 font-semibold mb-1 text-sm">{member.role}</p>
+                <p className="text-blue-600 font-medium mb-2 text-xs">{member.experience} Experience</p>
+                <p className="text-slate-600 max-w-xs mx-auto leading-relaxed text-xs">
                   {member.description}
                 </p>
               </motion.div>
