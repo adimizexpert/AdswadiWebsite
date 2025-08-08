@@ -11,8 +11,9 @@ const blogPosts = [
     excerpt: "Discover the story behind Adswadi - a leading digital marketing agency dedicated to helping businesses grow through innovative advertising strategies and performance-driven campaigns.",
     category: "Company",
     readTime: "3 min read",
-    date: "March 20, 2024",
+    date: "August 08, 2025",
     color: "bg-purple-500",
+    image: "/blog/About_Adswadi_blog.jpeg",
     tags: ["Adswadi", "Company", "Story"],
     fullContent: `
       <div style="text-align: center; margin-bottom: 2rem;">
@@ -242,11 +243,11 @@ const Blog: React.FC = () => {
                 <div className="flex items-center gap-4 mb-6">
                   <div className="flex items-center gap-2 text-slate-500">
                     <Calendar size={16} />
-                    <span className="text-sm">March 18, 2024</span>
+                    <span className="text-sm">August 08, 2025</span>
                   </div>
                   <div className="flex items-center gap-2 text-slate-500">
                     <Clock size={16} />
-                    <span className="text-sm">12 min read</span>
+                    <span className="text-sm">5 min read</span>
                   </div>
                 </div>
                 <motion.button
@@ -259,10 +260,16 @@ const Blog: React.FC = () => {
                   <ArrowRight size={20} />
                 </motion.button>
               </div>
-              <div className="bg-gradient-to-br from-purple-600 to-blue-600 p-8 flex items-center justify-center">
-                <div className="text-center text-white">
+              <div className="relative overflow-hidden">
+                <img 
+                  src="/blog/About_Adswadi_blog.jpeg" 
+                  alt="About Adswadi - Performance Marketing Agency" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
                   <h4 className="text-xl font-semibold mb-2">Performance Marketing</h4>
-                  <p className="text-purple-100">Expert insights & strategies</p>
+                  <p className="text-white/90">Expert insights & strategies</p>
                 </div>
               </div>
             </div>
@@ -280,8 +287,13 @@ const Blog: React.FC = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
             >
-              <div className={`${post.color} p-6 flex items-center justify-center`}>
-                <TrendingUp className="text-white w-8 h-8" />
+              <div className="relative overflow-hidden h-48">
+                <img 
+                  src={post.image} 
+                  alt={post.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
