@@ -394,24 +394,7 @@ const Contact: React.FC = () => {
               </motion.div>
             </div>
 
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-r from-slate-900 to-slate-800 p-8 rounded-2xl text-white"
-            >
-              <h4 className="font-bold text-xl mb-3">Ready to get started?</h4>
-              <p className="text-slate-300 mb-6 leading-relaxed">
-                Join 250+ businesses that trust Adswadi for their marketing success. 
-                Let's create your success story together.
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 flex items-center gap-2"
-              >
-                Schedule a Call
-                <ArrowRight size={20} />
-              </motion.button>
-            </motion.div>
+
           </motion.div>
         </div>
 
