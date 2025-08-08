@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, ArrowRight, TrendingUp, Target, BarChart3, X } from 'lucide-react';
+import AvifImage from './AvifImage';
 
 
 
@@ -261,9 +262,10 @@ const Blog: React.FC = () => {
                 </motion.button>
               </div>
               <div className="relative overflow-hidden">
-                <img 
-                  src="/blog/About_Adswadi_blog.jpeg" 
-                  alt="About Adswadi - Performance Marketing Agency" 
+                <AvifImage
+                  avifSrc="/blog/About_Adswadi_blog.avif"
+                  fallbackSrc="/blog/About_Adswadi_blog.jpeg"
+                  alt="About Adswadi - Performance Marketing Agency"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -288,8 +290,9 @@ const Blog: React.FC = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
             >
               <div className="relative overflow-hidden h-48">
-                <img 
-                  src={post.image} 
+                <AvifImage
+                  avifSrc={post.image}
+                  fallbackSrc={post.fallbackImage}
                   alt={post.title}
                   className="w-full h-full object-cover"
                 />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, TrendingUp, Users, DollarSign, Target } from 'lucide-react';
+import AvifImage from './AvifImage';
 
 const CaseStudies: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,7 +13,8 @@ const CaseStudies: React.FC = () => {
       description: 'Increased online sales by 400% through targeted Instagram and Facebook campaigns.',
       before: { sales: '₹2L/month', roas: '2.1x', cpa: '₹450' },
       after: { sales: '₹8L/month', roas: '4.8x', cpa: '₹180' },
-      image: '/case-studies/fashion.jpg',
+      image: '/case-studies/fashion.avif',
+      fallbackImage: '/case-studies/fashion.jpg',
       color: 'from-pink-500 to-purple-600'
     },
     {
@@ -21,7 +23,8 @@ const CaseStudies: React.FC = () => {
       description: 'Generated 500+ qualified leads in 3 months with Google Ads and retargeting campaigns.',
       before: { leads: '50/month', cpl: '₹800', conversion: '2.1%' },
       after: { leads: '180/month', cpl: '₹320', conversion: '6.8%' },
-      image: '/case-studies/saas.jpg',
+      image: '/case-studies/saas.avif',
+      fallbackImage: '/case-studies/saas.jpg',
       color: 'from-blue-500 to-indigo-600'
     },
     {
@@ -30,7 +33,8 @@ const CaseStudies: React.FC = () => {
       description: 'Boosted foot traffic by 300% using location-based Facebook ads and Google My Business.',
       before: { customers: '200/week', revenue: '₹3L/month', online: '15%' },
       after: { customers: '600/week', revenue: '₹9L/month', online: '45%' },
-      image: '/case-studies/restaurant.jpg',
+      image: '/case-studies/restaurant.avif',
+      fallbackImage: '/case-studies/restaurant.jpg',
       color: 'from-green-500 to-teal-600'
     },
     {
@@ -39,7 +43,8 @@ const CaseStudies: React.FC = () => {
       description: 'Sold 25 premium properties in 6 months through targeted display and video campaigns.',
       before: { sales: '5/month', cpl: '₹2,500', roi: '180%' },
       after: { sales: '12/month', cpl: '₹1,200', roi: '420%' },
-      image: '/case-studies/real-estate.jpg',
+      image: '/case-studies/real-estate.avif',
+      fallbackImage: '/case-studies/real-estate.jpg',
       color: 'from-purple-500 to-pink-600'
     },
     {
@@ -48,7 +53,8 @@ const CaseStudies: React.FC = () => {
       description: 'Increased patient appointments by 250% with HIPAA-compliant Google Ads campaigns.',
       before: { patients: '30/week', cpa: '₹600', online: '20%' },
       after: { patients: '75/week', cpa: '₹240', online: '65%' },
-      image: '/case-studies/healthcare.jpg',
+      image: '/case-studies/healthcare.avif',
+      fallbackImage: '/case-studies/healthcare.jpg',
       color: 'from-emerald-500 to-green-600'
     }
   ];
@@ -271,8 +277,9 @@ const CaseStudies: React.FC = () => {
                 >
                   <div className={`w-full h-80 rounded-2xl bg-gradient-to-br ${currentCase.color} p-1`}>
                     <div className="w-full h-full rounded-2xl bg-slate-800 flex items-center justify-center">
-                      <img
-                        src={currentCase.image}
+                      <AvifImage
+                        avifSrc={currentCase.image}
+                        fallbackSrc={currentCase.fallbackImage}
                         alt={currentCase.title}
                         className="w-full h-full rounded-2xl object-cover"
                         onError={(e) => {
