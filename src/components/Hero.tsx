@@ -1,9 +1,25 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useRef, useCallback, useLayoutEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Facebook, ShoppingBag, Search, MessageCircle, Sparkles, Zap, Target } from 'lucide-react';
+import { ArrowRight, Pencil } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const profitRef = useRef<HTMLSpanElement>(null);
+  const [profitWidth, setProfitWidth] = useState<number>(0);
+  const [profitHeight, setProfitHeight] = useState<number>(0);
+
+  // Measure the "Profit" word to size the underline
+  useLayoutEffect(() => {
+    const update = () => {
+      const rect = profitRef.current?.getBoundingClientRect();
+      if (!rect) return;
+      setProfitWidth(rect.width);
+      setProfitHeight(rect.height);
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
 
   const animate = useCallback(() => {
     const canvas = canvasRef.current;
@@ -131,18 +147,89 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="mb-12"
         >
-          <motion.h1 
-            className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+          <motion.h1
+            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight"
+            initial="hidden"
+            animate="show"
+            variants={{
+              hidden: { opacity: 0 },
+              show: { opacity: 1, transition: { staggerChildren: 0.06, delayChildren: 0.15 } }
+            }}
           >
-            <span className="bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
-              Transform Your Business
-            </span>
-            <br />
-            <span className="text-white">
-              With Smart Digital Marketing
+            {['Optimize', 'Your', 'Ads'].map((word, idx) => (
+              <motion.span
+                key={`w1-${idx}`}
+                className="inline-block bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent"
+                variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
+              >
+                {word}{' '}
+              </motion.span>
+            ))}
+            <br className="hidden sm:block" />
+            {['For', 'More'].map((word, idx) => (
+              <motion.span
+                key={`w2-${idx}`}
+                className="inline-block text-white"
+                variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
+              >
+                {word}{' '}
+              </motion.span>
+            ))}
+            <span className="relative inline-block">
+              <motion.span
+                ref={profitRef}
+                className="relative z-10 inline-block bg-gradient-to-r from-purple-200 via-white to-purple-200 bg-clip-text text-transparent"
+                variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
+              >
+                Profit.
+              </motion.span>
+              {/* Pencil underline (animated draw) */}
+              <motion.svg
+                key={profitWidth}
+                width={Math.max(profitWidth, 10)}
+                height={Math.max(Math.round(profitHeight * 0.6), 12)}
+                viewBox={`0 0 ${Math.max(profitWidth, 10)} ${Math.max(
+                  Math.round(profitHeight * 0.6),
+                  12
+                )}`}
+                className="absolute left-0 -bottom-2 overflow-visible"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+              >
+                {/* Curved underline path */}
+                <motion.path
+                  d={`M2 ${Math.max(Math.round(profitHeight * 0.35), 8)} C ${
+                    profitWidth * 0.25
+                  } ${Math.max(Math.round(profitHeight * 0.65), 12)}, ${
+                    profitWidth * 0.75
+                  } ${Math.max(Math.round(profitHeight * 0.05), 4)}, ${
+                    profitWidth - 4
+                  } ${Math.max(Math.round(profitHeight * 0.35), 8)}`}
+                  fill="none"
+                  stroke="url(#pencilGradient)"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 1.1, ease: 'easeInOut', delay: 0.65 }}
+                />
+                <defs>
+                  <linearGradient id="pencilGradient" x1="0" x2="1" y1="0" y2="0">
+                    <stop offset="0%" stopColor="#a855f7" />
+                    <stop offset="50%" stopColor="#7c3aed" />
+                    <stop offset="100%" stopColor="#9333ea" />
+                  </linearGradient>
+                </defs>
+                {/* Pencil icon moving left to right */}
+                <motion.g
+                  initial={{ x: -10, opacity: 0 }}
+                  animate={{ x: profitWidth - 6, opacity: 1 }}
+                  transition={{ duration: 1.1, ease: 'easeInOut', delay: 0.65 }}
+                >
+                  <Pencil size={18} color="#ffffff" fill="#ffffff" />
+                </motion.g>
+              </motion.svg>
             </span>
           </motion.h1>
           
