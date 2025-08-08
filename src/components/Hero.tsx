@@ -166,7 +166,7 @@ const Hero: React.FC = () => {
           className="mb-12"
         >
           <motion.h1
-            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight"
+            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-slate-900 mb-6 leading-tight"
             initial="hidden"
             animate="show"
             variants={{
@@ -177,7 +177,7 @@ const Hero: React.FC = () => {
             {['Unlock', 'Greater', 'Profits'].map((word, idx) => (
               <motion.span
                 key={`w1-${idx}`}
-                className="inline-block bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent"
+                className="inline-block text-slate-900"
                 variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
                 {word}{' '}
@@ -187,7 +187,7 @@ const Hero: React.FC = () => {
             <span className="relative inline-block align-bottom">
               <motion.span
                 ref={phraseRef}
-                className="relative z-10 inline-block text-white"
+                className="relative z-10 inline-block text-slate-900"
                 variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
                 from Every Ad
@@ -232,14 +232,14 @@ const Hero: React.FC = () => {
                   animate={{ x: phraseWidth - 6, opacity: 1 }}
                   transition={{ duration: 1.1, ease: 'easeInOut', delay: 0.6 }}
                 >
-                  <Pencil size={18} color="#ffffff" fill="#ffffff" />
+                  <Pencil size={18} color="#7c3aed" fill="#7c3aed" />
                 </motion.g>
               </svg>
             </span>
           </motion.h1>
           
           <motion.p 
-            className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed"
+            className="text-xl sm:text-2xl text-slate-700 max-w-3xl mx-auto mb-8 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -275,7 +275,7 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.6, delay: 1.0 }}
           className="text-center"
         >
-          <p className="text-white mb-8 font-medium text-lg">
+          <p className="text-slate-700 mb-8 font-medium text-lg">
             Our Performance Marketing Services are Certified by
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8">
@@ -318,10 +318,10 @@ const Hero: React.FC = () => {
                   />
                 </div>
                 <div className="text-center">
-                  <div className="font-bold text-white text-base">
+                  <div className="font-bold text-slate-900 text-base">
                     {partner.name}
                   </div>
-                  <div className="text-xs text-white/80">
+                  <div className="text-xs text-slate-600">
                     {partner.subText}
                   </div>
                 </div>
