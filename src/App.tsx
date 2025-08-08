@@ -7,6 +7,7 @@ import Team from './components/Team.tsx';
 import Blog from './components/Blog.tsx';
 import Testimonials from './components/Testimonials.tsx';
 import Contact from './components/Contact.tsx';
+import FAQ from './components/FAQ.tsx';
 import Footer from './components/Footer.tsx';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Team />
         <Blog />
         <Testimonials />
+        <FAQ />
         <Contact />
       </main>
       <Footer />
