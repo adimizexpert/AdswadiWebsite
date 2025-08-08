@@ -3,6 +3,18 @@ import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Search, Palette, Globe } from 'lucide-react';
 
 const Services: React.FC = () => {
+  // WhatsApp links with service-specific messages
+  const getWhatsAppLink = (service: string) => {
+    const baseUrl = 'https://wa.me/918678830021?text=';
+    const messages = {
+      'Meta Ads': 'Hi%20Adswadi%20team!%20I%20want%20to%20get%20started%20with%20Meta%20Ads%20services.%20Can%20you%20help%20me%20set%20up%20Facebook%20and%20Instagram%20ad%20campaigns%20for%20my%20business?',
+      'Google Ads': 'Hi%20Adswadi%20team!%20I%20want%20to%20get%20started%20with%20Google%20Ads%20services.%20Can%20you%20help%20me%20create%20high-converting%20search%20and%20display%20campaigns?',
+      'Web Development': 'Hi%20Adswadi%20team!%20I%20want%20to%20get%20started%20with%20Web%20Development%20services.%20Can%20you%20help%20me%20build%20websites,%20funnels,%20and%20landing%20pages%20for%20my%20business?',
+      'Branding': 'Hi%20Adswadi%20team!%20I%20want%20to%20get%20started%20with%20Branding%20services.%20Can%20you%20help%20me%20create%20a%20memorable%20brand%20identity%20and%20visual%20guidelines?'
+    };
+    return baseUrl + (messages[service as keyof typeof messages] || messages['Meta Ads']);
+  };
+
   const services = [
     {
       image: '/partners/meta-logo.png',
@@ -152,14 +164,17 @@ const Services: React.FC = () => {
                 </div>
 
                 {/* CTA Button */}
-                <motion.button
+                <motion.a
+                  href={getWhatsAppLink(service.title)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`w-full bg-gradient-to-r ${service.color} text-white px-4 py-2 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group/btn text-sm`}
+                  className={`w-full bg-gradient-to-r ${service.color} text-white px-4 py-2 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 group/btn text-sm cursor-pointer`}
                 >
                   Get Started
                   <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
-                </motion.button>
+                </motion.a>
               </motion.div>
             </motion.div>
           ))}
