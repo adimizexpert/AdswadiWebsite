@@ -192,10 +192,10 @@ const Blog: React.FC = () => {
                   <span className="text-slate-500 text-sm">Digital Marketing</span>
                 </div>
                 <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
-                  The Ultimate Guide to Performance Marketing in 2024
+                  About Adswadi
                 </h3>
                 <p className="text-slate-600 mb-6 leading-relaxed">
-                  Master the art of performance marketing with our comprehensive guide covering the latest trends, tools, and strategies that are driving results in 2024.
+                  Discover the story behind Adswadi - a leading digital marketing agency dedicated to helping businesses grow through innovative advertising strategies and performance-driven campaigns.
                 </p>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="flex items-center gap-2 text-slate-500">
