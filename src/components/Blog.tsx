@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, ArrowRight, TrendingUp, Target, BarChart3 } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, TrendingUp, Target, BarChart3, X } from 'lucide-react';
 
 // Blog content for the performance marketing guide
 const performanceMarketingContent = {
@@ -183,6 +183,19 @@ const blogPosts = [
 ];
 
 const Blog: React.FC = () => {
+  const [selectedBlog, setSelectedBlog] = React.useState<any>(null);
+  const [showModal, setShowModal] = React.useState(false);
+
+  const handleBlogClick = (blog: any) => {
+    setSelectedBlog(blog);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedBlog(null);
+  };
+
   return (
     <section id="blog" className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative overflow-hidden">
       {/* Background Effects */}
@@ -296,6 +309,7 @@ const Blog: React.FC = () => {
                   </div>
                 </div>
                 <motion.button
+                  onClick={() => handleBlogClick(blogPosts[0])}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center gap-2"
@@ -352,6 +366,7 @@ const Blog: React.FC = () => {
                     </div>
                   </div>
                   <motion.button
+                    onClick={() => handleBlogClick(post)}
                     whileHover={{ x: 5 }}
                     className="text-purple-600 hover:text-purple-700 transition-colors"
                   >
@@ -363,7 +378,73 @@ const Blog: React.FC = () => {
           ))}
         </div>
 
-
+        {/* Blog Modal */}
+        {showModal && selectedBlog && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+            onClick={closeModal}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-8">
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <span className="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm font-medium mb-2 inline-block">
+                      {selectedBlog.category}
+                    </span>
+                    <h2 className="text-3xl font-bold text-slate-900 mb-4">
+                      {selectedBlog.title}
+                    </h2>
+                    <div className="flex items-center gap-4 text-slate-500 mb-6">
+                      <div className="flex items-center gap-2">
+                        <Calendar size={16} />
+                        <span className="text-sm">{selectedBlog.date}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Clock size={16} />
+                        <span className="text-sm">{selectedBlog.readTime}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <motion.button
+                    onClick={closeModal}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="text-slate-400 hover:text-slate-600 transition-colors"
+                  >
+                    <X size={24} />
+                  </motion.button>
+                </div>
+                
+                {selectedBlog.fullContent && (
+                  <div 
+                    className="prose prose-lg max-w-none text-slate-700"
+                    dangerouslySetInnerHTML={{ __html: selectedBlog.fullContent }}
+                  />
+                )}
+                
+                <div className="mt-8 pt-6 border-t border-slate-200">
+                  <motion.button
+                    onClick={closeModal}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                  >
+                    Close Article
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
       </div>
     </section>
   );
