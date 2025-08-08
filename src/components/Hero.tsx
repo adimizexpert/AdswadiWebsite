@@ -269,36 +269,33 @@ const Hero: React.FC = () => {
         </motion.div>
 
         {/* Partner Logos */}
-        <motion.div
+        <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0 }}
-          className="text-center"
+          className="certified-section text-center"
         >
-          <p className="text-slate-700 mb-8 font-medium text-lg">
+          <h2 className="text-slate-700 mb-12 font-semibold text-xl">
             Our Performance Marketing Services are Certified by
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8">
+          </h2>
+          <div className="partners grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
               { 
                 name: 'Meta', 
                 image: '/facebook.png',
-                color: 'text-blue-600',
-                bgColor: 'bg-white',
+                alt: 'Meta Business Partner Logo',
                 subText: 'Business Partner'
               },
               { 
                 name: 'Shopify', 
                 image: '/shopify.png',
-                color: 'text-green-600',
-                bgColor: 'bg-white',
-                subText: 'partners'
+                alt: 'Shopify Partner Logo',
+                subText: 'Partner'
               },
               { 
                 name: 'Google', 
                 image: '/google.png',
-                color: 'text-blue-600',
-                bgColor: 'bg-white',
+                alt: 'Google Partner Logo',
                 subText: 'Partner'
               }
             ].map((partner, index) => (
@@ -307,28 +304,29 @@ const Hero: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="flex flex-col items-center gap-3"
+                whileHover={{ scale: 1.02, y: -2 }}
+                className="partner flex flex-col items-center gap-4 p-6 rounded-2xl bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className={`w-16 h-16 rounded-xl ${partner.bgColor} flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden`}>
+                <div className="w-20 h-20 rounded-xl bg-white flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden p-3">
                   <img 
                     src={partner.image} 
-                    alt={`${partner.name} logo`}
-                    className="w-8 h-8 object-contain"
+                    alt={partner.alt}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
                   />
                 </div>
                 <div className="text-center">
-                  <div className="font-bold text-slate-900 text-base">
+                  <h3 className="font-bold text-slate-900 text-lg mb-1">
                     {partner.name}
-                  </div>
-                  <div className="text-xs text-slate-600">
+                  </h3>
+                  <p className="text-sm text-slate-600 font-medium">
                     {partner.subText}
-                  </div>
+                  </p>
                 </div>
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.section>
       </div>
     </section>
   );
