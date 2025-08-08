@@ -66,7 +66,7 @@ export default function Home() {
       sameAs: [
         'https://www.facebook.com/adswadi',
         'https://www.linkedin.com/company/adswadi',
-        'https://twitter.com/adswadi',
+    
       ],
       serviceArea: {
         '@type': 'Country',

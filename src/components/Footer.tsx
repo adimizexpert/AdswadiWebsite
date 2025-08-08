@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter, Instagram, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
+import { Linkedin, Instagram, Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -43,8 +43,7 @@ const Footer: React.FC = () => {
 
   const socialLinks = [
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Twitter, href: '#', label: 'Twitter' }
+    { icon: Instagram, href: '#', label: 'Instagram' }
   ];
 
   return (

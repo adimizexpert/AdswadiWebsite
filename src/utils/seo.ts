@@ -17,7 +17,7 @@ export const siteConfig = {
     'conversion optimization'
   ],
   author: 'Adswadi Team',
-  twitterHandle: '@adswadi',
+
   facebookPage: 'adswadi'
 };
 
