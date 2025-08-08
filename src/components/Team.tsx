@@ -22,18 +22,21 @@ const teamMembers = [
     name: 'Md Sam',
     role: 'Dropshipping Ads Expert',
     description: 'Specializes in creating high-converting dropshipping ad campaigns that drive sales and maximize ROI.',
+    experience: '4+ years',
     image: '/team/team-member-1.png'
   },
   {
     name: 'Ayubh',
     role: 'Graphic Designer & Video Editor',
     description: 'Creates stunning visuals and compelling video content that captures attention and converts.',
+    experience: '3+ years',
     image: '/team/team-member-2.png'
   },
   {
     name: 'Aditya',
     role: 'Website Developer & Landing Page Expert',
     description: 'Builds high-converting websites and landing pages that turn visitors into customers.',
+    experience: '4+ years',
     image: '/team/team-member-3.png'
   }
 ];
@@ -198,7 +201,8 @@ const Team: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent rounded-full"></div>
                 </div>
                 <h4 className="font-bold text-slate-900 mb-2 text-xl">{member.name}</h4>
-                <p className="text-purple-600 font-semibold mb-3">{member.role}</p>
+                <p className="text-purple-600 font-semibold mb-2">{member.role}</p>
+                <p className="text-blue-600 font-medium mb-3 text-sm">{member.experience} Experience</p>
                 <p className="text-slate-600 max-w-sm mx-auto leading-relaxed text-sm">
                   {member.description}
                 </p>
