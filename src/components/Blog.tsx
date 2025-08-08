@@ -252,28 +252,7 @@ const Blog: React.FC = () => {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Stay Updated with Our Latest Insights</h3>
-            <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
-              Get weekly updates on the latest digital marketing trends, advertising strategies, and industry insights delivered straight to your inbox.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
-            >
-              Subscribe to Newsletter
-            </motion.button>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );
