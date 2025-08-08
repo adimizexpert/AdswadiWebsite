@@ -38,6 +38,13 @@ const teamMembers = [
     description: 'Builds high-converting websites and landing pages that turn visitors into customers.',
     experience: '4+ years',
     image: '/team/team-member-3.png'
+  },
+  {
+    name: 'Yasir',
+    role: 'Media Buyer Specialist Lead Generation',
+    description: 'Expert in lead generation strategies and media buying, specializing in high-converting campaigns that drive qualified leads.',
+    experience: '2+ years',
+    image: '/team/team-member-4.png'
   }
 ];
 
