@@ -166,7 +166,7 @@ const Hero: React.FC = () => {
           className="mb-12"
         >
           <motion.h1
-            className="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight"
+            className="text-5xl sm:text-6xl lg:text-8xl xl:text-9xl font-black mb-8 leading-none"
             initial="hidden"
             animate="show"
             variants={{
@@ -177,17 +177,17 @@ const Hero: React.FC = () => {
             {['Unlock', 'Greater', 'Profits'].map((word, idx) => (
               <motion.span
                 key={`w1-${idx}`}
-                className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-md"
+                className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg"
                 variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
                 {word}{' '}
               </motion.span>
             ))}
-            <br className="hidden sm:block" />
+            <br className="block" />
             <span className="relative inline-block align-bottom">
               <motion.span
                 ref={phraseRef}
-                className="relative z-10 inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-md"
+                className="relative z-10 inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black"
                 variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
                 from Every Ad
