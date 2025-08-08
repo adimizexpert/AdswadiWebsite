@@ -229,7 +229,7 @@ src/
 ## 📞 Contact
 
 For questions or support:
-- **Email**: hello@adswadi.com
+- **Email**: adswadiofficial@gmail.com
 - **Phone**: +91-8678830021
 - **WhatsApp**: [Click to chat](https://wa.me/918678830021)
 

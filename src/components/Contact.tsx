@@ -389,7 +389,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="flex-1">
                   <h4 className="font-bold text-slate-900">Email</h4>
-                  <p className="text-slate-600">hello@adswadi.com</p>
+                  <p className="text-slate-600">adswadiofficial@gmail.com</p>
                 </div>
               </motion.div>
             </div>

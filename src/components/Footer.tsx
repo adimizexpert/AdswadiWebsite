@@ -121,7 +121,7 @@ const Footer: React.FC = () => {
             <div className="rounded-2xl border border-slate-200 shadow-sm p-6">
               <h4 className="font-semibold text-slate-900 mb-2">Contact</h4>
               <div className="space-y-2 text-slate-600">
-                <div className="flex items-center gap-3"><Mail className="w-4 h-4" /> hello@adswadi.com</div>
+                <div className="flex items-center gap-3"><Mail className="w-4 h-4" /> adswadiofficial@gmail.com</div>
                 <div className="flex items-center gap-3"><Mail className="w-4 h-4" /> adswadiofficial@gmail.com</div>
                 <div className="flex items-center gap-3"><Phone className="w-4 h-4" /> +91 8678830021</div>
                 <div className="flex items-center gap-3"><MapPin className="w-4 h-4" /> Mumbai, India</div>
