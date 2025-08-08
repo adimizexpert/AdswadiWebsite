@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, Instagram } from 'lucide-react';
+import { MessageCircle, Instagram, MessageSquare } from 'lucide-react';
 
 const founders = [
   {
@@ -174,20 +174,28 @@ const Team: React.FC = () => {
                 "{founder.description}"
               </p>
               <div className="flex justify-center gap-4 mt-4">
-                <motion.button
+                <motion.a
+                  href="https://wa.me/918678830021"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-2 rounded-full bg-slate-100 hover:bg-purple-100 transition-colors"
+                  className="p-2 rounded-full bg-green-100 hover:bg-green-200 transition-colors"
+                  title="WhatsApp"
                 >
-                  <MessageCircle size={20} className="text-slate-600" />
-                </motion.button>
-                <motion.button
+                  <MessageSquare size={20} className="text-green-600" />
+                </motion.a>
+                <motion.a
+                  href="https://www.instagram.com/adswadi"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-2 rounded-full bg-slate-100 hover:bg-purple-100 transition-colors"
+                  className="p-2 rounded-full bg-pink-100 hover:bg-pink-200 transition-colors"
+                  title="Instagram"
                 >
-                  <Instagram size={20} className="text-slate-600" />
-                </motion.button>
+                  <Instagram size={20} className="text-pink-600" />
+                </motion.a>
               </div>
             </motion.div>
           ))}
@@ -225,22 +233,6 @@ const Team: React.FC = () => {
                 <p className="text-slate-600 max-w-sm mx-auto leading-relaxed text-sm">
                   {member.description}
                 </p>
-                <div className="flex justify-center gap-4 mt-4">
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="p-2 rounded-full bg-slate-100 hover:bg-purple-100 transition-colors"
-                  >
-                    <MessageCircle size={18} className="text-slate-600" />
-                  </motion.button>
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="p-2 rounded-full bg-slate-100 hover:bg-purple-100 transition-colors"
-                  >
-                    <Instagram size={18} className="text-slate-600" />
-                  </motion.button>
-                </div>
               </motion.div>
             ))}
           </div>
