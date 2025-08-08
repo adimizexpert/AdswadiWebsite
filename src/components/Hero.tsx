@@ -4,22 +4,35 @@ import { ArrowRight, Pencil } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const profitRef = useRef<HTMLSpanElement>(null);
-  const [profitWidth, setProfitWidth] = useState<number>(0);
-  const [profitHeight, setProfitHeight] = useState<number>(0);
+  const phraseRef = useRef<HTMLSpanElement>(null);
+  const underlinePathRef = useRef<SVGPathElement>(null);
+  const [phraseWidth, setPhraseWidth] = useState<number>(0);
+  const [phraseHeight, setPhraseHeight] = useState<number>(0);
+  const [dash, setDash] = useState<number>(0);
 
-  // Measure the "Profit" word to size the underline
+  // Measure the "For More Profit" phrase to size the underline
   useLayoutEffect(() => {
     const update = () => {
-      const rect = profitRef.current?.getBoundingClientRect();
+      const rect = phraseRef.current?.getBoundingClientRect();
       if (!rect) return;
-      setProfitWidth(rect.width);
-      setProfitHeight(rect.height);
+      setPhraseWidth(rect.width);
+      setPhraseHeight(rect.height);
     };
     update();
     window.addEventListener('resize', update);
     return () => window.removeEventListener('resize', update);
   }, []);
+
+  // After render, compute actual SVG path length for perfect dash animation
+  useEffect(() => {
+    if (!underlinePathRef.current) return;
+    try {
+      const len = underlinePathRef.current.getTotalLength();
+      setDash(len);
+    } catch {
+      // noop
+    }
+  }, [phraseWidth, phraseHeight]);
 
   const animate = useCallback(() => {
     const canvas = canvasRef.current;
@@ -166,70 +179,57 @@ const Hero: React.FC = () => {
               </motion.span>
             ))}
             <br className="hidden sm:block" />
-            {['For', 'More'].map((word, idx) => (
+            <span className="relative inline-block align-bottom">
               <motion.span
-                key={`w2-${idx}`}
-                className="inline-block text-white"
+                ref={phraseRef}
+                className="relative z-10 inline-block text-white"
                 variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
-                {word}{' '}
+                For More Profit
               </motion.span>
-            ))}
-            <span className="relative inline-block">
-              <motion.span
-                ref={profitRef}
-                className="relative z-10 inline-block bg-gradient-to-r from-purple-200 via-white to-purple-200 bg-clip-text text-transparent"
-                variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
-              >
-                Profit.
-              </motion.span>
-              {/* Pencil underline (animated draw) */}
-              <motion.svg
-                key={profitWidth}
-                width={Math.max(profitWidth, 10)}
-                height={Math.max(Math.round(profitHeight * 0.6), 12)}
-                viewBox={`0 0 ${Math.max(profitWidth, 10)} ${Math.max(
-                  Math.round(profitHeight * 0.6),
+              {/* Pencil underline (animated draw from left to right) */}
+              <svg
+                key={phraseWidth}
+                width={Math.max(phraseWidth, 10)}
+                height={Math.max(Math.round(phraseHeight * 0.6), 12)}
+                viewBox={`0 0 ${Math.max(phraseWidth, 10)} ${Math.max(
+                  Math.round(phraseHeight * 0.6),
                   12
                 )}`}
                 className="absolute left-0 -bottom-2 overflow-visible"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
               >
-                {/* Curved underline path */}
-                <motion.path
-                  d={`M2 ${Math.max(Math.round(profitHeight * 0.35), 8)} C ${
-                    profitWidth * 0.25
-                  } ${Math.max(Math.round(profitHeight * 0.65), 12)}, ${
-                    profitWidth * 0.75
-                  } ${Math.max(Math.round(profitHeight * 0.05), 4)}, ${
-                    profitWidth - 4
-                  } ${Math.max(Math.round(profitHeight * 0.35), 8)}`}
-                  fill="none"
-                  stroke="url(#pencilGradient)"
-                  strokeWidth="6"
-                  strokeLinecap="round"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1.1, ease: 'easeInOut', delay: 0.65 }}
-                />
                 <defs>
-                  <linearGradient id="pencilGradient" x1="0" x2="1" y1="0" y2="0">
+                  <linearGradient id="pencilGradient2" x1="0" x2="1" y1="0" y2="0">
                     <stop offset="0%" stopColor="#a855f7" />
                     <stop offset="50%" stopColor="#7c3aed" />
-                    <stop offset="100%" stopColor="#9333ea" />
+                    <stop offset="100%" stopColor="#ec4899" />
                   </linearGradient>
                 </defs>
-                {/* Pencil icon moving left to right */}
+                <path
+                  ref={underlinePathRef}
+                  d={`M2 ${Math.max(Math.round(phraseHeight * 0.35), 8)} C ${
+                    phraseWidth * 0.25
+                  } ${Math.max(Math.round(phraseHeight * 0.65), 12)}, ${
+                    phraseWidth * 0.75
+                  } ${Math.max(Math.round(phraseHeight * 0.05), 4)}, ${
+                    phraseWidth - 4
+                  } ${Math.max(Math.round(phraseHeight * 0.35), 8)}`}
+                  fill="none"
+                  stroke="url(#pencilGradient2)"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                  className="underline-draw"
+                  style={{ ['--dash' as any]: dash }}
+                />
+                {/* Moving pencil icon */}
                 <motion.g
                   initial={{ x: -10, opacity: 0 }}
-                  animate={{ x: profitWidth - 6, opacity: 1 }}
-                  transition={{ duration: 1.1, ease: 'easeInOut', delay: 0.65 }}
+                  animate={{ x: phraseWidth - 6, opacity: 1 }}
+                  transition={{ duration: 1.1, ease: 'easeInOut', delay: 0.6 }}
                 >
                   <Pencil size={18} color="#ffffff" fill="#ffffff" />
                 </motion.g>
-              </motion.svg>
+              </svg>
             </span>
           </motion.h1>
           
