@@ -6,37 +6,31 @@ const testimonials = [
   {
     name: 'Priya Sharma',
     company: 'TechStart Solutions',
-    image: '/teams/testimonials.png',
     text: 'ADSWADi transformed our marketing completely. Our ROAS increased by 300% in just 3 months!'
   },
   {
     name: 'Rajesh Kumar',
     company: 'E-commerce Plus',
-    image: '/teams/testimonials.png',
     text: 'The automation systems they built for us are incredible. We now generate leads 24/7 without any manual work.'
   },
   {
     name: 'Anjali Patel',
     company: 'Fashion Forward',
-    image: '/teams/testimonials.png',
     text: 'Their creative team knows exactly how to make ads that convert. Our cost per acquisition dropped by 60%.'
   },
   {
     name: 'Amit Singh',
     company: 'Digital Dynamics',
-    image: '/teams/testimonials.png',
     text: 'Working with ADSWADi has been a game-changer. Our conversion rates improved by 200% in the first quarter!'
   },
   {
     name: 'Meera Reddy',
     company: 'Startup Ventures',
-    image: '/teams/testimonials.png',
     text: 'Their data-driven approach helped us scale from 0 to 10,000 customers in just 6 months. Incredible results!'
   },
   {
     name: 'Vikram Malhotra',
     company: 'Growth Labs',
-    image: '/teams/testimonials.png',
     text: 'The ROI we achieved with ADSWADi exceeded all expectations. Highly recommend their services!'
   }
 ];
@@ -165,11 +159,6 @@ const Testimonials: React.FC = () => {
                 "{testimonial.text}"
               </p>
               <div className="flex items-center">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover mr-4"
-                />
                 <div>
                   <h4 className="font-bold text-slate-900">{testimonial.name}</h4>
                   <p className="text-slate-600 text-sm">{testimonial.company}</p>
