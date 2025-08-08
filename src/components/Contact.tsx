@@ -367,9 +367,10 @@ const Contact: React.FC = () => {
                 <ArrowRight className="w-5 h-5 text-green-600 group-hover:translate-x-1 transition-transform" />
               </motion.a>
 
-              <motion.div
+              <motion.a
+                href="tel:+918678830021"
                 whileHover={{ scale: 1.02 }}
-                className="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200"
+                className="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:bg-slate-100 transition-all duration-300 cursor-pointer"
               >
                 <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center">
                   <Phone className="w-6 h-6 text-white" />
@@ -378,7 +379,7 @@ const Contact: React.FC = () => {
                   <h4 className="font-bold text-slate-900">Phone</h4>
                   <p className="text-slate-600">+91 8678830021</p>
                 </div>
-              </motion.div>
+              </motion.a>
 
               <motion.div
                 whileHover={{ scale: 1.02 }}

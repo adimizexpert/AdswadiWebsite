@@ -129,8 +129,8 @@ const Footer: React.FC = () => {
               <h4 className="font-semibold text-slate-900 mb-2">Contact</h4>
               <div className="space-y-2 text-slate-600">
                 <div className="flex items-center gap-3"><Mail className="w-4 h-4" /> adswadiofficial@gmail.com</div>
-                <div className="flex items-center gap-3"><Phone className="w-4 h-4" /> +91 8678830021</div>
-                <div className="flex items-center gap-3"><Phone className="w-4 h-4" /> +91 9798440519</div>
+                <div className="flex items-center gap-3"><a href="tel:+918678830021" className="hover:text-blue-600 transition-colors"><Phone className="w-4 h-4" /> +91 8678830021</a></div>
+                <div className="flex items-center gap-3"><a href="tel:+919798440519" className="hover:text-blue-600 transition-colors"><Phone className="w-4 h-4" /> +91 9798440519</a></div>
                 <div className="flex items-center gap-3"><MapPin className="w-4 h-4" /> Mumbai, India</div>
               </div>
             </div>
