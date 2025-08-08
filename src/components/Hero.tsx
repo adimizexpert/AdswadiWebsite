@@ -231,71 +231,104 @@ const Hero: React.FC = () => {
           className="mb-12"
         >
           <motion.h1
-            className="hero-headline text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black mb-6 leading-tight"
+            className="hero-headline text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black mb-8 leading-tight tracking-tight"
             initial="hidden"
             animate="show"
             variants={{
               hidden: { opacity: 0 },
-              show: { opacity: 1, transition: { staggerChildren: 0.06, delayChildren: 0.15 } }
+              show: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.2 } }
             }}
           >
-            {['Unlock', 'Greater', 'Profits'].map((word, idx) => (
-              <motion.span
-                key={`w1-${idx}`}
-                className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg"
-                variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
+            {/* Main Title with Enhanced Design */}
+            <div className="relative">
+              {/* Background Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-fuchsia-600/20 to-purple-800/20 blur-3xl rounded-full transform scale-150"></div>
+              
+              {/* First Line */}
+              <motion.div
+                className="relative z-10 mb-4"
+                variants={{ hidden: { y: 30, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
-                {word}{' '}
-              </motion.span>
-            ))}
-            <br className="block" />
-            <span className="relative inline-block align-bottom">
-              <motion.span
+                <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-2xl">
+                  Unlock
+                </span>
+                <span className="inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 bg-clip-text text-transparent drop-shadow-2xl ml-4">
+                  Greater
+                </span>
+                <span className="inline-block bg-gradient-to-r from-pink-600 via-rose-600 to-purple-800 bg-clip-text text-transparent drop-shadow-2xl ml-4">
+                  Profits
+                </span>
+              </motion.div>
+              
+              {/* Second Line with Enhanced Underline */}
+              <motion.div
                 ref={phraseRef}
-                className="relative z-10 inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black"
-                variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
+                className="relative z-10 inline-block"
+                variants={{ hidden: { y: 30, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
-                from Every Ad
-              </motion.span>
-              {/* Simple underline (animated draw from right to left) */}
-              <svg
-                key={phraseWidth}
-                width={phraseWidth}
-                height={Math.max(Math.round(phraseHeight * 0.3), 8)}
-                viewBox={`0 0 ${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.3), 8)}`}
-                className="absolute left-0 -bottom-2 overflow-visible"
-              >
-                <defs>
-                  <linearGradient id="underlineGradient" x1="0" x2="1" y1="0" y2="0">
-                    <stop offset="0%" stopColor="#a855f7" />
-                    <stop offset="50%" stopColor="#7c3aed" />
-                    <stop offset="100%" stopColor="#ec4899" />
-                  </linearGradient>
-                  <filter id="underlineShadow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feDropShadow dx="0" dy="1" stdDeviation="2" floodColor="#000000" floodOpacity="0.2"/>
-                  </filter>
-                </defs>
-                <path
-                  ref={underlinePathRef}
-                  id="underlinePath"
-                  d={`M0 ${Math.max(Math.round(phraseHeight * 0.15), 4)} L${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.15), 4)}`}
-                  fill="none"
-                  stroke="url(#underlineGradient)"
-                  strokeWidth="6"
-                  strokeLinecap="round"
-                  filter="url(#underlineShadow)"
-                />
-              </svg>
-            </span>
+                <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-2xl">
+                  from Every Ad
+                </span>
+                
+                {/* Enhanced Animated Underline */}
+                <svg
+                  key={phraseWidth}
+                  width={phraseWidth}
+                  height={Math.max(Math.round(phraseHeight * 0.4), 12)}
+                  viewBox={`0 0 ${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.4), 12)}`}
+                  className="absolute left-0 -bottom-3 overflow-visible"
+                >
+                  <defs>
+                    <linearGradient id="underlineGradient" x1="0" x2="1" y1="0" y2="0">
+                      <stop offset="0%" stopColor="#a855f7" />
+                      <stop offset="25%" stopColor="#7c3aed" />
+                      <stop offset="50%" stopColor="#ec4899" />
+                      <stop offset="75%" stopColor="#8b5cf6" />
+                      <stop offset="100%" stopColor="#a855f7" />
+                    </linearGradient>
+                    <filter id="underlineShadow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feDropShadow dx="0" dy="2" stdDeviation="4" floodColor="#000000" floodOpacity="0.3"/>
+                    </filter>
+                    <filter id="glowEffect" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                      <feMerge> 
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  <path
+                    ref={underlinePathRef}
+                    id="underlinePath"
+                    d={`M0 ${Math.max(Math.round(phraseHeight * 0.2), 6)} L${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.2), 6)}`}
+                    fill="none"
+                    stroke="url(#underlineGradient)"
+                    strokeWidth="8"
+                    strokeLinecap="round"
+                    filter="url(#underlineShadow)"
+                  />
+                  {/* Glow effect */}
+                  <path
+                    d={`M0 ${Math.max(Math.round(phraseHeight * 0.2), 6)} L${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.2), 6)}`}
+                    fill="none"
+                    stroke="url(#underlineGradient)"
+                    strokeWidth="12"
+                    strokeLinecap="round"
+                    opacity="0.3"
+                    filter="url(#glowEffect)"
+                  />
+                </svg>
+              </motion.div>
+            </div>
           </motion.h1>
           
           <motion.p 
-            className="text-lg sm:text-xl text-slate-700 max-w-3xl mx-auto mb-6 leading-relaxed"
+            className="text-xl sm:text-2xl lg:text-3xl text-slate-600 max-w-4xl mx-auto mb-8 leading-relaxed font-medium"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            We help businesses grow with data-driven digital marketing strategies that deliver real results.
+            We help businesses grow with <span className="text-purple-600 font-semibold">data-driven digital marketing strategies</span> that deliver <span className="text-purple-600 font-semibold">real results</span>.
           </motion.p>
         </motion.div>
 
