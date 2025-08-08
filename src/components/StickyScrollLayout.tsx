@@ -22,23 +22,43 @@ const StickyScrollLayout: React.FC = () => {
   useEffect(() => {
     if (!sectionsRef.current) return;
 
-    // Create smooth sticky sections
+    // Create smooth scrolling without sticky pinning
     const sections = gsap.utils.toArray('.sticky-section');
     
     sections.forEach((section, index) => {
       ScrollTrigger.create({
         trigger: section,
-        start: 'top top',
-        end: 'bottom top',
-        pin: true,
-        pinSpacing: true,
-        onUpdate: (self) => {
-          // Add subtle animation to current section
-          const progress = self.progress;
+        start: 'top 80%',
+        end: 'bottom 20%',
+        onEnter: () => {
           gsap.to(section, {
-            opacity: 0.8 + (progress * 0.2),
-            scale: 0.98 + (progress * 0.02),
-            duration: 0.3,
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: 'power2.out'
+          });
+        },
+        onLeave: () => {
+          gsap.to(section, {
+            opacity: 0.7,
+            y: 50,
+            duration: 0.6,
+            ease: 'power2.out'
+          });
+        },
+        onEnterBack: () => {
+          gsap.to(section, {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: 'power2.out'
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(section, {
+            opacity: 0.7,
+            y: 50,
+            duration: 0.6,
             ease: 'power2.out'
           });
         }
