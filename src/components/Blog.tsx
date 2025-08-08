@@ -15,6 +15,10 @@ const blogPosts = [
     color: "bg-purple-500",
     tags: ["Adswadi", "Company", "Story"],
     fullContent: `
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <img src="/blog/About_Adswadi_blog.jpeg" alt="About Adswadi - Performance Marketing Agency" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+      </div>
+      
       <h2>🧠 About Adswadi – India's Performance-Driven Meta & Google Ads Agency</h2>
       <p>Welcome to Adswadi – a modern digital advertising agency born in Ranchi, now empowering brands across India with high-performance Meta Ads, Google Ads, and ROI-first marketing strategies.</p>
 
