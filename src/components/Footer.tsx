@@ -51,15 +51,15 @@ const Footer: React.FC = () => {
       <div className="bg-gradient-to-br from-purple-700 via-fuchsia-600 to-pink-600">
         <div className="max-w-6xl mx-auto px-6 py-14">
           <div className="flex flex-col items-center text-center">
-            <motion.img
-              src="/adswadi-logo.svg"
-              alt="Logo"
-              className="h-12 w-auto mb-6"
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            />
+                         <motion.img
+               src="/logos/adswadi-logo.svg"
+               alt="Adswadi Logo"
+               className="h-12 w-auto mb-6"
+               initial={{ opacity: 0, y: 8 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.5 }}
+             />
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
                 <motion.a
