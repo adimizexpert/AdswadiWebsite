@@ -157,7 +157,13 @@ const Footer: React.FC = () => {
       <div className="bg-white border-t border-slate-200">
         <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-600 text-sm text-center md:text-left">
-            © 2025 Adswadi Private Limited | Privacy Policy
+            © 2025 Adswadi Private Limited |{' '}
+            <button 
+              onClick={() => window.location.href = '/privacy-policy'}
+              className="hover:text-purple-600 transition-colors underline"
+            >
+              Privacy Policy
+            </button>
           </p>
           <motion.button
             onClick={scrollToTop}
