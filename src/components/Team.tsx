@@ -2,6 +2,21 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle, Instagram } from 'lucide-react';
 
+const founders = [
+  {
+    name: 'Sadab Alam',
+    role: 'Founder & Performance Lead',
+    description: 'Drives the strategy behind every high-performing campaign.',
+    image: '02.png'
+  },
+  {
+    name: 'Raushan',
+    role: 'Co-Founder & AdsExpert',
+    description: 'Makes the systems behind your success run smoother than ever.',
+    image: '01.png'
+  }
+];
+
 const teamMembers = [
   {
     name: 'Md Sam',
@@ -136,6 +151,50 @@ const Team: React.FC = () => {
             Built by a team of relentless creators and marketers who believe in smart ads and scalable growth.
           </p>
         </motion.div>
+
+        {/* Founders */}
+        <div className="grid md:grid-cols-2 gap-12 mb-16">
+          {founders.map((founder, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: index === 0 ? -30 : 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="group text-center"
+            >
+              <div className="relative mb-6">
+                <img
+                  src={founder.image}
+                  alt={founder.name}
+                  className="w-40 h-40 rounded-full mx-auto object-cover shadow-xl group-hover:shadow-2xl transition-shadow duration-300 hover:scale-105 transform transition-transform"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent rounded-full"></div>
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">{founder.name}</h3>
+              <p className="text-purple-600 font-semibold mb-3">{founder.role}</p>
+              <p className="text-slate-600 max-w-sm mx-auto leading-relaxed">
+                "{founder.description}"
+              </p>
+              <div className="flex justify-center gap-4 mt-4">
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-2 rounded-full bg-slate-100 hover:bg-purple-100 transition-colors"
+                >
+                  <MessageCircle size={20} className="text-slate-600" />
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-2 rounded-full bg-slate-100 hover:bg-purple-100 transition-colors"
+                >
+                  <Instagram size={20} className="text-slate-600" />
+                </motion.button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
         {/* Team Members */}
         <motion.div
