@@ -49,6 +49,69 @@ const Hero: React.FC = () => {
     });
   }, [phraseWidth, phraseHeight]);
 
+  // Advanced text splitting animation
+  useEffect(() => {
+    const headline = document.querySelector('.hero-headline');
+    if (!headline) return;
+
+    // Split text into characters and words
+    const splitText = new SplitText(headline, { 
+      type: "chars, words",
+      charsClass: "char",
+      wordsClass: "word"
+    });
+
+    // Animate characters in
+    gsap.from(splitText.chars, {
+      opacity: 0,
+      y: 50,
+      rotationX: -90,
+      stagger: 0.02,
+      duration: 0.8,
+      ease: "back.out(1.7)",
+      delay: 0.3
+    });
+
+    // Animate words with different timing
+    gsap.from(splitText.words, {
+      opacity: 0,
+      y: 30,
+      stagger: 0.1,
+      duration: 0.6,
+      ease: "power2.out",
+      delay: 0.5
+    });
+  }, []);
+
+  // Scroll-triggered animations for partner logos
+  useEffect(() => {
+    const partnerCards = document.querySelectorAll('.partner');
+    
+    partnerCards.forEach((card, index) => {
+      gsap.fromTo(card, 
+        {
+          opacity: 0,
+          y: 50,
+          scale: 0.8
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          },
+          delay: index * 0.2
+        }
+      );
+    });
+  }, []);
+
   const animate = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -181,7 +244,7 @@ const Hero: React.FC = () => {
           className="mb-12"
         >
           <motion.h1
-            className="text-5xl sm:text-6xl lg:text-8xl xl:text-9xl font-black mb-8 leading-none"
+            className="hero-headline text-5xl sm:text-6xl lg:text-8xl xl:text-9xl font-black mb-8 leading-none"
             initial="hidden"
             animate="show"
             variants={{
