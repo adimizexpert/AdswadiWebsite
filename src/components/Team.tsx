@@ -7,13 +7,13 @@ const founders = [
     name: 'Sadab Alam',
     role: 'Founder & Performance Lead',
     description: 'Drives the strategy behind every high-performing campaign.',
-    image: '/team/sadab-alam.png'
+    image: '/team/raushan.png'
   },
   {
     name: 'Raushan',
     role: 'Co-Founder & AdsExpert',
     description: 'Makes the systems behind your success run smoother than ever.',
-    image: '/team/raushan.png'
+    image: '/team/sadab-alam.png'
   }
 ];
 

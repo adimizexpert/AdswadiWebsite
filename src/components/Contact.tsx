@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, MessageCircle, Phone, Mail, CheckCircle, ArrowRight, Clock, Users, Star } from 'lucide-react';
+import { Send, MessageCircle, Phone, Mail, CheckCircle, ArrowRight, Clock, Users, Star, ChevronDown } from 'lucide-react';
+import { Disclosure } from '@headlessui/react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -46,6 +47,25 @@ const Contact: React.FC = () => {
 
   // WhatsApp link with pre-filled message
   const whatsappLink = `https://wa.me/918678830021?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
+
+  // FAQ Data
+  const faqs = [
+    {
+      question: 'Why should I choose Adswadi over other agencies?',
+      answer:
+        'We combine senior-level strategists with hands-on execution, offering transparent pricing, weekly sprints, and measurable goals. You get a dedicated team focused on revenue impact, not vanity metrics.'
+    },
+    {
+      question: 'What sets Adswadi apart from the competition?',
+      answer:
+        'Our approach is experimentation-first and data-led. We craft full-funnel roadmaps, run rapid A/B tests, and share live dashboards. Creative, media, and analytics collaborate under one roof to ship faster.'
+    },
+    {
+      question: 'How can Adswadi guarantee accurate reporting?',
+      answer:
+        'We implement server-side tracking where feasible, follow a strict analytics QA checklist, and reconcile ad platform data with analytics and CRM events. Every report includes definitions and methodology.'
+    }
+  ];
 
   return (
     <section id="contact" className="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
@@ -376,6 +396,52 @@ const Contact: React.FC = () => {
             </motion.div>
           </motion.div>
         </div>
+
+        {/* FAQ Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mt-20"
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+              Need Help?
+            </h3>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Answers to common questions about how we work and report results.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-4">
+            {faqs.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+              >
+                <Disclosure>
+                  {({ open }) => (
+                    <div className="rounded-2xl bg-white/90 backdrop-blur border border-slate-200 shadow-sm overflow-hidden">
+                      <Disclosure.Button className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-slate-50 transition-colors">
+                        <span className="font-semibold text-slate-900">{item.question}</span>
+                        <ChevronDown
+                          className={`w-5 h-5 text-slate-500 transition-transform ${open ? 'rotate-180' : ''}`}
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="px-6 pb-5 pt-0 text-slate-700 leading-relaxed">
+                        {item.answer}
+                      </Disclosure.Panel>
+                    </div>
+                  )}
+                </Disclosure>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ import CaseStudies from './CaseStudies.tsx';
 import Team from './Team.tsx';
 import Blog from './Blog.tsx';
 import Testimonials from './Testimonials.tsx';
-import FAQ from './FAQ.tsx';
+
 import Contact from './Contact.tsx';
 
 gsap.registerPlugin(MorphSVGPlugin, ScrollTrigger, ScrollSmoother, SplitText);
@@ -123,14 +123,7 @@ const StickyScrollLayout: React.FC = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="sticky-section min-h-screen w-full bg-gradient-to-br from-pink-50 to-rose-50">
-        <div className="h-full flex items-center justify-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <FAQ />
-          </div>
-        </div>
-      </section>
+
 
       {/* Contact Section */}
       <section className="sticky-section min-h-screen w-full bg-gradient-to-br from-violet-50 to-purple-50">
