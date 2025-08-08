@@ -39,15 +39,15 @@ const Header: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center"
           >
-            <motion.img 
-              src="/adswadi-logo.svg"
-              alt="Adswadi Logo"
-              className="h-8 w-auto"
+            <motion.h1 
+              className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
               whileHover={{ 
                 scale: 1.1,
                 transition: { duration: 0.2 }
               }}
-            />
+            >
+              Adswadi
+            </motion.h1>
           </motion.div>
 
           {/* Desktop Navigation */}
