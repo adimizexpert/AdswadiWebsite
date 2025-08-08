@@ -28,16 +28,6 @@ const CaseStudies: React.FC = () => {
       color: 'from-blue-500 to-indigo-600'
     },
     {
-      title: 'Local Restaurant Chain',
-      industry: 'Food & Beverage',
-      description: 'Boosted foot traffic by 300% using location-based Facebook ads and Google My Business.',
-      before: { customers: '200/week', revenue: '₹3L/month', online: '15%' },
-      after: { customers: '600/week', revenue: '₹9L/month', online: '45%' },
-      image: '/case-studies/restaurant.avif',
-      fallbackImage: '/case-studies/restaurant.jpg',
-      color: 'from-green-500 to-teal-600'
-    },
-    {
       title: 'Real Estate Developer',
       industry: 'Real Estate',
       description: 'Sold 25 premium properties in 6 months through targeted display and video campaigns.',
