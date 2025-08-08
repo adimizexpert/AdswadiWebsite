@@ -231,7 +231,7 @@ const Hero: React.FC = () => {
           className="mb-12"
         >
           <motion.h1
-            className="hero-headline text-5xl sm:text-6xl lg:text-8xl xl:text-9xl font-black mb-8 leading-none"
+            className="hero-headline text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black mb-8 leading-tight"
             initial="hidden"
             animate="show"
             variants={{
@@ -339,10 +339,10 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.6, delay: 1.0 }}
           className="certified-section text-center"
         >
-          <h2 className="text-slate-700 mb-12 font-semibold text-xl">
+          <h2 className="text-slate-700 mb-8 font-semibold text-lg">
             Our Performance Marketing Services are Certified by
           </h2>
-          <div className="partners grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="partners flex flex-wrap justify-center items-center gap-4 max-w-4xl mx-auto">
             {[
               { 
                 name: 'Meta', 
@@ -368,10 +368,10 @@ const Hero: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-                whileHover={{ scale: 1.02, y: -2 }}
-                className="partner flex flex-col items-center gap-4 p-6 rounded-2xl bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                className="partner flex items-center gap-3 p-4 rounded-xl bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="w-20 h-20 rounded-xl bg-white flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden p-3">
+                <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden p-2">
                   <img 
                     src={partner.image} 
                     alt={partner.alt}
@@ -379,11 +379,11 @@ const Hero: React.FC = () => {
                     loading="lazy"
                   />
                 </div>
-                <div className="text-center">
-                  <h3 className="font-bold text-slate-900 text-lg mb-1">
+                <div className="text-left">
+                  <h3 className="font-bold text-slate-900 text-sm">
                     {partner.name}
                   </h3>
-                  <p className="text-sm text-slate-600 font-medium">
+                  <p className="text-xs text-slate-600 font-medium">
                     {partner.subText}
                   </p>
                 </div>
