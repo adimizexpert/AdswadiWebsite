@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<!-- Homepage -->
+<url>
+  <loc>https://adswadi.com/</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+</url>
+
+<!-- Services Section -->
+<url>
+  <loc>https://adswadi.com/#services</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<!-- About Section -->
+<url>
+  <loc>https://adswadi.com/#about</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<!-- Case Studies Section -->
+<url>
+  <loc>https://adswadi.com/#case-studies</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<!-- Team Section -->
+<url>
+  <loc>https://adswadi.com/#team</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<!-- Blog Section -->
+<url>
+  <loc>https://adswadi.com/#blog</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<!-- Contact Section -->
+<url>
+  <loc>https://adswadi.com/#contact</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<!-- FAQ Section -->
+<url>
+  <loc>https://adswadi.com/#faq</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
+<!-- Privacy Policy -->
+<url>
+  <loc>https://adswadi.com/privacy-policy</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
+</url>
+
+<!-- Digital Marketing Services -->
+<url>
+  <loc>https://adswadi.com/services/digital-marketing</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<!-- Facebook Ads Services -->
+<url>
+  <loc>https://adswadi.com/services/facebook-ads</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<!-- Google Ads Services -->
+<url>
+  <loc>https://adswadi.com/services/google-ads</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<!-- SEO Services -->
+<url>
+  <loc>https://adswadi.com/services/seo</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<!-- Social Media Marketing -->
+<url>
+  <loc>https://adswadi.com/services/social-media-marketing</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<!-- PPC Campaigns -->
+<url>
+  <loc>https://adswadi.com/services/ppc-campaigns</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<!-- Performance Marketing -->
+<url>
+  <loc>https://adswadi.com/services/performance-marketing</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<!-- India Market -->
+<url>
+  <loc>https://adswadi.com/markets/india</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<!-- UAE Market -->
+<url>
+  <loc>https://adswadi.com/markets/uae</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+</urlset>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, TrendingUp, Users, DollarSign, Target } from 'lucide-react';
-import AvifImage from './AvifImage';
+import AvifImage from './AvifImage.tsx';
 
 const CaseStudies: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
