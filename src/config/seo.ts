@@ -43,18 +43,18 @@ export const KEYWORDS = {
     'marketing agency India'
   ],
   
-  // Local Targeting - UAE
-  uae: [
-    'digital marketing Dubai',
-    'Facebook ads UAE',
-    'Google ads Abu Dhabi',
-    'performance marketing Sharjah',
-    'social media marketing UAE',
-    'PPC agency Dubai',
-    'SEO services UAE',
-    'digital marketing agency UAE',
-    'online advertising Dubai',
-    'marketing agency UAE'
+  // Local Targeting - Major Indian Cities
+  majorCities: [
+    'digital marketing Mumbai',
+    'Facebook ads Delhi',
+    'Google ads Bangalore',
+    'performance marketing Chennai',
+    'social media marketing Hyderabad',
+    'PPC agency Pune',
+    'SEO services Kolkata',
+    'digital marketing agency Ahmedabad',
+    'online advertising Jaipur',
+    'marketing agency Surat'
   ],
   
   // Industry Specific
@@ -122,7 +122,7 @@ export const getAllKeywords = (): string[] => {
 // Base SEO configuration
 export const BASE_SEO: SEOConfig = {
   title: 'Adswadi - Performance Marketing Agency | Facebook Ads, Google Ads, Digital Marketing',
-  description: 'Transform your business with smart ads. Expert digital marketing services including Facebook Ads, Google Ads, Instagram Ads, and performance marketing strategies. Serving India and UAE markets.',
+  description: 'Transform your business with smart ads. Expert digital marketing services including Facebook Ads, Google Ads, Instagram Ads, and performance marketing strategies. Serving India markets with proven results.',
   keywords: getAllKeywords(),
   ogType: 'website',
   canonicalUrl: 'https://adswadi.com',
@@ -146,8 +146,8 @@ export const BASE_SEO: SEOConfig = {
       "@type": "ContactPoint",
       "telephone": "+91-8678830021",
       "contactType": "customer service",
-      "areaServed": ["India", "UAE"],
-      "availableLanguage": ["English", "Hindi", "Arabic"]
+      "areaServed": ["India"],
+      "availableLanguage": ["English", "Hindi"]
     },
     "sameAs": [
       "https://www.facebook.com/adswadi",
@@ -162,7 +162,7 @@ export const PAGE_SEO: PageSEOConfig = {
   home: {
     ...BASE_SEO,
     title: 'Adswadi - Performance Marketing Agency | Facebook Ads, Google Ads, Digital Marketing',
-    description: 'Transform your business with smart ads. Expert digital marketing services including Facebook Ads, Google Ads, Instagram Ads, and performance marketing strategies. Serving India and UAE markets.',
+    description: 'Transform your business with smart ads. Expert digital marketing services including Facebook Ads, Google Ads, Instagram Ads, and performance marketing strategies. Serving India markets.',
     canonicalUrl: 'https://adswadi.com',
     structuredData: {
       ...BASE_SEO.structuredData,
@@ -173,7 +173,7 @@ export const PAGE_SEO: PageSEOConfig = {
   services: {
     ...BASE_SEO,
     title: 'Digital Marketing Services | Facebook Ads, Google Ads, SEO | Adswadi',
-    description: 'Comprehensive digital marketing services including Facebook Ads, Google Ads, Instagram Ads, SEO, PPC, and performance marketing. Expert strategies for India and UAE markets.',
+    description: 'Comprehensive digital marketing services including Facebook Ads, Google Ads, Instagram Ads, SEO, PPC, and performance marketing. Expert strategies for India markets.',
     canonicalUrl: 'https://adswadi.com/services',
     ogType: 'service',
     structuredData: {
@@ -185,7 +185,7 @@ export const PAGE_SEO: PageSEOConfig = {
         "name": "Adswadi"
       },
       "description": "Comprehensive digital marketing services including Facebook Ads, Google Ads, Instagram Ads, SEO, PPC, and performance marketing.",
-      "areaServed": ["India", "UAE"],
+      "areaServed": ["India"],
       "serviceType": "Digital Marketing"
     }
   },
@@ -193,7 +193,7 @@ export const PAGE_SEO: PageSEOConfig = {
   about: {
     ...BASE_SEO,
     title: 'About Adswadi | Performance Marketing Agency | Digital Marketing Experts',
-    description: 'Learn about Adswadi, a leading performance marketing agency specializing in Facebook Ads, Google Ads, and digital marketing strategies. Serving India and UAE markets.',
+    description: 'Learn about Adswadi, a leading performance marketing agency specializing in Facebook Ads, Google Ads, and digital marketing strategies. Serving India markets.',
     canonicalUrl: 'https://adswadi.com/about',
     structuredData: {
       "@context": "https://schema.org",

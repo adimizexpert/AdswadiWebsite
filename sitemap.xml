@@ -133,17 +133,57 @@
   <priority>0.8</priority>
 </url>
 
-<!-- India Market -->
+<!-- Mumbai Market -->
 <url>
-  <loc>https://adswadi.com/markets/india</loc>
+  <loc>https://adswadi.com/markets/mumbai</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<!-- Delhi Market -->
+<url>
+  <loc>https://adswadi.com/markets/delhi</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<!-- Bangalore Market -->
+<url>
+  <loc>https://adswadi.com/markets/bangalore</loc>
   <lastmod>2025-01-27T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>
 </url>
 
-<!-- UAE Market -->
+<!-- Chennai Market -->
 <url>
-  <loc>https://adswadi.com/markets/uae</loc>
+  <loc>https://adswadi.com/markets/chennai</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<!-- Hyderabad Market -->
+<url>
+  <loc>https://adswadi.com/markets/hyderabad</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<!-- Pune Market -->
+<url>
+  <loc>https://adswadi.com/markets/pune</loc>
+  <lastmod>2025-01-27T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<!-- Kolkata Market -->
+<url>
+  <loc>https://adswadi.com/markets/kolkata</loc>
   <lastmod>2025-01-27T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>

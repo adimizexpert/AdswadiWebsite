@@ -11,9 +11,9 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'Adswadi - Performance Marketing Agency | Facebook Ads, Google Ads, Digital Marketing | India & UAE',
-  description = 'Transform your business with smart ads. Expert digital marketing services including Facebook Ads, Google Ads, Instagram Ads, and performance marketing strategies. Serving India and UAE markets with proven results.',
-  keywords = 'digital marketing, facebook ads, google ads, instagram ads, performance marketing, advertising agency, social media marketing, PPC campaigns, ROI optimization, conversion optimization, India, UAE, Mumbai, Dubai, digital marketing agency, SEO services, PPC management, social media agency',
+  title = 'Adswadi - Performance Marketing Agency | Facebook Ads, Google Ads, Digital Marketing | India',
+  description = 'Transform your business with smart ads. Expert digital marketing services including Facebook Ads, Google Ads, Instagram Ads, and performance marketing strategies. Serving India markets with proven results.',
+  keywords = 'digital marketing, facebook ads, google ads, instagram ads, performance marketing, advertising agency, social media marketing, PPC campaigns, ROI optimization, conversion optimization, India, Mumbai, Delhi, Bangalore, Chennai, Hyderabad, Pune, Kolkata, digital marketing agency, SEO services, PPC management, social media agency',
   pageType = 'home',
   customImage = 'https://adswadi.com/og-image.jpg',
   customUrl = 'https://adswadi.com'
@@ -29,7 +29,7 @@ const SEO: React.FC<SEOProps> = ({
     "name": "Adswadi",
     "url": "https://adswadi.com",
     "logo": "https://adswadi.com/logo.png",
-    "description": "Performance marketing agency specializing in Facebook Ads, Google Ads, and digital marketing strategies. Serving India and UAE markets with proven results.",
+    "description": "Performance marketing agency specializing in Facebook Ads, Google Ads, and digital marketing strategies. Serving India markets with proven results.",
     "foundingDate": "2020",
     "address": {
       "@type": "PostalAddress",
@@ -42,8 +42,8 @@ const SEO: React.FC<SEOProps> = ({
       "@type": "ContactPoint",
       "telephone": "+91-8678830021",
       "contactType": "customer service",
-      "areaServed": ["India", "UAE"],
-      "availableLanguage": ["English", "Hindi", "Arabic"],
+      "areaServed": ["India"],
+      "availableLanguage": ["English", "Hindi"],
       "hoursAvailable": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -72,7 +72,7 @@ const SEO: React.FC<SEOProps> = ({
         "name": "Adswadi"
       },
       "description": "Comprehensive digital marketing services including Facebook Ads, Google Ads, Instagram Ads, SEO, PPC, and performance marketing.",
-      "areaServed": ["India", "UAE"],
+      "areaServed": ["India"],
       "serviceType": "Digital Marketing"
     };
   } else if (pageType === 'about') {
@@ -119,7 +119,6 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:site_name" content="Adswadi" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:locale:alternate" content="hi_IN" />
-      <meta property="og:locale:alternate" content="ar_AE" />
       
       {/* Twitter Card Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />

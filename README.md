@@ -1,11 +1,11 @@
 # 🚀 Adswadi - Performance Marketing Agency Website
 
-A comprehensive React + TypeScript website for Adswadi, a performance marketing agency specializing in Facebook Ads, Google Ads, and digital marketing strategies across India and UAE markets.
+A comprehensive React + TypeScript website for Adswadi, a performance marketing agency specializing in Facebook Ads, Google Ads, and digital marketing strategies across India markets.
 
 ## ✨ What's New - Major SEO & Analytics Update
 
 ### 🎯 Enterprise-Level SEO Implementation
-- **100+ Keywords**: Comprehensive keyword strategy targeting India and UAE markets
+- **100+ Keywords**: Comprehensive keyword strategy targeting India markets
 - **Dynamic SEO Component**: React component for managing meta tags across all pages
 - **Structured Data**: Rich snippets and schema markup for better search visibility
 - **PWA Support**: Progressive Web App capabilities with manifest integration
@@ -18,9 +18,9 @@ A comprehensive React + TypeScript website for Adswadi, a performance marketing 
 
 ### 🌍 Market Focus Updates
 - **India Market**: Primary focus with Mumbai-based operations
-- **UAE Market**: Secondary market with Dubai and regional targeting
-- **Local SEO**: Geographic optimization for both markets
-- **Multi-language**: Support for English, Hindi, and Arabic
+- **Major Cities**: Mumbai, Delhi, Bangalore, Chennai, Hyderabad, Pune, Kolkata
+- **Local SEO**: Geographic optimization for Indian markets
+- **Multi-language**: Support for English and Hindi
 
 ## 🚀 Features
 
@@ -137,7 +137,7 @@ src/
 - ✅ **LocalBusiness** schema for India operations
 - ✅ **Organization** schema for company information
 - ✅ **Contact information** with phone and address
-- ✅ **Service areas** (India and UAE markets)
+- ✅ **Service areas** (India markets)
 - ✅ **Geographic targeting** for local search
 
 ### Performance SEO
@@ -159,9 +159,10 @@ src/
 - Google ads agency Delhi, performance marketing Bangalore
 - social media marketing Chennai, PPC agency Hyderabad
 
-### Local Targeting - UAE (10 keywords)
-- digital marketing Dubai, Facebook ads UAE, Google ads Abu Dhabi
-- performance marketing Sharjah, social media marketing UAE
+### Local Targeting - Major Indian Cities (10 keywords)
+- digital marketing Mumbai, Facebook ads Delhi, Google ads Bangalore
+- performance marketing Chennai, social media marketing Hyderabad
+- PPC agency Pune, SEO services Kolkata
 
 ### Industry Specific (10 keywords)
 - B2B marketing, e-commerce marketing, startup marketing
@@ -205,11 +206,14 @@ src/
 - **Languages**: English, Hindi
 - **Target Cities**: Mumbai, Delhi, Bangalore, Chennai, Hyderabad, Kolkata, Pune
 
-### UAE Market (Secondary)
-- **Location**: Dubai, UAE
-- **Services**: Digital marketing and advertising
-- **Languages**: English, Arabic
-- **Target Cities**: Dubai, Abu Dhabi, Sharjah, Ajman
+### Major Cities Coverage
+- **Mumbai**: Primary operations and headquarters
+- **Delhi**: NCR region and northern India
+- **Bangalore**: Tech hub and startup ecosystem
+- **Chennai**: Southern India market
+- **Hyderabad**: Emerging tech market
+- **Pune**: Educational and industrial hub
+- **Kolkata**: Eastern India market
 
 ## 🚀 Deployment
 
@@ -226,13 +230,13 @@ src/
 ## 📝 Content Guidelines
 
 ### Page Titles
-- **Homepage**: "Adswadi - Performance Marketing Agency | Facebook Ads, Google Ads, Digital Marketing | India & UAE"
+- **Homepage**: "Adswadi - Performance Marketing Agency | Facebook Ads, Google Ads, Digital Marketing | India"
 - **Services**: "Digital Marketing Services | Facebook Ads, Google Ads, SEO | Adswadi"
 - **Contact**: "Contact Adswadi | Digital Marketing Agency | Get Free Consultation"
 
 ### Meta Descriptions
 - Include primary keywords and target markets
-- Mention India and UAE markets
+- Mention India markets
 - Keep under 160 characters
 - Include call-to-action
 
@@ -265,7 +269,7 @@ src/
 - [x] LocalBusiness schema added
 - [x] Organization schema implemented
 - [x] Contact information complete
-- [x] Service areas specified (India & UAE)
+- [x] Service areas specified (India markets)
 - [x] Geographic targeting configured
 
 ## 📚 Documentation
@@ -287,7 +291,7 @@ For questions or support:
 - **Email**: adswadiofficial@gmail.com
 - **Phone**: +91-8678830021
 - **WhatsApp**: [Click to chat](https://wa.me/918678830021)
-- **Location**: Mumbai, India (Serving India & UAE)
+- **Location**: Mumbai, India (Serving India markets)
 
 ## 🎉 What You Now Have
 

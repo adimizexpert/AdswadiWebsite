@@ -23,7 +23,7 @@ This document outlines the comprehensive SEO implementation for the Adswadi webs
 - ✅ Centralized SEO settings for easy management
 - ✅ Page-specific configurations for each section
 - ✅ Comprehensive keyword strategy (100+ keywords)
-- ✅ Local SEO targeting for India and UAE markets
+- ✅ Local SEO targeting for India markets
 
 ## 🎯 Keyword Strategy
 
@@ -51,17 +51,17 @@ This document outlines the comprehensive SEO implementation for the Adswadi webs
 - online advertising India
 - marketing agency India
 
-### Local Targeting - UAE (10 keywords)
-- digital marketing Dubai
-- Facebook ads UAE
-- Google ads Abu Dhabi
-- performance marketing Sharjah
-- social media marketing UAE
-- PPC agency Dubai
-- SEO services UAE
-- digital marketing agency UAE
-- online advertising Dubai
-- marketing agency UAE
+### Local Targeting - Major Indian Cities (10 keywords)
+- digital marketing Mumbai
+- Facebook ads Delhi
+- Google ads Bangalore
+- performance marketing Chennai
+- social media marketing Hyderabad
+- PPC agency Pune
+- SEO services Kolkata
+- digital marketing agency Ahmedabad
+- online advertising Jaipur
+- marketing agency Surat
 
 ### Industry Specific (10 keywords)
 - B2B marketing
@@ -205,11 +205,14 @@ import SEO from './components/SEO';
 - Local address information
 - Hindi language support
 
-### UAE Market Reach
-- Dubai market targeting
-- Arabic language support
-- UAE-specific keywords
-- Regional business focus
+### Major Cities Coverage
+- **Mumbai**: Primary operations and headquarters
+- **Delhi**: NCR region and northern India
+- **Bangalore**: Tech hub and startup ecosystem
+- **Chennai**: Southern India market
+- **Hyderabad**: Emerging tech market
+- **Pune**: Educational and industrial hub
+- **Kolkata**: Eastern India market
 
 ## 📁 Technical SEO Files
 

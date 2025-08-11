@@ -162,11 +162,14 @@ useEffect(() => {
 - **Local Content**: Mumbai and major city targeting
 - **Language Support**: Hindi language considerations
 
-### UAE Market Optimization
-- **Middle East CDN**: Fast loading in UAE
-- **Arabic Support**: RTL language considerations
-- **Local Keywords**: Dubai and UAE-specific terms
-- **Cultural Adaptation**: Regional business practices
+### Major Cities Coverage
+- **Mumbai**: Primary operations and headquarters
+- **Delhi**: NCR region and northern India
+- **Bangalore**: Tech hub and startup ecosystem
+- **Chennai**: Southern India market
+- **Hyderabad**: Emerging tech market
+- **Pune**: Educational and industrial hub
+- **Kolkata**: Eastern India market
 
 ## 📈 Analytics Dashboard
 
