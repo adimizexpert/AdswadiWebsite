@@ -1,16 +1,22 @@
 import React, { useEffect, useRef, useCallback, useLayoutEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { gsap } from "gsap";
-import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-import { EasePack } from "gsap/EasePack";
-import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-// ScrollSmoother requires ScrollTrigger
-import { ScrollSmoother } from "gsap/ScrollSmoother";
-import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(DrawSVGPlugin, EasePack, MorphSVGPlugin, ScrollTrigger, ScrollSmoother, SplitText);
+// Fallback animation system that doesn't rely on GSAP plugins
+const useFallbackAnimation = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Simple timeout-based animation trigger
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return isLoaded;
+};
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -19,6 +25,7 @@ const Hero: React.FC = () => {
   const [phraseWidth, setPhraseWidth] = useState<number>(0);
   const [phraseHeight, setPhraseHeight] = useState<number>(0);
   const [dash, setDash] = useState<number>(0);
+  const isLoaded = useFallbackAnimation();
 
   // Measure the "For More Profit" phrase to size the underline
   useLayoutEffect(() => {
@@ -38,15 +45,15 @@ const Hero: React.FC = () => {
     if (!underlinePathRef.current || !phraseWidth) return;
     
     // Reset the path
-    gsap.set(underlinePathRef.current, { drawSVG: "100% 100%" });
+    // gsap.set(underlinePathRef.current, { drawSVG: "100% 100%" }); // This line is removed as per the new_code
     
     // Animate the path drawing from right to left
-    gsap.to(underlinePathRef.current, {
-      drawSVG: "0% 100%",
-      duration: 1.5,
-      ease: "power2.out",
-      delay: 0.6
-    });
+    // gsap.to(underlinePathRef.current, { // This line is removed as per the new_code
+    //   drawSVG: "0% 100%",
+    //   duration: 1.5,
+    //   ease: "power2.out",
+    //   delay: 0.6
+    // });
   }, [phraseWidth, phraseHeight]);
 
   // Advanced text splitting animation - disabled for now to fix visibility
@@ -55,48 +62,51 @@ const Hero: React.FC = () => {
     if (!headline) return;
 
     // Ensure text is visible first
-    gsap.set(headline, { opacity: 1 });
+    // gsap.set(headline, { opacity: 1 }); // This line is removed as per the new_code
     
     // Simple fade-in animation instead of complex splitting
-    gsap.fromTo(headline, 
-      { opacity: 0, y: 30 },
-      { 
-        opacity: 1, 
-        y: 0, 
-        duration: 0.8, 
-        ease: "power2.out",
-        delay: 0.3
-      }
-    );
+    // gsap.fromTo(headline,  // This line is removed as per the new_code
+    //   { opacity: 0, y: 30 },
+    //   { 
+    //     opacity: 1, 
+    //     y: 0, 
+    //     duration: 0.8, 
+    //     ease: "power2.out",
+    //     delay: 0.3
+    //   }
+    // );
   }, []);
 
-  // Scroll-triggered animations for partner logos
+  // Simple CSS-based animations instead of GSAP
+  useEffect(() => {
+    const headline = document.querySelector('.hero-headline');
+    if (!headline) return;
+
+    // Add CSS classes for animation
+    headline.classList.add('animate-fade-in');
+  }, []);
+
+  // Simple scroll-triggered animations using Intersection Observer
   useEffect(() => {
     const partnerCards = document.querySelectorAll('.partner');
     
-    partnerCards.forEach((card, index) => {
-      gsap.fromTo(card, 
-        {
-          opacity: 0,
-          y: 50,
-          scale: 0.8
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          ease: "back.out(1.7)",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse"
-          },
-          delay: index * 0.2
-        }
-      );
+         const observer = new IntersectionObserver((entries) => {
+       entries.forEach((entry, index) => {
+         if (entry.isIntersecting) {
+           entry.target.classList.add('animate-slide-up');
+           (entry.target as HTMLElement).style.animationDelay = `${index * 0.2}s`;
+         }
+       });
+     }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -20% 0px'
     });
+
+    partnerCards.forEach(card => {
+      observer.observe(card);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const animate = useCallback(() => {
@@ -262,10 +272,10 @@ const Hero: React.FC = () => {
               
               {/* Second Line with Enhanced Underline */}
               <motion.div
-                ref={phraseRef}
                 className="relative z-10 inline-block"
                 variants={{ hidden: { y: 30, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
+                <span ref={phraseRef}>
                 <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-2xl">
                   from Every Ad
                 </span>
@@ -275,7 +285,7 @@ const Hero: React.FC = () => {
                   key={phraseWidth}
                   width={phraseWidth}
                   height={Math.max(Math.round(phraseHeight * 0.4), 12)}
-                  viewBox={`0 0 ${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.4), 12)}`}
+                  viewBox={`0 0 ${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.2), 6)}`}
                   className="absolute left-0 -bottom-3 overflow-visible"
                 >
                   <defs>
@@ -318,6 +328,7 @@ const Hero: React.FC = () => {
                     filter="url(#glowEffect)"
                   />
                 </svg>
+                </span>
               </motion.div>
             </div>
           </motion.h1>

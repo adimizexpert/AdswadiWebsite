@@ -1,10 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// ScrollSmoother requires ScrollTrigger
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
-import { SplitText } from 'gsap/SplitText';
 import Hero from './Hero.tsx';
 import Services from './Services.tsx';
 import CaseStudies from './CaseStudies.tsx';
@@ -14,7 +10,8 @@ import Testimonials from './Testimonials.tsx';
 
 import Contact from './Contact.tsx';
 
-gsap.registerPlugin(MorphSVGPlugin, ScrollTrigger, ScrollSmoother, SplitText);
+// Only register ScrollTrigger as it's included in the main GSAP package
+gsap.registerPlugin(ScrollTrigger);
 
 const StickyScrollLayout: React.FC = () => {
   const sectionsRef = useRef<HTMLDivElement>(null);
