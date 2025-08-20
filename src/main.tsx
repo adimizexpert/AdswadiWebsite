@@ -1,12 +1,17 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SEO from './components/SEO.tsx';
+import PerformanceOptimizer from './components/PerformanceOptimizer.tsx';
 import Header from './components/Header.tsx';
-import Hero from './components/Hero.tsx';
+import StickyScrollLayout from './components/StickyScrollLayout.tsx';
+import Footer from './components/Footer.tsx';
+import PrivacyPolicy from './components/PrivacyPolicy.tsx';
 import './index.css';
 
-console.log('🚀 Starting Adswadi website with React + Header + Hero...');
+console.log('🚀 Starting Adswadi website with complete app structure...');
 
-// Test if React can initialize with Header + Hero components
+// Test if React can initialize with complete app structure
 function renderReactApp() {
   const rootElement = document.getElementById('root');
   if (!rootElement) {
@@ -21,64 +26,40 @@ function renderReactApp() {
     
     root.render(
       <StrictMode>
-        <div style={{
-          minHeight: '100vh',
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          fontFamily: 'Arial, sans-serif',
-          color: 'white'
-        }}>
-          {/* Test Header Component */}
-          <Header />
-          
-          {/* Test Hero Component */}
-          <div style={{ padding: '20px' }}>
-            <Hero />
+        <Router>
+          <div className="App">
+            {/* Global SEO Component */}
+            <SEO pageType="home" />
+            
+            {/* Performance Optimizer Wrapper */}
+            <PerformanceOptimizer
+              preloadImages={[
+                '/logos/logo.png',
+                '/og-image.jpg',
+                '/twitter-image.jpg'
+              ]}
+              preloadFonts={['Inter']}
+              lazyLoadImages={true}
+              enableIntersectionObserver={true}
+            >
+              <Header />
+              <main>
+                <Routes>
+                  <Route path="/" element={<StickyScrollLayout />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                </Routes>
+              </main>
+              <Footer />
+            </PerformanceOptimizer>
           </div>
-          
-          {/* Test Message */}
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center',
-            padding: '20px',
-            background: 'rgba(255,255,255,0.1)',
-            borderRadius: '15px',
-            margin: '20px'
-          }}>
-            <div>
-              <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>
-                Hero Component Test! 🚀
-              </h2>
-              <p style={{ fontSize: '1.2rem', marginBottom: '2rem', opacity: 0.9 }}>
-                If you can see this message, both Header and Hero components are working.
-              </p>
-              <button 
-                onClick={() => alert('🎯 Both Header and Hero components are working!')}
-                style={{
-                  background: '#8b5cf6',
-                  color: 'white',
-                  border: 'none',
-                  padding: '15px 30px',
-                  fontSize: '1.1rem',
-                  borderRadius: '8px',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
-                }}
-              >
-                Both Components Test Button
-              </button>
-            </div>
-          </div>
-        </div>
+        </Router>
       </StrictMode>
     );
     
-    console.log('🎉 React app with Header + Hero rendered successfully!');
+    console.log('🎉 Complete app structure rendered successfully!');
     return true;
   } catch (error) {
-    console.error('❌ Failed to render React app with Header + Hero:', error);
+    console.error('❌ Failed to render complete app structure:', error);
     return false;
   }
 }
@@ -111,13 +92,13 @@ if (!renderReactApp()) {
           </p>
           <div style="background: rgba(255,255,255,0.2); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
             <h2 style="font-size: 2rem; margin-bottom: 1rem;">
-              Hero Component Failed 🚨
+              Complete App Structure Failed 🚨
             </h2>
             <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
-              The Hero component caused an error, but the website is still functional.
+              One of the complex components caused an error, but the website is still functional.
             </p>
             <button 
-              onclick="alert('🚨 Hero component failed to load.')"
+              onclick="alert('🚨 Complete app structure failed to load.')"
               style="
                 background: #ef4444;
                 color: white;
@@ -130,7 +111,7 @@ if (!renderReactApp()) {
                 box-shadow: 0 4px 15px rgba(0,0,0,0.2);
               "
             >
-              Hero Failed Button
+              App Structure Failed Button
             </button>
           </div>
           <div style="margin-top: 2rem; opacity: 0.7;">
