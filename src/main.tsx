@@ -1,5 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SEO from './components/SEO.tsx';
 import PerformanceOptimizer from './components/PerformanceOptimizer.tsx';
@@ -26,33 +27,35 @@ function renderReactApp() {
     
     root.render(
       <StrictMode>
-        <Router>
-          <div className="App">
-            {/* Global SEO Component */}
-            <SEO pageType="home" />
-            
-            {/* Performance Optimizer Wrapper */}
-            <PerformanceOptimizer
-              preloadImages={[
-                '/logos/logo.png',
-                '/og-image.jpg',
-                '/twitter-image.jpg'
-              ]}
-              preloadFonts={['Inter']}
-              lazyLoadImages={true}
-              enableIntersectionObserver={true}
-            >
-              <Header />
-              <main>
-                <Routes>
-                  <Route path="/" element={<StickyScrollLayout />} />
-                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                </Routes>
-              </main>
-              <Footer />
-            </PerformanceOptimizer>
-          </div>
-        </Router>
+        <HelmetProvider>
+          <Router>
+            <div className="App">
+              {/* Global SEO Component */}
+              <SEO pageType="home" />
+              
+              {/* Performance Optimizer Wrapper */}
+              <PerformanceOptimizer
+                preloadImages={[
+                  '/logos/logo.png',
+                  '/og-image.jpg',
+                  '/twitter-image.jpg'
+                ]}
+                preloadFonts={['Inter']}
+                lazyLoadImages={true}
+                enableIntersectionObserver={true}
+              >
+                <Header />
+                <main>
+                  <Routes>
+                    <Route path="/" element={<StickyScrollLayout />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  </Routes>
+                </main>
+                <Footer />
+              </PerformanceOptimizer>
+            </div>
+          </Router>
+        </HelmetProvider>
       </StrictMode>
     );
     
