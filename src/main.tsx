@@ -1,10 +1,11 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import Header from './components/Header.tsx';
 import './index.css';
 
-console.log('🚀 Starting Adswadi website with React...');
+console.log('🚀 Starting Adswadi website with React + Header...');
 
-// Test if React can initialize
+// Test if React can initialize with Header component
 function renderReactApp() {
   const rootElement = document.getElementById('root');
   if (!rootElement) {
@@ -22,58 +23,66 @@ function renderReactApp() {
         <div style={{
           minHeight: '100vh',
           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
           fontFamily: 'Arial, sans-serif',
-          color: 'white',
-          textAlign: 'center',
-          padding: '20px'
+          color: 'white'
         }}>
-          <div>
-            <h1 style={{ fontSize: '3rem', marginBottom: '1rem', textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>
-              🎉 Adswadi
-            </h1>
-            <p style={{ fontSize: '1.5rem', marginBottom: '2rem', opacity: 0.9 }}>
-              Performance Marketing Agency
-            </p>
-            <div style={{ background: 'rgba(255,255,255,0.2)', padding: '2rem', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
-              <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>
-                React is Working! 🚀
-              </h2>
-              <p style={{ fontSize: '1.2rem', marginBottom: '2rem', opacity: 0.9 }}>
-                If you can see this message, React is rendering successfully.
+          {/* Test Header Component */}
+          <Header />
+          
+          {/* Main Content */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            padding: '20px',
+            minHeight: 'calc(100vh - 80px)' // Account for header
+          }}>
+            <div>
+              <h1 style={{ fontSize: '3rem', marginBottom: '1rem', textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>
+                🎉 Adswadi
+              </h1>
+              <p style={{ fontSize: '1.5rem', marginBottom: '2rem', opacity: 0.9 }}>
+                Performance Marketing Agency
               </p>
-              <button 
-                onClick={() => alert('🎯 React is working! This is a React component.')}
-                style={{
-                  background: '#3b82f6',
-                  color: 'white',
-                  border: 'none',
-                  padding: '15px 30px',
-                  fontSize: '1.1rem',
-                  borderRadius: '8px',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
-                }}
-              >
-                React Test Button
-              </button>
-            </div>
-            <div style={{ marginTop: '2rem', opacity: 0.7 }}>
-              <p>📍 Mumbai, India | 📞 +91-8678830021</p>
-              <p>Facebook Ads • Google Ads • Digital Marketing</p>
+              <div style={{ background: 'rgba(255,255,255,0.2)', padding: '2rem', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
+                <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>
+                  Header Component Test! 🚀
+                </h2>
+                <p style={{ fontSize: '1.2rem', marginBottom: '2rem', opacity: 0.9 }}>
+                  If you can see this message, the Header component is working.
+                </p>
+                <button 
+                  onClick={() => alert('🎯 Header component is working!')}
+                  style={{
+                    background: '#10b981',
+                    color: 'white',
+                    border: 'none',
+                    padding: '15px 30px',
+                    fontSize: '1.1rem',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+                  }}
+                >
+                  Header Test Button
+                </button>
+              </div>
+              <div style={{ marginTop: '2rem', opacity: 0.7 }}>
+                <p>📍 Mumbai, India | 📞 +91-8678830021</p>
+                <p>Facebook Ads • Google Ads • Digital Marketing</p>
+              </div>
             </div>
           </div>
         </div>
       </StrictMode>
     );
     
-    console.log('🎉 React app rendered successfully!');
+    console.log('🎉 React app with Header rendered successfully!');
     return true;
   } catch (error) {
-    console.error('❌ Failed to render React app:', error);
+    console.error('❌ Failed to render React app with Header:', error);
     return false;
   }
 }
@@ -106,13 +115,13 @@ if (!renderReactApp()) {
           </p>
           <div style="background: rgba(255,255,255,0.2); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
             <h2 style="font-size: 2rem; margin-bottom: 1rem;">
-              Fallback Mode 🔄
+              Header Component Failed 🚨
             </h2>
             <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
-              React failed to load, but the website is still functional.
+              The Header component caused an error, but the website is still functional.
             </p>
             <button 
-              onclick="alert('🔄 This is the fallback version.')"
+              onclick="alert('🚨 Header component failed to load.')"
               style="
                 background: #ef4444;
                 color: white;
@@ -125,7 +134,7 @@ if (!renderReactApp()) {
                 box-shadow: 0 4px 15px rgba(0,0,0,0.2);
               "
             >
-              Fallback Button
+              Header Failed Button
             </button>
           </div>
           <div style="margin-top: 2rem; opacity: 0.7;">
