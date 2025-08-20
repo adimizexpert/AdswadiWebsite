@@ -1,11 +1,12 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import Header from './components/Header.tsx';
+import Hero from './components/Hero.tsx';
 import './index.css';
 
-console.log('🚀 Starting Adswadi website with React + Header...');
+console.log('🚀 Starting Adswadi website with React + Header + Hero...');
 
-// Test if React can initialize with Header component
+// Test if React can initialize with Header + Hero components
 function renderReactApp() {
   const rootElement = document.getElementById('root');
   if (!rootElement) {
@@ -29,60 +30,55 @@ function renderReactApp() {
           {/* Test Header Component */}
           <Header />
           
-          {/* Main Content */}
+          {/* Test Hero Component */}
+          <div style={{ padding: '20px' }}>
+            <Hero />
+          </div>
+          
+          {/* Test Message */}
           <div style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             textAlign: 'center',
             padding: '20px',
-            minHeight: 'calc(100vh - 80px)' // Account for header
+            background: 'rgba(255,255,255,0.1)',
+            borderRadius: '15px',
+            margin: '20px'
           }}>
             <div>
-              <h1 style={{ fontSize: '3rem', marginBottom: '1rem', textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>
-                🎉 Adswadi
-              </h1>
-              <p style={{ fontSize: '1.5rem', marginBottom: '2rem', opacity: 0.9 }}>
-                Performance Marketing Agency
+              <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>
+                Hero Component Test! 🚀
+              </h2>
+              <p style={{ fontSize: '1.2rem', marginBottom: '2rem', opacity: 0.9 }}>
+                If you can see this message, both Header and Hero components are working.
               </p>
-              <div style={{ background: 'rgba(255,255,255,0.2)', padding: '2rem', borderRadius: '15px', backdropFilter: 'blur(10px)' }}>
-                <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>
-                  Header Component Test! 🚀
-                </h2>
-                <p style={{ fontSize: '1.2rem', marginBottom: '2rem', opacity: 0.9 }}>
-                  If you can see this message, the Header component is working.
-                </p>
-                <button 
-                  onClick={() => alert('🎯 Header component is working!')}
-                  style={{
-                    background: '#10b981',
-                    color: 'white',
-                    border: 'none',
-                    padding: '15px 30px',
-                    fontSize: '1.1rem',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
-                  }}
-                >
-                  Header Test Button
-                </button>
-              </div>
-              <div style={{ marginTop: '2rem', opacity: 0.7 }}>
-                <p>📍 Mumbai, India | 📞 +91-8678830021</p>
-                <p>Facebook Ads • Google Ads • Digital Marketing</p>
-              </div>
+              <button 
+                onClick={() => alert('🎯 Both Header and Hero components are working!')}
+                style={{
+                  background: '#8b5cf6',
+                  color: 'white',
+                  border: 'none',
+                  padding: '15px 30px',
+                  fontSize: '1.1rem',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+                }}
+              >
+                Both Components Test Button
+              </button>
             </div>
           </div>
         </div>
       </StrictMode>
     );
     
-    console.log('🎉 React app with Header rendered successfully!');
+    console.log('🎉 React app with Header + Hero rendered successfully!');
     return true;
   } catch (error) {
-    console.error('❌ Failed to render React app with Header:', error);
+    console.error('❌ Failed to render React app with Header + Hero:', error);
     return false;
   }
 }
@@ -115,13 +111,13 @@ if (!renderReactApp()) {
           </p>
           <div style="background: rgba(255,255,255,0.2); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
             <h2 style="font-size: 2rem; margin-bottom: 1rem;">
-              Header Component Failed 🚨
+              Hero Component Failed 🚨
             </h2>
             <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
-              The Header component caused an error, but the website is still functional.
+              The Hero component caused an error, but the website is still functional.
             </p>
             <button 
-              onclick="alert('🚨 Header component failed to load.')"
+              onclick="alert('🚨 Hero component failed to load.')"
               style="
                 background: #ef4444;
                 color: white;
@@ -134,7 +130,7 @@ if (!renderReactApp()) {
                 box-shadow: 0 4px 15px rgba(0,0,0,0.2);
               "
             >
-              Header Failed Button
+              Hero Failed Button
             </button>
           </div>
           <div style="margin-top: 2rem; opacity: 0.7;">
