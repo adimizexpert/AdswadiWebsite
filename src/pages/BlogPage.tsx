@@ -375,7 +375,7 @@ const BlogPage: React.FC = () => {
             <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="relative h-64 lg:h-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
                     <div className="text-center text-white">
                       <Calendar className="w-16 h-16 mx-auto mb-4 opacity-80" />
                       <h3 className="text-2xl font-bold">Featured Post</h3>
@@ -384,9 +384,9 @@ const BlogPage: React.FC = () => {
                 </div>
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="px-3 py-1 bg-green-100 text-green-700 text-sm font-medium rounded-full">
-                      {blogPosts[0].category}
-                    </span>
+                                      <span className="px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full">
+                    {blogPosts[0].category}
+                  </span>
                     <span className="text-slate-500 text-sm">{blogPosts[0].readTime}</span>
                   </div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
@@ -402,7 +402,7 @@ const BlogPage: React.FC = () => {
                       <Clock className="w-4 h-4 ml-3" />
                       {blogPosts[0].date}
                     </div>
-                    <button className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors">
+                    <button className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors">
                       Read Full Article
                       <ArrowRight className="w-4 h-4" />
                     </button>
@@ -430,22 +430,22 @@ const BlogPage: React.FC = () => {
                   transition={{ duration: 0.5, delay: 0.1 * index }}
                   className="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-shadow group"
                 >
-                  <div className="h-48 bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center">
-                    <div className="text-center text-green-600">
-                      <Calendar className="w-12 h-12 mx-auto mb-2 opacity-60" />
-                      <p className="text-sm font-medium">Blog Post</p>
-                    </div>
+                                  <div className="h-48 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+                  <div className="text-center text-blue-600">
+                    <Calendar className="w-12 h-12 mx-auto mb-2 opacity-60" />
+                    <p className="text-sm font-medium">Blog Post</p>
                   </div>
+                </div>
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="px-2 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-full">
-                        {post.category}
-                      </span>
+                                          <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full">
+                      {post.category}
+                    </span>
                       <span className="text-slate-500 text-xs">{post.readTime}</span>
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 line-clamp-2 group-hover:text-green-600 transition-colors">
-                      {post.title}
-                    </h3>
+                                      <h3 className="text-lg font-bold text-slate-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                    {post.title}
+                  </h3>
                     <p className="text-slate-600 text-sm mb-4 line-clamp-3">
                       {post.excerpt}
                     </p>
@@ -454,10 +454,10 @@ const BlogPage: React.FC = () => {
                         <User className="w-3 h-3" />
                         {post.author}
                       </div>
-                      <button className="inline-flex items-center gap-1 text-green-600 hover:text-green-700 text-sm font-medium transition-colors">
-                        Read More
-                        <ExternalLink className="w-3 h-3" />
-                      </button>
+                                          <button className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors">
+                      Read More
+                      <ExternalLink className="w-3 h-4" />
+                    </button>
                     </div>
                   </div>
                 </motion.article>
