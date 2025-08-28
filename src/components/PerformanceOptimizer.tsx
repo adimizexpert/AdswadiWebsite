@@ -168,31 +168,28 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
 
   // Font display optimization
   useEffect(() => {
-    // Add font-display: swap for better performance
-    const style = document.createElement('style');
-    style.textContent = `
-      @font-face {
-        font-family: 'Inter';
-        font-display: swap;
-        src: url('/fonts/Inter-Regular.woff2') format('woff2');
-      }
-      @font-face {
-        font-family: 'Inter';
-        font-display: swap;
-        font-weight: 600;
-        src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
-      }
-      @font-face {
-        font-family: 'Inter';
-        font-display: swap;
-        font-weight: 700;
-        src: url('/fonts/Inter-Bold.woff2') format('woff2');
-      }
-    `;
-    document.head.appendChild(style);
+    // Load Inter font from Google Fonts with font-display: swap
+    const link = document.createElement('link');
+    link.rel = 'preconnect';
+    link.href = 'https://fonts.googleapis.com';
+    document.head.appendChild(link);
+
+    const fontLink = document.createElement('link');
+    fontLink.rel = 'preconnect';
+    fontLink.href = 'https://fonts.gstatic.com';
+    fontLink.crossOrigin = 'anonymous';
+    document.head.appendChild(link);
+
+    const googleFontsLink = document.createElement('link');
+    googleFontsLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap';
+    googleFontsLink.rel = 'stylesheet';
+    document.head.appendChild(googleFontsLink);
 
     return () => {
-      document.head.removeChild(style);
+      // Clean up links on unmount
+      if (document.head.contains(link)) document.head.removeChild(link);
+      if (document.head.contains(fontLink)) document.head.removeChild(fontLink);
+      if (document.head.contains(googleFontsLink)) document.head.removeChild(googleFontsLink);
     };
   }, []);
 
