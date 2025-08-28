@@ -299,7 +299,7 @@ const Blog: React.FC = () => {
   const categories = ['All', 'Digital Marketing', 'Paid Advertising', 'E-commerce', 'SEO', 'Social Media', 'Automation'];
 
   return (
-    <section id="blog" className="py-20 bg-gradient-to-br from-green-50 to-emerald-50 relative overflow-hidden">
+    <section id="blog" className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <motion.div
@@ -312,7 +312,7 @@ const Blog: React.FC = () => {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute top-1/3 left-1/3 w-80 h-80 bg-gradient-to-r from-green-100/40 to-emerald-100/40 rounded-full blur-3xl"
+          className="absolute top-1/3 left-1/3 w-80 h-80 bg-gradient-to-r from-blue-100/40 to-purple-100/40 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -325,7 +325,7 @@ const Blog: React.FC = () => {
             ease: "easeInOut",
             delay: 6
           }}
-          className="absolute bottom-1/3 right-1/3 w-72 h-72 bg-gradient-to-r from-emerald-100/40 to-green-100/40 rounded-full blur-3xl"
+          className="absolute bottom-1/3 right-1/3 w-72 h-72 bg-gradient-to-r from-purple-100/40 to-blue-100/40 rounded-full blur-3xl"
         />
       </div>
 
@@ -339,7 +339,7 @@ const Blog: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-green-700 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 bg-clip-text text-transparent">
               Latest Insights & Strategies
             </span>
           </h2>
@@ -360,7 +360,7 @@ const Blog: React.FC = () => {
           <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
             <div className="grid lg:grid-cols-2 gap-0">
               <div className="relative h-64 lg:h-full">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
                   <div className="text-center text-white">
                     <Calendar className="w-16 h-16 mx-auto mb-4 opacity-80" />
                     <h3 className="text-2xl font-bold">Featured Post</h3>
@@ -369,7 +369,7 @@ const Blog: React.FC = () => {
               </div>
               <div className="p-8 lg:p-12 flex flex-col justify-center">
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="px-3 py-1 bg-green-100 text-green-700 text-sm font-medium rounded-full">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full">
                     {blogPosts[0].category}
                   </span>
                   <span className="text-slate-500 text-sm">{blogPosts[0].readTime}</span>
@@ -389,7 +389,7 @@ const Blog: React.FC = () => {
                   </div>
                   <a
                     href="/blog"
-                    className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-semibold transition-colors"
+                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors"
                   >
                     Read More
                     <ArrowRight className="w-4 h-4" />
@@ -418,20 +418,20 @@ const Blog: React.FC = () => {
                 transition={{ duration: 0.5, delay: 0.1 * index }}
                 className="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-shadow group"
               >
-                <div className="h-48 bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center">
-                  <div className="text-center text-green-600">
+                <div className="h-48 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+                  <div className="text-center text-blue-600">
                     <Calendar className="w-12 h-12 mx-auto mb-2 opacity-60" />
                     <p className="text-sm font-medium">Blog Post</p>
                   </div>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="px-2 py-1 bg-green-50 text-green-700 text-xs font-medium rounded-full">
+                    <span className="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-medium rounded-full">
                       {post.category}
                     </span>
                     <span className="text-slate-500 text-xs">{post.readTime}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-3 line-clamp-2 group-hover:text-green-600 transition-colors">
+                  <h3 className="text-lg font-bold text-slate-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
                     {post.title}
                   </h3>
                   <p className="text-slate-600 text-sm mb-4 line-clamp-3">
@@ -444,7 +444,7 @@ const Blog: React.FC = () => {
                     </div>
                     <a
                       href="/blog"
-                      className="inline-flex items-center gap-1 text-green-600 hover:text-green-700 text-sm font-medium transition-colors"
+                      className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors"
                     >
                       Read More
                       <ExternalLink className="w-3 h-3" />
@@ -464,15 +464,15 @@ const Blog: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Ready to Dive Deeper?</h3>
-            <p className="text-green-100 mb-6 max-w-2xl mx-auto">
+            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
               Explore our complete blog library with hundreds of articles on digital marketing, 
               growth strategies, and industry insights.
             </p>
             <a
               href="/blog"
-              className="inline-flex items-center gap-2 bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
             >
               View All Posts
               <ArrowRight className="w-4 h-4" />

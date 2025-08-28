@@ -113,7 +113,7 @@ const StickyScrollLayout: React.FC = () => {
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="sticky-section min-h-screen w-full bg-gradient-to-br from-green-50 to-emerald-50">
+      <section id="blog" className="sticky-section min-h-screen w-full bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="h-full flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <Blog />

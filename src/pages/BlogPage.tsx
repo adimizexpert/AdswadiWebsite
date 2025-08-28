@@ -300,13 +300,13 @@ const BlogPage: React.FC = () => {
   const categories = ['All', 'Digital Marketing', 'Paid Advertising', 'E-commerce', 'SEO', 'Social Media', 'Automation'];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
       {/* Back to Home Button */}
       <div className="pt-8 pb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             to="/"
-            className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Home
@@ -327,7 +327,7 @@ const BlogPage: React.FC = () => {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="absolute top-1/3 left-1/3 w-80 h-80 bg-gradient-to-r from-green-100/40 to-emerald-100/40 rounded-full blur-3xl"
+            className="absolute top-1/3 left-1/3 w-80 h-80 bg-gradient-to-r from-blue-100/40 to-purple-100/40 rounded-full blur-3xl"
           />
           <motion.div
             animate={{
@@ -340,7 +340,7 @@ const BlogPage: React.FC = () => {
               ease: "easeInOut",
               delay: 6
             }}
-            className="absolute bottom-1/3 right-1/3 w-72 h-72 bg-gradient-to-r from-emerald-100/40 to-green-100/40 rounded-full blur-3xl"
+            className="absolute bottom-1/3 right-1/3 w-72 h-72 bg-gradient-to-r from-purple-100/40 to-blue-100/40 rounded-full blur-3xl"
           />
         </div>
 
@@ -354,7 +354,7 @@ const BlogPage: React.FC = () => {
             className="text-center mb-16"
           >
             <h1 className="text-5xl sm:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-green-700 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 bg-clip-text text-transparent">
                 Our Blog
               </span>
             </h1>
@@ -473,22 +473,22 @@ const BlogPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-center"
           >
-            <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-8 text-white">
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-4">Stay Updated with Our Latest Insights</h3>
-              <p className="text-green-100 mb-6 max-w-2xl mx-auto">
+              <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
                 Get notified about new articles, industry updates, and exclusive marketing tips 
                 delivered straight to your inbox.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   to="/#contact"
-                  className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+                  className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
                 >
                   Subscribe to Newsletter
                 </Link>
                 <Link
                   to="/#services"
-                  className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors"
+                  className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
                 >
                   View Our Services
                 </Link>
