@@ -140,7 +140,7 @@ const Footer: React.FC = () => {
             <div className="rounded-2xl border border-slate-200 shadow-sm p-6">
               <h4 className="font-semibold text-slate-900 mb-2">Company</h4>
               <ul className="text-slate-600 space-y-1">
-                <li><button onClick={() => scrollToSection('about')} className="hover:text-blue-600 transition-colors">About Us</button></li>
+                <li><a href="/about" className="hover:text-blue-600 transition-colors">About Us</a></li>
                 <li><button onClick={() => scrollToSection('team')} className="hover:text-blue-600 transition-colors">Our Team</button></li>
                 <li><button onClick={() => scrollToSection('case-studies')} className="hover:text-blue-600 transition-colors">Case Studies</button></li>
                 <li><button onClick={() => scrollToSection('testimonials')} className="hover:text-blue-600 transition-colors">Testimonials</button></li>

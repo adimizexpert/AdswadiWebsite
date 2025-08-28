@@ -27,11 +27,11 @@ const About: React.FC = () => {
   ];
 
   const milestones = [
-    { year: '2020', title: 'Founded', description: 'Started with a vision to transform digital marketing' },
-    { year: '2021', title: 'First 100 Clients', description: 'Reached our first milestone of satisfied clients' },
-    { year: '2022', title: 'Team Expansion', description: 'Grew our team to 15+ marketing experts' },
-    { year: '2023', title: 'Industry Recognition', description: 'Awarded Best Performance Marketing Agency' },
-    { year: '2024', title: 'Global Reach', description: 'Serving clients across 25+ countries' }
+    { year: '2024', title: 'Founded', description: 'Started with a vision to transform digital marketing' },
+    { year: '2024', title: 'First Clients', description: 'Reached our first milestone of satisfied clients' },
+    { year: '2024', title: 'Team Growth', description: 'Building our team of passionate marketing experts' },
+    { year: '2024', title: 'Innovation Focus', description: 'Developing cutting-edge marketing strategies' },
+    { year: '2024', title: 'Future Ready', description: 'Preparing for global expansion and success' }
   ];
 
   return (
@@ -74,11 +74,11 @@ const About: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 bg-clip-text text-transparent">
-              About ADSWADi
-            </span>
-          </h1>
+                      <h1 className="text-5xl sm:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 bg-clip-text text-transparent">
+                About Adswadi
+              </span>
+            </h1>
           <p className="text-xl text-slate-600 max-w-4xl mx-auto">
             We're not just another digital marketing agency. We're your strategic partner in growth, 
             innovation, and digital transformation.
@@ -99,16 +99,16 @@ const About: React.FC = () => {
                 Our Story
               </h2>
               <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
-                <p>
-                  Founded in 2020, ADSWADi emerged from a simple yet powerful vision: to make 
-                  performance marketing accessible, transparent, and results-driven for businesses 
-                  of all sizes.
-                </p>
-                <p>
-                  What started as a small team of passionate marketers has grown into a 
-                  full-service digital marketing powerhouse, serving clients across 25+ countries 
-                  and helping them achieve remarkable growth.
-                </p>
+                                  <p>
+                    Founded in 2024, Adswadi emerged from a simple yet powerful vision: to make 
+                    performance marketing accessible, transparent, and results-driven for businesses 
+                    of all sizes.
+                  </p>
+                  <p>
+                    What started as a small team of passionate marketers has quickly grown into a 
+                    full-service digital marketing powerhouse, serving clients across multiple regions 
+                    and helping them achieve remarkable growth.
+                  </p>
                 <p>
                   We believe that every business deserves to thrive in the digital age, and 
                   we're committed to making that happen through innovative strategies, cutting-edge 

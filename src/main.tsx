@@ -8,6 +8,7 @@ import Header from './components/Header.tsx';
 import StickyScrollLayout from './components/StickyScrollLayout.tsx';
 import Footer from './components/Footer.tsx';
 import PrivacyPolicy from './components/PrivacyPolicy.tsx';
+import AboutPage from './pages/AboutPage.tsx';
 import './index.css';
 
 console.log('🚀 Starting Adswadi website with complete app structure...');
@@ -48,6 +49,7 @@ function renderReactApp() {
                 <main>
                   <Routes>
                     <Route path="/" element={<StickyScrollLayout />} />
+                    <Route path="/about" element={<AboutPage />} />
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   </Routes>
                 </main>
