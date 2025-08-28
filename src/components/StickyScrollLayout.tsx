@@ -5,7 +5,7 @@ import Hero from './Hero.tsx';
 import Services from './Services.tsx';
 import CaseStudies from './CaseStudies.tsx';
 import Team from './Team.tsx';
-
+import About from './About.tsx';
 import Testimonials from './Testimonials.tsx';
 
 import Contact from './Contact.tsx';
@@ -102,7 +102,14 @@ const StickyScrollLayout: React.FC = () => {
         </div>
       </section>
 
-
+      {/* About Section */}
+      <section id="about" className="sticky-section min-h-screen w-full bg-gradient-to-br from-slate-50 via-white to-blue-50">
+        <div className="h-full flex items-center justify-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <About />
+          </div>
+        </div>
+      </section>
 
       {/* Testimonials Section */}
       <section id="testimonials" className="sticky-section min-h-screen w-full bg-gradient-to-br from-orange-50 to-red-50">
