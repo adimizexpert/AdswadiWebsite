@@ -82,10 +82,6 @@ const Features: React.FC = () => {
                 <div className="text-slate-600">Average ROAS</div>
               </div>
               <div className="space-y-2 scroll-scale-in scroll-delay-600">
-                <div className="text-2xl font-bold text-purple-600">70+</div>
-                <div className="text-slate-600">Funnels Delivered</div>
-              </div>
-              <div className="space-y-2 scroll-scale-in scroll-delay-700">
                 <div className="text-2xl font-bold text-orange-600">24/7</div>
                 <div className="text-slate-600">Campaign Monitoring</div>
               </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, TrendingUp, Users, Award, Target } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 const testimonials = [
   {
@@ -35,27 +35,7 @@ const testimonials = [
   }
 ];
 
-const stats = [
-  {
-    icon: Target,
-    number: '250+',
-    label: 'Ad Campaigns',
-    color: 'text-blue-600'
-  },
-  {
-    icon: TrendingUp,
-    number: '10L+',
-    label: 'Ad Spent',
-    color: 'text-green-600'
-  },
-  {
-    icon: Award,
-    number: '70+',
-    label: 'Funnels Delivered',
-    color: 'text-purple-600'
-  },
 
-];
 
 const Testimonials: React.FC = () => {
   return (
@@ -163,25 +143,7 @@ const Testimonials: React.FC = () => {
           ))}
         </div>
 
-        {/* Stats */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-              className="text-center bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-slate-100"
-            >
-              <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-100 to-blue-100 flex items-center justify-center`}>
-                <stat.icon className={`w-8 h-8 ${stat.color}`} />
-              </div>
-              <div className="text-2xl font-bold text-slate-900 mb-2">{stat.number}</div>
-              <div className="text-slate-600 font-medium">{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
+
       </div>
     </section>
   );
