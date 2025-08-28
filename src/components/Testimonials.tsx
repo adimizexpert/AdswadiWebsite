@@ -54,12 +54,7 @@ const stats = [
     label: 'Funnels Delivered',
     color: 'text-purple-600'
   },
-  {
-    icon: Users,
-    number: '94%',
-    label: 'Client Retention',
-    color: 'text-orange-600'
-  }
+
 ];
 
 const Testimonials: React.FC = () => {
