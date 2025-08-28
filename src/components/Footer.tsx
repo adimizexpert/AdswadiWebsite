@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, Mail, Phone, MapPin, ArrowUp, Facebook, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -144,6 +145,7 @@ const Footer: React.FC = () => {
                 <li><button onClick={() => scrollToSection('team')} className="hover:text-blue-600 transition-colors">Our Team</button></li>
                 <li><button onClick={() => scrollToSection('case-studies')} className="hover:text-blue-600 transition-colors">Case Studies</button></li>
                 <li><button onClick={() => scrollToSection('testimonials')} className="hover:text-blue-600 transition-colors">Testimonials</button></li>
+                <li><Link to="/blog" className="hover:text-blue-600 transition-colors">Blog</Link></li>
               </ul>
             </div>
           </div>

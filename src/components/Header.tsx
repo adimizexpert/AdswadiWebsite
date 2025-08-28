@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +21,7 @@ const Header: React.FC = () => {
     { name: 'Case Studies', href: '#case-studies' },
     { name: 'Team', href: '#team' },
     { name: 'About', href: '#about' },
+    { name: 'Blog', href: '/blog', isRoute: true },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -100,18 +102,37 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -2 }}
-                className="text-slate-700 hover:text-purple-600 font-medium transition-colors relative group"
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </motion.a>
+              item.isRoute ? (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -2 }}
+                  className="relative group"
+                >
+                  <Link
+                    to={item.href}
+                    className="text-slate-700 hover:text-purple-600 font-medium transition-colors relative group"
+                  >
+                    {item.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                </motion.div>
+              ) : (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -2 }}
+                  className="text-slate-700 hover:text-purple-600 font-medium transition-colors relative group"
+                >
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                </motion.a>
+              )
             ))}
           </nav>
 
@@ -137,17 +158,34 @@ const Header: React.FC = () => {
           >
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item, index) => (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-slate-700 hover:text-purple-600 font-medium py-2 transition-colors"
-                >
-                  {item.name}
-                </motion.a>
+                item.isRoute ? (
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Link
+                      to={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block text-slate-700 hover:text-purple-600 font-medium py-2 transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                ) : (
+                  <motion.a
+                    key={item.name}
+                    href={item.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-slate-700 hover:text-purple-600 font-medium py-2 transition-colors"
+                  >
+                    {item.name}
+                  </motion.a>
+                )
               ))}
               
               {/* Mobile CTA Button */}

@@ -9,6 +9,7 @@ import StickyScrollLayout from './components/StickyScrollLayout.tsx';
 import Footer from './components/Footer.tsx';
 import PrivacyPolicy from './components/PrivacyPolicy.tsx';
 import AboutPage from './pages/AboutPage.tsx';
+import BlogPage from './pages/BlogPage.tsx';
 import './index.css';
 
 console.log('🚀 Starting Adswadi website with complete app structure...');
@@ -46,13 +47,14 @@ function renderReactApp() {
                 enableIntersectionObserver={true}
               >
                 <Header />
-                <main>
-                  <Routes>
-                    <Route path="/" element={<StickyScrollLayout />} />
-                    <Route path="/about" element={<AboutPage />} />
-                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                  </Routes>
-                </main>
+                                         <main>
+                           <Routes>
+                             <Route path="/" element={<StickyScrollLayout />} />
+                             <Route path="/about" element={<AboutPage />} />
+                             <Route path="/blog" element={<BlogPage />} />
+                             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                           </Routes>
+                         </main>
                 <Footer />
               </PerformanceOptimizer>
             </div>
