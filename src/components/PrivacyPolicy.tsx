@@ -265,7 +265,7 @@ const PrivacyPolicy: React.FC = () => {
                <div className="space-y-2 text-slate-600">
                  <p><strong>Email:</strong> adswadiofficial@gmail.com</p>
                  <p><strong>Phone:</strong> +91 8678830021</p>
-                 <p><strong>WhatsApp:</strong> +91 9798440519</p>
+
                  <p><strong>Address:</strong> Ranchi, India</p>
                  <p><strong>Response Time:</strong> We typically respond within 24 hours</p>
                </div>

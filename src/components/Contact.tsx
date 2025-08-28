@@ -45,9 +45,8 @@ const Contact: React.FC = () => {
     { icon: Star, value: '4.9/5', label: 'Client Rating' }
   ];
 
-  // WhatsApp links with pre-filled message
-  const whatsappLink1 = `https://wa.me/918678830021?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
-  const whatsappLink2 = `https://wa.me/919798440519?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
+  // WhatsApp link with pre-filled message
+  const whatsappLink = `https://wa.me/918678830021?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
 
   // FAQ Data
   const faqs = [
@@ -334,7 +333,7 @@ const Contact: React.FC = () => {
 
             <div className="space-y-6">
               <motion.a
-                href={whatsappLink1}
+                href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
@@ -350,22 +349,7 @@ const Contact: React.FC = () => {
                 <ArrowRight className="w-5 h-5 text-green-600 group-hover:translate-x-1 transition-transform" />
               </motion.a>
 
-              <motion.a
-                href={whatsappLink2}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.02 }}
-                className="flex items-center gap-4 p-6 bg-green-50 rounded-2xl hover:bg-green-100 transition-all duration-300 group border border-green-200"
-              >
-                <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <MessageCircle className="w-6 h-6 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h4 className="font-bold text-slate-900">WhatsApp</h4>
-                  <p className="text-slate-600">+91 9798440519</p>
-                </div>
-                <ArrowRight className="w-5 h-5 text-green-600 group-hover:translate-x-1 transition-transform" />
-              </motion.a>
+
 
               <motion.a
                 href="tel:+918678830021"
