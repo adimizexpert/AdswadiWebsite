@@ -8,6 +8,8 @@ import Header from './components/Header.tsx';
 import StickyScrollLayout from './components/StickyScrollLayout.tsx';
 import Footer from './components/Footer.tsx';
 import PrivacyPolicy from './components/PrivacyPolicy.tsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './index.css';
 
 console.log('🚀 Starting Adswadi website with complete app structure...');
