@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +25,21 @@ const Header: React.FC = () => {
     { name: 'Blog', href: '/blog', isRoute: true },
     { name: 'Contact', href: '#contact' }
   ];
+
+  // Function to get the correct navigation link
+  const getNavigationLink = (item: any) => {
+    if (item.isRoute) {
+      return item.href;
+    }
+    
+    // If we're not on the homepage, redirect to homepage with anchor
+    if (location.pathname !== '/') {
+      return `/${item.href}`;
+    }
+    
+    // If we're on homepage, use anchor link
+    return item.href;
+  };
 
   // WhatsApp link with pre-filled message
   const whatsappLink = `https://wa.me/918678830021?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?`;
@@ -112,7 +128,7 @@ const Header: React.FC = () => {
                   className="relative group"
                 >
                   <Link
-                    to={item.href}
+                    to={getNavigationLink(item)}
                     className="text-slate-700 hover:text-purple-600 font-medium transition-colors relative group"
                   >
                     {item.name}
@@ -122,7 +138,7 @@ const Header: React.FC = () => {
               ) : (
                 <motion.a
                   key={item.name}
-                  href={item.href}
+                  href={getNavigationLink(item)}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
@@ -166,7 +182,7 @@ const Header: React.FC = () => {
                     transition={{ delay: index * 0.1 }}
                   >
                     <Link
-                      to={item.href}
+                      to={getNavigationLink(item)}
                       onClick={() => setIsOpen(false)}
                       className="block text-slate-700 hover:text-purple-600 font-medium py-2 transition-colors"
                     >
@@ -176,7 +192,7 @@ const Header: React.FC = () => {
                 ) : (
                   <motion.a
                     key={item.name}
-                    href={item.href}
+                    href={getNavigationLink(item)}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
