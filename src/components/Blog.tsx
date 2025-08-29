@@ -132,6 +132,124 @@ const Blog: React.FC = () => {
       metaTitle: "7 Reasons Your Google Ads Aren't Converting in 2025 – Adswadi",
       metaDescription: "Struggling with Google Ads in India? Discover 7 reasons your campaigns fail and how Adswadi helps businesses get guaranteed results.",
       keywords: ["Google Ads agency India", "PPC services India", "Google Ads management", "digital marketing agency India", "advertising ROI"]
+    },
+    {
+      id: 2,
+      title: "High CPC in India? 5 Proven Hacks to Lower Your Google Ad Costs Without Losing Reach",
+      excerpt: "Discover proven strategies to reduce your Google Ads CPC by 20-40% while maintaining reach and quality leads. Expert insights from Adswadi's cost optimization campaigns.",
+      content: `
+        <p>Running Google Ads in India has become more expensive than ever. Whether you're a startup, a local coaching centre, or an e-commerce brand, you've probably noticed that your cost-per-click (CPC) keeps going up.</p>
+        
+        <p>According to recent studies, CPC for industries like real estate, e-commerce, and education can range between ₹8–₹15 per click — and in competitive metro cities, even higher. For small and medium businesses (SMBs), this can drain the marketing budget quickly without producing meaningful results.</p>
+        
+        <p>But here's the good news: a high CPC doesn't always mean you're stuck paying more. By making smart changes to your campaign strategy, you can reduce CPC while still getting qualified leads.</p>
+        
+        <p>At Adswadi, we've helped dozens of Indian businesses slash CPC costs by 20–40% without losing reach. In this blog, we'll break down 5 proven hacks to lower your Google Ads costs in 2025.</p>
+        
+        <h2>1. Use Long-Tail Keywords for Better Targeting</h2>
+        <p><strong>The Problem:</strong> Many businesses bid on broad terms like "real estate" or "buy clothes." These keywords are highly competitive, vague, and expensive. Worse, they attract people who are just browsing, not ready to buy.</p>
+        <p><strong>The Fix:</strong></p>
+        <ul>
+          <li>Focus on long-tail, buyer-intent keywords such as:</li>
+          <li>"Buy 2BHK flat in Gurgaon under 50 lakhs"</li>
+          <li>"Affordable digital marketing agency for small business India"</li>
+          <li>"Best coaching ads for student enrollment"</li>
+        </ul>
+        <p>These are less competitive, cheaper, and bring in users closer to conversion.</p>
+        <p>Use keyword research tools like Google Keyword Planner or SEMrush to identify untapped long-tail phrases.</p>
+        <p>👉 <strong>Adswadi Example:</strong> A client targeting "flats in Bangalore" reduced CPC from ₹12 to ₹7 when we shifted to long-tail keywords like "2BHK flats near Whitefield Bangalore."</p>
+        
+        <h2>2. Improve Your Quality Score</h2>
+        <p><strong>The Problem:</strong> Google rewards advertisers with higher Quality Scores by reducing CPC. But many businesses ignore ad relevance, landing page quality, and CTR (click-through rate).</p>
+        <p><strong>The Fix:</strong></p>
+        <ul>
+          <li>Match ad copy with keywords.</li>
+          <li>If keyword = "affordable coaching ads India," your ad headline should mention "Affordable Coaching Ads in India."</li>
+          <li>Optimize landing pages for relevance and speed.</li>
+          <li>Write strong CTAs ("Book Free Demo," "Get Instant Quote").</li>
+          <li>Continuously A/B test your ad creatives.</li>
+        </ul>
+        <p>👉 <strong>Why it matters:</strong> A higher Quality Score can cut CPC by up to 50%.</p>
+        
+        <h2>3. Leverage Ad Scheduling & Geo-Targeting</h2>
+        <p><strong>The Problem:</strong> Many businesses run ads 24/7 across India, which wastes budget. Ads shown at the wrong time or in irrelevant cities eat up clicks without conversions.</p>
+        <p><strong>The Fix:</strong></p>
+        <ul>
+          <li><strong>Use Ad Scheduling:</strong></li>
+          <li>Restaurants may run ads during lunch/dinner hours.</li>
+          <li>Coaching centres can target evenings (when parents browse).</li>
+          <li><strong>Apply Geo-Targeting:</strong></li>
+          <li>Instead of targeting "India," narrow down to profitable cities.</li>
+          <li>For example, a luxury builder in Goa shouldn't target tier-3 cities.</li>
+        </ul>
+        <p>👉 <strong>Adswadi Example:</strong> By running ads only between 10 AM–9 PM for a coaching client, we reduced wasted clicks by 25%.</p>
+        
+        <h2>4. Use Remarketing to Reduce Acquisition Costs</h2>
+        <p><strong>The Problem:</strong> Most first-time visitors don't convert. Businesses waste money chasing new clicks while ignoring past visitors who are easier to convert.</p>
+        <p><strong>The Fix:</strong></p>
+        <ul>
+          <li>Set up Remarketing campaigns on Google Display Network.</li>
+          <li>Retarget users who visited your site but didn't convert.</li>
+          <li>Offer special deals ("Still interested? Book today and get 10% off").</li>
+        </ul>
+        <p>👉 Remarketing CPCs are often 40–60% lower than cold audience CPCs.</p>
+        
+        <h2>5. Optimize Your Ad Extensions & Formats</h2>
+        <p><strong>The Problem:</strong> Ads that lack extensions (call, location, site links) appear less attractive and get lower CTR. A low CTR = higher CPC.</p>
+        <p><strong>The Fix:</strong></p>
+        <ul>
+          <li>Add Call Extensions (direct phone call).</li>
+          <li>Add Location Extensions (Google Maps visibility).</li>
+          <li>Add Sitelinks (extra links like "Pricing," "Contact," "Case Studies").</li>
+          <li>Experiment with Responsive Search Ads (RSA) to let Google auto-optimize headlines.</li>
+        </ul>
+        <p>👉 Businesses with optimized extensions often see a 20–30% CPC reduction.</p>
+        
+        <h2>Bonus Hack: Regularly Audit & Prune Wasted Spend</h2>
+        <p>Even the best campaigns generate wasted clicks. If you don't prune them, your CPC skyrockets.</p>
+        <p><strong>What to do:</strong></p>
+        <ul>
+          <li>Check search term reports weekly.</li>
+          <li>Pause keywords with high spend but zero conversions.</li>
+          <li>Move poor performers into negative keyword lists.</li>
+        </ul>
+        <p>👉 Adswadi runs weekly audits for all clients to ensure every rupee is working hard.</p>
+        
+        <h2>FAQs: Reducing CPC in India</h2>
+        <p><strong>Q1. Is a lower CPC always better?</strong><br>
+        ➡ Not necessarily. What matters is Cost per Conversion (CPA). A ₹12 click that converts is better than a ₹6 click that doesn't.</p>
+        
+        <p><strong>Q2. How long before CPC improvements show results?</strong><br>
+        ➡ With optimization, improvements can show within 2–3 weeks.</p>
+        
+        <p><strong>Q3. Can small businesses really compete in CPC-heavy industries?</strong><br>
+        ➡ Yes, with smart targeting and long-tail keywords, even a ₹30,000/month budget can generate strong ROI.</p>
+        
+        <h2>Final Thoughts</h2>
+        <p>High CPCs in India are a reality — but they don't have to drain your budget. By:</p>
+        <ul>
+          <li>Using long-tail keywords,</li>
+          <li>Improving Quality Score,</li>
+          <li>Leveraging ad scheduling and geo-targeting,</li>
+          <li>Running remarketing campaigns, and</li>
+          <li>Optimizing ad extensions,</li>
+        </ul>
+        <p>… you can significantly lower costs without losing reach or quality leads.</p>
+        
+        <p>At Adswadi, we specialize in affordable, performance-driven campaigns. Our proven strategies have helped dozens of Indian businesses save lakhs in wasted ad spend while doubling ROI.</p>
+        
+        <p>👉 <strong>If your Google Ads budget feels like it's slipping away, it's time to stop guessing and start optimizing.</strong> <a href="#contact" className="text-blue-600 hover:text-blue-800 underline">Contact Adswadi today</a> and get guaranteed results.</p>
+      `,
+      author: "Adswadi Team",
+      date: "January 20, 2025",
+      readTime: "7 min read",
+      category: "Google Ads",
+      image: "/blogs/cpc-reduction-hacks-india-2025.png",
+      featured: false,
+      slug: "high-cpc-india-5-hacks-lower-google-ad-costs",
+      metaTitle: "High CPC in India? 5 Proven Hacks to Lower Your Google Ad Costs – Adswadi",
+      metaDescription: "Reduce Google Ads CPC by 20-40% in India with proven strategies. Expert insights from Adswadi's cost optimization campaigns.",
+      keywords: ["Google Ads CPC reduction India", "lower PPC costs India", "Google Ads optimization", "cost per click reduction", "affordable Google Ads India"]
     }
   ];
 
@@ -265,7 +383,7 @@ const Blog: React.FC = () => {
 
         {/* Blog Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
+          {blogPosts.map((post, index) => (
             <motion.article
               key={post.id}
               initial={{ opacity: 0, y: 30 }}
@@ -274,7 +392,7 @@ const Blog: React.FC = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
               <img
-                src="/blogs/frustrated-vs-happy-business-owner.png"
+                src={index === 0 ? "/blogs/frustrated-vs-happy-business-owner.png" : "/blogs/cpc-costs-going-down-india.png"}
                 alt={`${post.title} - Digital marketing insights`}
                 className="w-full h-48 object-cover"
                 onError={(e) => {
