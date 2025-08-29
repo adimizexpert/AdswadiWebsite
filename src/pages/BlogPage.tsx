@@ -272,7 +272,32 @@ const BlogPage: React.FC = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <button className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors duration-300">
+              <button 
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator.share({
+                      title: currentPost.title,
+                      text: currentPost.excerpt,
+                      url: window.location.href
+                    });
+                  } else {
+                    // Fallback: copy URL to clipboard
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                      alert('Blog URL copied to clipboard!');
+                    }).catch(() => {
+                      // Fallback for older browsers
+                      const textArea = document.createElement('textarea');
+                      textArea.value = window.location.href;
+                      document.body.appendChild(textArea);
+                      textArea.select();
+                      document.execCommand('copy');
+                      document.body.removeChild(textArea);
+                      alert('Blog URL copied to clipboard!');
+                    });
+                  }
+                }}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors duration-300"
+              >
                 <Share2 className="w-4 h-4" />
                 Share
               </button>

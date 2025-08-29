@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, Clock, User, TrendingUp, Target, BarChart3, Smartphone, Globe, Zap } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, User, TrendingUp, Target, BarChart3, Smartphone, Globe, Zap, Share2 } from 'lucide-react';
 
 const Blog: React.FC = () => {
   const blogPosts = [
@@ -218,13 +218,45 @@ const Blog: React.FC = () => {
                     </div>
                   </div>
                   
-                  <a
-                    href={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-                  >
-                    Read Full Article
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
+                  <div className="flex items-center gap-4 mb-6">
+                    <button 
+                      onClick={() => {
+                        if (navigator.share) {
+                          navigator.share({
+                            title: post.title,
+                            text: post.excerpt,
+                            url: `${window.location.origin}/blog/${post.slug}`
+                          });
+                        } else {
+                          // Fallback: copy URL to clipboard
+                          const blogUrl = `${window.location.origin}/blog/${post.slug}`;
+                          navigator.clipboard.writeText(blogUrl).then(() => {
+                            alert('Blog URL copied to clipboard!');
+                          }).catch(() => {
+                            // Fallback for older browsers
+                            const textArea = document.createElement('textarea');
+                            textArea.value = blogUrl;
+                            document.body.appendChild(textArea);
+                            textArea.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(textArea);
+                            alert('Blog URL copied to clipboard!');
+                          });
+                        }
+                      }}
+                      className="inline-flex items-center gap-2 px-3 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors duration-300 text-sm"
+                    >
+                      <Share2 className="w-4 h-4" />
+                      Share
+                    </button>
+                    <a
+                      href={`/blog/${post.slug}`}
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                    >
+                      Read Full Article
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
