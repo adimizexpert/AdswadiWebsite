@@ -242,7 +242,7 @@ const Blog: React.FC = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
               <img
-                src={post.image}
+                src="/blogs/frustrated-vs-happy-business-owner.png"
                 alt={`${post.title} - Digital marketing insights`}
                 className="w-full h-48 object-cover"
                 onError={(e) => {
@@ -311,7 +311,9 @@ const Blog: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="#contact"
+                href="https://wa.me/918678830021?text=Hi%20Adswadi%20team!%20I'm%20interested%20in%20your%20digital%20marketing%20services.%20Can%20you%20help%20me%20grow%20my%20business?"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
               >
                 Get Free Consultation
