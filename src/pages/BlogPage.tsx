@@ -1,9 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, Clock, User, Share2, Bookmark, Tag } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 
 const BlogPage: React.FC = () => {
+  const { slug } = useParams();
+  const navigate = useNavigate();
+
   const blogPosts = [
     {
       id: 1,
@@ -136,8 +139,83 @@ const BlogPage: React.FC = () => {
     }
   ];
 
-  const featuredPost = blogPosts.find(post => post.featured);
+  // Find the blog post by slug
+  const currentPost = slug ? blogPosts.find(post => post.slug === slug) : null;
 
+  // If no slug or post not found, show blog listing
+  if (!slug || !currentPost) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        {/* Header */}
+        <div className="bg-white shadow-sm border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div className="flex items-center justify-between">
+              <Link
+                to="/"
+                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-300"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Back to Home
+              </Link>
+              <h1 className="text-2xl font-bold text-gray-900">Adswadi Blog</h1>
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">All Blog Posts</h1>
+            <p className="text-xl text-gray-600">Discover our latest insights and strategies</p>
+          </div>
+
+          {/* Blog Posts Grid */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {blogPosts.map((post) => (
+              <motion.article
+                key={post.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+              >
+                <img
+                  src={post.image}
+                  alt={`${post.title} - Digital marketing insights`}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                      {post.category}
+                    </span>
+                    {post.featured && (
+                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                        Featured
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{post.title}</h3>
+                  <p className="text-gray-600 mb-4 text-sm">{post.excerpt}</p>
+                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                    <span>{post.author}</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <Link
+                    to={`/blog/${post.slug}`}
+                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold text-sm"
+                  >
+                    Read Full Article
+                  </Link>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Display the specific blog post
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Header */}
@@ -157,134 +235,111 @@ const BlogPage: React.FC = () => {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Featured Blog Post */}
-        {featuredPost && (
-          <motion.article
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
-          >
-            {/* Blog Header */}
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4">
-                {featuredPost.category}
-              </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                {featuredPost.title}
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-                {featuredPost.excerpt}
-              </p>
-              
-              {/* Meta Information */}
-              <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 mb-8">
-                <div className="flex items-center gap-2">
-                  <User className="w-4 h-4" />
-                  {featuredPost.author}
-                </div>
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4" />
-                  {featuredPost.date}
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4" />
-                  {featuredPost.readTime}
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center justify-center gap-4">
-                <button className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors duration-300">
-                  <Share2 className="w-4 h-4" />
-                  Share
-                </button>
-                <button className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 transition-colors duration-300">
-                  <Bookmark className="w-4 h-4" />
-                  Bookmark
-                </button>
-              </div>
+        {/* Blog Post Content */}
+        <motion.article
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          {/* Blog Header */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4">
+              {currentPost.category}
             </div>
-
-            {/* Featured Image */}
-            <div className="mb-8">
-              <img
-                src={featuredPost.image}
-                alt={`${featuredPost.title} - Google Ads conversion optimization guide`}
-                className="w-full h-64 md:h-96 object-cover rounded-2xl shadow-lg"
-              />
-            </div>
-
-            {/* Blog Content */}
-            <div className="prose prose-lg max-w-none">
-              <div dangerouslySetInnerHTML={{ __html: featuredPost.content }} />
-            </div>
-
-            {/* Tags */}
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <div className="flex items-center gap-2 mb-4">
-                <Tag className="w-5 h-5 text-gray-500" />
-                <span className="text-sm font-medium text-gray-700">Tags:</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {featuredPost.keywords.map((keyword, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-300 cursor-pointer"
-                  >
-                    {keyword}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* CTA Section */}
-            <div className="mt-12 p-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl text-white text-center">
-              <h3 className="text-2xl font-bold mb-4">
-                Ready to Fix Your Google Ads?
-              </h3>
-              <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-                Don't let your ad spend go to waste. Get expert help from Adswadi's Google Ads specialists 
-                and start seeing real conversions today.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Free Consultation
-                </a>
-                <a
-                  href="/"
-                  className="inline-flex items-center gap-2 border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105"
-                >
-                  Explore Our Services
-                </a>
-              </div>
-            </div>
-          </motion.article>
-        )}
-
-        {/* More Articles Section */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            More Digital Marketing Insights
-          </h2>
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-            <p className="text-gray-600 text-center mb-6">
-              We're working on more valuable content to help your business grow. 
-              Subscribe to our newsletter to get notified when new articles are published.
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              {currentPost.title}
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+              {currentPost.excerpt}
             </p>
-            <div className="text-center">
+            
+            {/* Meta Information */}
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 mb-8">
+              <div className="flex items-center gap-2">
+                <User className="w-4 h-4" />
+                {currentPost.author}
+              </div>
+              <div className="flex items-center gap-2">
+                <Calendar className="w-4 h-4" />
+                {currentPost.date}
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4" />
+                {currentPost.readTime}
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <button className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors duration-300">
+                <Share2 className="w-4 h-4" />
+                Share
+              </button>
+              <button className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200 transition-colors duration-300">
+                <Bookmark className="w-4 h-4" />
+                Bookmark
+              </button>
+            </div>
+          </div>
+
+          {/* Featured Image */}
+          <div className="mb-8">
+            <img
+              src={currentPost.image}
+              alt={`${currentPost.title} - Google Ads conversion optimization guide`}
+              className="w-full h-64 md:h-96 object-cover rounded-2xl shadow-lg"
+            />
+          </div>
+
+          {/* Blog Content */}
+          <div className="prose prose-lg max-w-none">
+            <div dangerouslySetInnerHTML={{ __html: currentPost.content }} />
+          </div>
+
+          {/* Tags */}
+          <div className="mt-12 pt-8 border-t border-gray-200">
+            <div className="flex items-center gap-2 mb-4">
+              <Tag className="w-5 h-5 text-gray-500" />
+              <span className="text-sm font-medium text-gray-700">Tags:</span>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {currentPost.keywords.map((keyword, index) => (
+                <span
+                  key={index}
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-300 cursor-pointer"
+                >
+                  {keyword}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="mt-12 p-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl text-white text-center">
+            <h3 className="text-2xl font-bold mb-4">
+              Ready to Fix Your Google Ads?
+            </h3>
+            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+              Don't let your ad spend go to waste. Get expert help from Adswadi's Google Ads specialists 
+              and start seeing real conversions today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
               >
-                Subscribe to Updates
+                Get Free Consultation
+              </a>
+              <a
+                href="/"
+                className="inline-flex items-center gap-2 border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105"
+              >
+                Explore Our Services
               </a>
             </div>
           </div>
-        </div>
+        </motion.article>
       </div>
     </div>
   );

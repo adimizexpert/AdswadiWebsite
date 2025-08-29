@@ -52,6 +52,7 @@ function renderReactApp() {
                     <Route path="/" element={<StickyScrollLayout />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/blog" element={<BlogPage />} />
+                    <Route path="/blog/:slug" element={<BlogPage />} />
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   </Routes>
                 </main>

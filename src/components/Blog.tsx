@@ -149,13 +149,7 @@ const Blog: React.FC = () => {
   return (
     <section id="blog" className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Debug Info - Remove this later */}
-        <div className="mb-8 p-4 bg-yellow-100 border border-yellow-400 rounded-lg">
-          <p className="text-yellow-800 text-sm">
-            <strong>Debug Info:</strong> Blog component loaded with {blogPosts.length} posts. 
-            Featured posts: {blogPosts.filter(post => post.featured).length}
-          </p>
-        </div>
+
 
         {/* Section Header */}
         <motion.div
@@ -251,6 +245,10 @@ const Blog: React.FC = () => {
                 src={post.image}
                 alt={`${post.title} - Digital marketing insights`}
                 className="w-full h-48 object-cover"
+                onError={(e) => {
+                  console.error('Image failed to load:', post.image);
+                  e.currentTarget.style.display = 'none';
+                }}
               />
               
               <div className="p-6">
