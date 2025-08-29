@@ -127,7 +127,7 @@ const BlogPage: React.FC = () => {
       date: "January 15, 2025",
       readTime: "8 min read",
       category: "Google Ads",
-      image: "/blogs images/blog1/7 reasons why Google Ads fail in India, each represented with icons (keywords, ad copy, landing page, tracking).png",
+      image: "/blogs/google-ads-fail-india-2025.png",
       featured: true,
       slug: "google-ads-not-converting-india-2025",
       metaTitle: "7 Reasons Your Google Ads Aren't Converting in 2025 – Adswadi",
