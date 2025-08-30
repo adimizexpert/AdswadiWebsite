@@ -75,97 +75,66 @@ const Header: React.FC = () => {
               }}
             />
             
-            {/* Enhanced Animated Typography */}
-            <motion.div 
-              className="flex relative"
-              animate={{
-                filter: [
-                  "drop-shadow(0 0 0px rgba(124, 58, 237, 0))",
-                  "drop-shadow(0 0 8px rgba(124, 58, 237, 0.3))",
-                  "drop-shadow(0 0 0px rgba(124, 58, 237, 0))"
-                ]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
+            {/* New Different Animation Style */}
+            <motion.div className="flex">
               {'ADSWADI'.split('').map((letter, index) => (
                 <motion.span
                   key={index}
-                  initial={{ opacity: 0, y: 20, scale: 0.5, rotateY: -90 }}
+                  initial={{ opacity: 0, scale: 0 }}
                   animate={{ 
                     opacity: 1, 
-                    y: 0, 
                     scale: 1,
-                    rotateY: 0,
                     transition: {
-                      duration: 0.5,
-                      delay: index * 0.08,
-                      ease: "easeOut"
+                      duration: 0.4,
+                      delay: index * 0.1,
+                      type: "spring",
+                      stiffness: 200
                     }
                   }}
                   whileHover={{ 
-                    y: -5,
-                    scale: 1.3,
-                    rotateY: 15,
-                    color: "#7c3aed",
-                    textShadow: "0 6px 12px rgba(124, 58, 237, 0.4)",
-                    transition: { duration: 0.3 }
+                    scale: 1.4,
+                    y: -8,
+                    transition: { 
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 10
+                    }
                   }}
-                  className="text-2xl font-black text-slate-900 cursor-pointer inline-block relative mx-0.5"
-                  style={{ 
-                    textShadow: "0 2px 4px rgba(0,0,0,0.15)",
-                    transition: "all 0.3s ease",
-                    transformStyle: "preserve-3d"
-                  }}
+                  className="text-2xl font-black text-slate-900 cursor-pointer inline-block mx-1 relative overflow-hidden"
                 >
-                  {letter}
+                  {/* Main letter */}
+                  <span className="relative z-10">{letter}</span>
                   
-                  {/* Glowing effect */}
+                  {/* Rainbow trail effect */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 bg-clip-text text-transparent opacity-0"
-                    animate={{
-                      opacity: [0, 1, 0]
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      delay: index * 0.15,
-                      ease: "easeInOut"
-                    }}
-                  >
-                    {letter}
-                  </motion.div>
-                  
-                  {/* Floating particles effect */}
-                  <motion.div
-                    className="absolute -top-1 -right-1 w-2 h-2 bg-purple-500 rounded-full opacity-0"
-                    animate={{
-                      opacity: [0, 1, 0],
-                      scale: [0, 1.5, 0],
-                      y: [0, -10, 0],
-                      x: [0, 5, 0]
-                    }}
+                    className="absolute inset-0 bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 bg-clip-text text-transparent"
+                    initial={{ x: "-100%" }}
+                    animate={{ x: "100%" }}
                     transition={{
                       duration: 2,
                       repeat: Infinity,
                       delay: index * 0.2,
                       ease: "easeInOut"
                     }}
-                  />
+                  >
+                    {letter}
+                  </motion.div>
                   
-                  {/* Underline animation */}
+                  {/* Bounce effect on hover */}
                   <motion.div
-                    className="absolute -bottom-1 left-0 h-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full"
-                    initial={{ width: 0 }}
-                    animate={{ width: "100%" }}
-                    transition={{
-                      duration: 0.8,
-                      delay: index * 0.1 + 0.5
+                    className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ 
+                      opacity: 1,
+                      scale: [1, 1.2, 1],
+                      transition: {
+                        duration: 0.6,
+                        ease: "easeInOut"
+                      }
                     }}
-                  />
+                  >
+                    {letter}
+                  </motion.div>
                 </motion.span>
               ))}
             </motion.div>
