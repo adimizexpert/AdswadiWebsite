@@ -40,8 +40,6 @@ const Contact: React.FC = () => {
   };
 
   const stats = [
-    { icon: Users, value: '50+', label: 'Happy Clients' },
-    { icon: Clock, value: '24h', label: 'Response Time' },
     { icon: Star, value: '4.9', label: 'Client Rating', showStars: true }
   ];
 
@@ -159,17 +157,17 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+          className="flex justify-center mb-16"
         >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              className="text-center bg-white p-6 rounded-2xl shadow-lg border border-slate-100"
-            >
+                      {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                className="text-center bg-white p-8 rounded-2xl shadow-lg border border-slate-100 max-w-sm"
+              >
               <div className="flex items-center justify-center mb-4">
                 <stat.icon className="w-8 h-8 text-blue-600" />
               </div>
