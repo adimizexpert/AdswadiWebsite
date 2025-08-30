@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
   const stats = [
     { icon: Users, value: '50+', label: 'Happy Clients' },
     { icon: Clock, value: '24h', label: 'Response Time' },
-    { icon: Star, value: '4.9/5', label: 'Client Rating' }
+    { icon: Star, value: '4.9', label: 'Client Rating', showStars: true }
   ];
 
   // WhatsApp link with pre-filled message
@@ -173,7 +173,21 @@ const Contact: React.FC = () => {
               <div className="flex items-center justify-center mb-4">
                 <stat.icon className="w-8 h-8 text-blue-600" />
               </div>
-              <div className="text-2xl font-bold text-slate-900 mb-2">{stat.value}</div>
+              {stat.showStars ? (
+                <div className="mb-2">
+                  <div className="text-2xl font-bold text-slate-900 mb-2">{stat.value}/5</div>
+                  <div className="flex justify-center items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star 
+                        key={i} 
+                        className={`w-5 h-5 ${i < Math.floor(parseFloat(stat.value)) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+                      />
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="text-2xl font-bold text-slate-900 mb-2">{stat.value}</div>
+              )}
               <div className="text-slate-600 font-medium">{stat.label}</div>
             </motion.div>
           ))}

@@ -18,11 +18,6 @@ const About: React.FC = () => {
       icon: Zap,
       title: 'Innovation First',
       description: 'We stay ahead of digital marketing trends to give you the competitive edge.'
-    },
-    {
-      icon: Shield,
-      title: 'Transparency',
-      description: 'Complete visibility into your campaigns with detailed reporting and insights.'
     }
   ];
 
@@ -169,7 +164,7 @@ const About: React.FC = () => {
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">
             Our Core Values
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {values.map((value, index) => (
               <motion.div
                 key={index}
@@ -241,7 +236,7 @@ const About: React.FC = () => {
           <h2 className="text-3xl font-bold text-slate-900 mb-8">
             Why Choose ADSWADi?
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
               <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-slate-900 mb-2">Expert Team</h3>
@@ -254,13 +249,6 @@ const About: React.FC = () => {
               <h3 className="text-xl font-bold text-slate-900 mb-2">Proven Results</h3>
               <p className="text-slate-600">
                 Average 3.2x ROAS and 200%+ conversion rate improvements
-              </p>
-            </div>
-            <div className="text-center">
-              <Shield className="w-12 h-12 text-green-600 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Full Transparency</h3>
-              <p className="text-slate-600">
-                Real-time reporting and complete campaign visibility
               </p>
             </div>
           </div>
