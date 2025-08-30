@@ -1,26 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, TrendingUp, Globe, Heart, Zap, Shield, ArrowLeft } from 'lucide-react';
+import { Globe, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const AboutPage: React.FC = () => {
-  const values = [
-    {
-      icon: Target,
-      title: 'Results-Driven',
-      description: 'We focus on measurable outcomes and ROI for every campaign we manage.'
-    },
-    {
-      icon: Heart,
-      title: 'Client-Centric',
-      description: 'Your success is our success. We build long-term partnerships based on trust.'
-    },
-    {
-      icon: Zap,
-      title: 'Innovation First',
-      description: 'We stay ahead of digital marketing trends to give you the competitive edge.'
-    }
-  ];
+
 
   const milestones = [
     { year: '2024', title: 'Founded', description: 'Started with a vision to transform digital marketing' },
@@ -140,62 +124,7 @@ const AboutPage: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Mission & Vision */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mb-20"
-          >
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
-                <Target className="w-12 h-12 text-blue-600 mb-4" />
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Mission</h3>
-                <p className="text-slate-600 leading-relaxed">
-                  To empower businesses with data-driven marketing strategies that deliver 
-                  measurable results, driving sustainable growth and market leadership.
-                </p>
-              </div>
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
-                <TrendingUp className="w-12 h-12 text-purple-600 mb-4" />
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">Our Vision</h3>
-                <p className="text-slate-600 leading-relaxed">
-                  To be the most trusted partner in digital transformation, setting industry 
-                  standards for innovation, transparency, and client success.
-                </p>
-              </div>
-            </div>
-          </motion.div>
 
-          {/* Core Values */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="mb-20"
-          >
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">
-              Our Core Values
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {values.map((value, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 * index }}
-                  className="bg-white p-6 rounded-xl shadow-lg border border-slate-100 text-center hover:shadow-xl transition-shadow"
-                >
-                  <value.icon className="w-10 h-10 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{value.title}</h3>
-                  <p className="text-slate-600 text-sm">{value.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
 
           {/* Journey Timeline */}
           <motion.div
