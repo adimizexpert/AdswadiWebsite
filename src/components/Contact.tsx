@@ -62,6 +62,21 @@ const Contact: React.FC = () => {
       question: 'How can Adswadi guarantee accurate reporting?',
       answer:
         'We implement server-side tracking where feasible, follow a strict analytics QA checklist, and reconcile ad platform data with analytics and CRM events. Every report includes definitions and methodology.'
+    },
+    {
+      question: 'What is the typical timeline to see results from your campaigns?',
+      answer:
+        'Most clients see initial improvements in 2-4 weeks, with significant results typically appearing within 1-3 months. We provide weekly progress updates and monthly performance reviews to keep you informed every step of the way.'
+    },
+    {
+      question: 'Do you work with businesses of all sizes and budgets?',
+      answer:
+        'Yes! We work with startups, small businesses, and enterprise clients. We offer flexible pricing models and scalable solutions to fit various budgets. Our minimum engagement starts at ₹50,000/month, and we customize packages based on your specific needs and goals.'
+    },
+    {
+      question: 'What makes Adswadi different from other digital marketing agencies in India?',
+      answer:
+        'Unlike traditional agencies, we focus on performance marketing with guaranteed ROI. Our team includes certified Google Ads and Meta specialists, we provide 24/7 campaign monitoring, and we\'re the only agency offering weekly sprint-based delivery with transparent reporting. Plus, we\'re based in India, so we understand the local market dynamics better than international agencies.'
     }
   ];
 
