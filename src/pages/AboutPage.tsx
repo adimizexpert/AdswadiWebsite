@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Target, Award, TrendingUp, Globe, Heart, Zap, Shield, ArrowLeft } from 'lucide-react';
+import { Target, TrendingUp, Globe, Heart, Zap, Shield, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const AboutPage: React.FC = () => {
@@ -240,34 +240,7 @@ const AboutPage: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Why Choose Us */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            className="text-center"
-          >
-            <h2 className="text-3xl font-bold text-slate-900 mb-8">
-              Why Choose Adswadi?
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div className="text-center">
-                <Users className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Expert Team</h3>
-                <p className="text-slate-600">
-                  15+ certified marketing professionals with 5+ years of experience
-                </p>
-              </div>
-              <div className="text-center">
-                <Award className="w-12 h-12 text-purple-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Proven Results</h3>
-                <p className="text-slate-600">
-                  Average 3.2x ROAS and 200%+ conversion rate improvements
-                </p>
-              </div>
-            </div>
-          </motion.div>
+
 
           {/* CTA Section */}
           <motion.div
