@@ -392,9 +392,10 @@ const Contact: React.FC = () => {
                 </div>
               </motion.a>
 
-              <motion.div
+              <motion.a
+                href="mailto:adswadiofficial@gmail.com?subject=Inquiry from Adswadi Website&body=Hi Adswadi team! I'm interested in your digital marketing services. Can you help me grow my business?"
                 whileHover={{ scale: 1.02 }}
-                className="flex items-center gap-4 p-6 bg-blue-50 rounded-2xl border border-blue-200"
+                className="flex items-center gap-4 p-6 bg-blue-50 rounded-2xl border border-blue-200 hover:bg-blue-100 transition-all duration-300 cursor-pointer"
               >
                 <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center">
                   <Mail className="w-6 h-6 text-white" />
@@ -403,7 +404,8 @@ const Contact: React.FC = () => {
                   <h4 className="font-bold text-slate-900">Email</h4>
                   <p className="text-slate-600">adswadiofficial@gmail.com</p>
                 </div>
-              </motion.div>
+                <ArrowRight className="w-5 h-5 text-purple-600 group-hover:translate-x-1 transition-transform" />
+              </motion.a>
             </div>
 
 
