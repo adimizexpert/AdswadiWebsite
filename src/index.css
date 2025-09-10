@@ -194,6 +194,86 @@
     }
   }
 
+  /* Pencil Underline Animation */
+  .pencil-underline {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: pencilDraw 2.5s ease-in-out 1.5s forwards;
+    animation-fill-mode: forwards;
+    will-change: stroke-dashoffset, opacity;
+  }
+
+  .pencil-underline-accent {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: pencilDrawAccent 2.5s ease-in-out 1.5s forwards;
+    animation-fill-mode: forwards;
+    will-change: stroke-dashoffset, opacity;
+  }
+
+  /* Animation state after completion */
+  .pencil-underline.animated {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  .pencil-underline-accent.animated {
+    stroke-dashoffset: 0;
+    opacity: 0.7;
+  }
+
+  @keyframes pencilDraw {
+    0% {
+      stroke-dashoffset: 200;
+      opacity: 0.8;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes pencilDrawAccent {
+    0% {
+      stroke-dashoffset: 200;
+      opacity: 0.4;
+    }
+    20% {
+      opacity: 0.7;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0.7;
+    }
+  }
+
+  /* Hero title specific styles */
+  .hero-title {
+    position: relative;
+  }
+
+  /* Responsive pencil underline */
+  @media (max-width: 640px) {
+    .pencil-underline {
+      stroke-width: 2;
+    }
+    .pencil-underline-accent {
+      stroke-width: 1;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .pencil-underline {
+      stroke-width: 3;
+    }
+    .pencil-underline-accent {
+      stroke-width: 1.5;
+    }
+  }
+
 
 
   /* Text glow animation on hover */
