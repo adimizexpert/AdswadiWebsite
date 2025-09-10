@@ -20,24 +20,7 @@ const useFallbackAnimation = () => {
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const phraseRef = useRef<HTMLSpanElement>(null);
-  const underlinePathRef = useRef<SVGPathElement>(null);
-  const [phraseWidth, setPhraseWidth] = useState<number>(0);
-  const [phraseHeight, setPhraseHeight] = useState<number>(0);
   const isLoaded = useFallbackAnimation();
-
-  // Measure the text to size the pencil underline
-  useLayoutEffect(() => {
-    const update = () => {
-      const rect = phraseRef.current?.getBoundingClientRect();
-      if (!rect) return;
-      setPhraseWidth(rect.width);
-      setPhraseHeight(rect.height);
-    };
-    update();
-    window.addEventListener('resize', update);
-    return () => window.removeEventListener('resize', update);
-  }, []);
 
   // Advanced text splitting animation - disabled for now to fix visibility
   useEffect(() => {
@@ -238,144 +221,29 @@ const Hero: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-fuchsia-600/8 to-purple-800/10 blur-2xl rounded-full transform scale-150"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/8 via-indigo-600/8 to-purple-700/8 blur-xl rounded-full transform scale-125 rotate-12"></div>
               
-              {/* First Line with Pencil Underline */}
+              {/* First Line */}
               <motion.div
                 className="relative z-10 mb-4"
                 variants={{ hidden: { y: 30, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
-                <span className="relative group">
-                  <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg relative text-glow-hover">
-                    Unlock
-                  </span>
-                  <span className="inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 bg-clip-text text-transparent drop-shadow-lg ml-4 relative text-glow-hover">
-                    Greater
-                  </span>
-                  <span className="inline-block bg-gradient-to-r from-pink-600 via-rose-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg ml-4 relative text-glow-hover">
-                    Profits
-                  </span>
-                  
-                  {/* Pencil Drawing Underline for First Line */}
-                  <svg
-                    width="100%"
-                    height="20"
-                    viewBox="0 0 100 20"
-                    className="absolute left-0 -bottom-2 overflow-visible"
-                  >
-                    <defs>
-                      <linearGradient id="pencilGradient1" x1="0" x2="1" y1="0" y2="0">
-                        <stop offset="0%" stopColor="#8b5cf6" />
-                        <stop offset="25%" stopColor="#a855f7" />
-                        <stop offset="50%" stopColor="#ec4899" />
-                        <stop offset="75%" stopColor="#f59e0b" />
-                        <stop offset="100%" stopColor="#8b5cf6" />
-                      </linearGradient>
-                      <filter id="pencilShadow1" x="-50%" y="-50%" width="200%" height="200%">
-                        <feDropShadow dx="1" dy="2" stdDeviation="2" floodColor="#000000" floodOpacity="0.2"/>
-                      </filter>
-                      <filter id="pencilGlow1" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
-                        <feMerge> 
-                          <feMergeNode in="coloredBlur"/>
-                          <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                      </filter>
-                    </defs>
-                    
-                    {/* Pencil stroke path for first line */}
-                    <path
-                      d="M0 12 Q10 8 20 12 T40 10 T60 12 T80 8 T100 12"
-                      fill="none"
-                      stroke="url(#pencilGradient1)"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      filter="url(#pencilShadow1)"
-                      strokeDasharray="200"
-                      strokeDashoffset="200"
-                      className="animate-pencil-draw-first"
-                    />
-                    
-                    {/* Subtle pencil pressure variation for first line */}
-                    <path
-                      d="M0 12 Q10 8 20 12 T40 10 T60 12 T80 8 T100 12"
-                      fill="none"
-                      stroke="url(#pencilGradient1)"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      opacity="0.6"
-                      filter="url(#pencilGlow1)"
-                    />
-                  </svg>
+                <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg relative text-glow-hover">
+                  Unlock
+                </span>
+                <span className="inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 bg-clip-text text-transparent drop-shadow-lg ml-4 relative text-glow-hover">
+                  Greater
+                </span>
+                <span className="inline-block bg-gradient-to-r from-pink-600 via-rose-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg ml-4 relative text-glow-hover">
+                  Profits
                 </span>
               </motion.div>
               
-              {/* Second Line with Pencil Underline */}
+              {/* Second Line */}
               <motion.div
                 className="relative z-10 inline-block"
                 variants={{ hidden: { y: 30, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
-                <span ref={phraseRef} className="relative group">
-                  <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg relative text-glow-hover">
-                    from Every Ad
-                  </span>
-                  
-                  {/* Pencil Drawing Underline Effect */}
-                  <svg
-                    key={phraseWidth}
-                    width={phraseWidth}
-                    height={Math.max(Math.round(phraseHeight * 0.4), 15)}
-                    viewBox={`0 0 ${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.3), 10)}`}
-                    className="absolute left-0 -bottom-2 overflow-visible"
-                  >
-                    <defs>
-                      <linearGradient id="pencilGradient" x1="0" x2="1" y1="0" y2="0">
-                        <stop offset="0%" stopColor="#8b5cf6" />
-                        <stop offset="25%" stopColor="#a855f7" />
-                        <stop offset="50%" stopColor="#ec4899" />
-                        <stop offset="75%" stopColor="#f59e0b" />
-                        <stop offset="100%" stopColor="#8b5cf6" />
-                      </linearGradient>
-                      <filter id="pencilShadow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feDropShadow dx="1" dy="2" stdDeviation="2" floodColor="#000000" floodOpacity="0.2"/>
-                      </filter>
-                      <filter id="pencilGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
-                        <feMerge> 
-                          <feMergeNode in="coloredBlur"/>
-                          <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                      </filter>
-                    </defs>
-                    
-                    {/* Pencil stroke path with hand-drawn appearance */}
-                    <path
-                      ref={underlinePathRef}
-                      id="pencilPath"
-                      d={`M0 ${Math.max(Math.round(phraseHeight * 0.2), 6)} Q${phraseWidth * 0.1} ${Math.max(Math.round(phraseHeight * 0.15), 4)} ${phraseWidth * 0.2} ${Math.max(Math.round(phraseHeight * 0.2), 6)} T${phraseWidth * 0.4} ${Math.max(Math.round(phraseHeight * 0.18), 5)} T${phraseWidth * 0.6} ${Math.max(Math.round(phraseHeight * 0.2), 6)} T${phraseWidth * 0.8} ${Math.max(Math.round(phraseHeight * 0.15), 4)} T${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.2), 6)}`}
-                      fill="none"
-                      stroke="url(#pencilGradient)"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      filter="url(#pencilShadow)"
-                      strokeDasharray="1000"
-                      strokeDashoffset="1000"
-                      className="animate-pencil-draw"
-                    />
-                    
-                    {/* Subtle pencil pressure variation */}
-                    <path
-                      d={`M0 ${Math.max(Math.round(phraseHeight * 0.2), 6)} Q${phraseWidth * 0.1} ${Math.max(Math.round(phraseHeight * 0.15), 4)} ${phraseWidth * 0.2} ${Math.max(Math.round(phraseHeight * 0.2), 6)} T${phraseWidth * 0.4} ${Math.max(Math.round(phraseHeight * 0.18), 5)} T${phraseWidth * 0.6} ${Math.max(Math.round(phraseHeight * 0.2), 6)} T${phraseWidth * 0.8} ${Math.max(Math.round(phraseHeight * 0.15), 4)} T${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.2), 6)}`}
-                      fill="none"
-                      stroke="url(#pencilGradient)"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      opacity="0.6"
-                      filter="url(#pencilGlow)"
-                    />
-                  </svg>
+                <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg relative text-glow-hover">
+                  from Every Ad
                 </span>
               </motion.div>
             </div>
