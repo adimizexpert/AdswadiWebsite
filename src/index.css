@@ -194,6 +194,34 @@
     }
   }
 
+  /* Pencil drawing animation */
+  .animate-pencil-draw {
+    animation: pencilDraw 3s ease-in-out 1.2s forwards;
+  }
+
+  @keyframes pencilDraw {
+    0% {
+      stroke-dashoffset: 1000;
+      opacity: 0.8;
+      stroke-width: 2;
+    }
+    25% {
+      stroke-width: 3.5;
+    }
+    50% {
+      opacity: 1;
+      stroke-width: 3;
+    }
+    75% {
+      stroke-width: 2.5;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+      stroke-width: 3;
+    }
+  }
+
 
   /* Text glow animation on hover */
   .text-glow-hover {
