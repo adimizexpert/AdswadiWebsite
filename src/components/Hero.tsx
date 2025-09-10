@@ -251,33 +251,23 @@ const Hero: React.FC = () => {
           >
             {/* Main Title with Enhanced Design */}
             <div className="relative">
-              {/* Enhanced Background Glow Effects */}
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/30 via-fuchsia-600/25 to-purple-800/30 blur-3xl rounded-full transform scale-150"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-indigo-600/20 to-purple-700/20 blur-2xl rounded-full transform scale-125 rotate-12"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-pink-600/15 via-rose-600/15 to-purple-800/15 blur-xl rounded-full transform scale-110 -rotate-6"></div>
+              {/* Subtle Background Glow Effects */}
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-fuchsia-600/8 to-purple-800/10 blur-2xl rounded-full transform scale-150"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/8 via-indigo-600/8 to-purple-700/8 blur-xl rounded-full transform scale-125 rotate-12"></div>
               
               {/* First Line with Enhanced 3D Effects */}
               <motion.div
                 className="relative z-10 mb-4"
                 variants={{ hidden: { y: 30, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
-                <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-2xl relative group text-glow-hover">
-                  <span className="absolute inset-0 bg-gradient-to-r from-purple-400 via-fuchsia-400 to-purple-600 bg-clip-text text-transparent blur-sm opacity-50 group-hover:opacity-75 transition-opacity duration-300">
-                    Unlock
-                  </span>
-                  <span className="relative z-10">Unlock</span>
+                <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg relative group text-glow-hover">
+                  Unlock
                 </span>
-                <span className="inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 bg-clip-text text-transparent drop-shadow-2xl ml-4 relative group text-glow-hover">
-                  <span className="absolute inset-0 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent blur-sm opacity-50 group-hover:opacity-75 transition-opacity duration-300">
-                    Greater
-                  </span>
-                  <span className="relative z-10">Greater</span>
+                <span className="inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 bg-clip-text text-transparent drop-shadow-lg ml-4 relative group text-glow-hover">
+                  Greater
                 </span>
-                <span className="inline-block bg-gradient-to-r from-pink-600 via-rose-600 to-purple-800 bg-clip-text text-transparent drop-shadow-2xl ml-4 relative group text-glow-hover">
-                  <span className="absolute inset-0 bg-gradient-to-r from-pink-400 via-rose-400 to-purple-600 bg-clip-text text-transparent blur-sm opacity-50 group-hover:opacity-75 transition-opacity duration-300">
-                    Profits
-                  </span>
-                  <span className="relative z-10">Profits</span>
+                <span className="inline-block bg-gradient-to-r from-pink-600 via-rose-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg ml-4 relative group text-glow-hover">
+                  Profits
                 </span>
               </motion.div>
               
@@ -287,11 +277,8 @@ const Hero: React.FC = () => {
                 variants={{ hidden: { y: 30, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
                 <span ref={phraseRef} className="relative group">
-                <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-2xl relative text-glow-hover">
-                  <span className="absolute inset-0 bg-gradient-to-r from-purple-400 via-fuchsia-400 to-purple-600 bg-clip-text text-transparent blur-sm opacity-50 group-hover:opacity-75 transition-opacity duration-300">
-                    from Every Ad
-                  </span>
-                  <span className="relative z-10">from Every Ad</span>
+                <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg relative text-glow-hover">
+                  from Every Ad
                 </span>
                 
                 {/* Enhanced Animated Underline with Multiple Effects */}

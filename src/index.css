@@ -200,8 +200,8 @@
   }
 
   .text-glow-hover:hover {
-    filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.6)) drop-shadow(0 0 40px rgba(236, 72, 153, 0.4));
-    transform: scale(1.02);
+    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.4)) drop-shadow(0 0 16px rgba(236, 72, 153, 0.3));
+    transform: scale(1.01);
   }
 
   /* 3D text effect */
@@ -223,15 +223,15 @@
 
   /* Pulsing glow effect */
   .pulse-glow {
-    animation: pulseGlow 2s ease-in-out infinite alternate;
+    animation: pulseGlow 3s ease-in-out infinite alternate;
   }
 
   @keyframes pulseGlow {
     from {
-      filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.5));
+      filter: drop-shadow(0 0 3px rgba(168, 85, 247, 0.3));
     }
     to {
-      filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.8)) drop-shadow(0 0 30px rgba(236, 72, 153, 0.6));
+      filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.5)) drop-shadow(0 0 12px rgba(236, 72, 153, 0.3));
     }
   }
 }
