@@ -281,91 +281,91 @@ const Hero: React.FC = () => {
                   from Every Ad
                 </span>
                 
-                {/* Enhanced Animated Underline with Multiple Effects */}
+                {/* Diagonal Animated Underline - Corner to Corner */}
                 <svg
                   key={phraseWidth}
                   width={phraseWidth}
-                  height={Math.max(Math.round(phraseHeight * 0.6), 20)}
-                  viewBox={`0 0 ${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.4), 12)}`}
-                  className="absolute left-0 -bottom-4 overflow-visible"
+                  height={Math.max(Math.round(phraseHeight * 0.8), 30)}
+                  viewBox={`0 0 ${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.6), 20)}`}
+                  className="absolute left-0 -bottom-6 overflow-visible"
                 >
                   <defs>
-                    <linearGradient id="underlineGradient" x1="0" x2="1" y1="0" y2="0">
+                    <linearGradient id="diagonalGradient" x1="0" x2="1" y1="0" y2="0">
                       <stop offset="0%" stopColor="#a855f7" />
-                      <stop offset="20%" stopColor="#7c3aed" />
-                      <stop offset="40%" stopColor="#ec4899" />
-                      <stop offset="60%" stopColor="#8b5cf6" />
-                      <stop offset="80%" stopColor="#f59e0b" />
-                      <stop offset="100%" stopColor="#a855f7" />
+                      <stop offset="25%" stopColor="#7c3aed" />
+                      <stop offset="50%" stopColor="#ec4899" />
+                      <stop offset="75%" stopColor="#8b5cf6" />
+                      <stop offset="100%" stopColor="#f59e0b" />
                     </linearGradient>
-                    <linearGradient id="underlineGradient2" x1="0" x2="1" y1="0" y2="0">
+                    <linearGradient id="diagonalGradient2" x1="0" x2="1" y1="0" y2="0">
                       <stop offset="0%" stopColor="#3b82f6" />
                       <stop offset="50%" stopColor="#8b5cf6" />
                       <stop offset="100%" stopColor="#ec4899" />
                     </linearGradient>
-                    <filter id="underlineShadow" x="-50%" y="-50%" width="200%" height="200%">
-                      <feDropShadow dx="0" dy="3" stdDeviation="6" floodColor="#000000" floodOpacity="0.4"/>
+                    <filter id="diagonalShadow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feDropShadow dx="2" dy="4" stdDeviation="4" floodColor="#000000" floodOpacity="0.3"/>
                     </filter>
-                    <filter id="glowEffect" x="-50%" y="-50%" width="200%" height="200%">
-                      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                    <filter id="diagonalGlow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
                       <feMerge> 
                         <feMergeNode in="coloredBlur"/>
                         <feMergeNode in="SourceGraphic"/>
                       </feMerge>
                     </filter>
-                    <filter id="innerGlow" x="-50%" y="-50%" width="200%" height="200%">
-                      <feGaussianBlur stdDeviation="2" result="innerBlur"/>
+                    <filter id="diagonalInnerGlow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="1.5" result="innerBlur"/>
                       <feMerge> 
                         <feMergeNode in="innerBlur"/>
                         <feMergeNode in="SourceGraphic"/>
                       </feMerge>
                     </filter>
-                    <pattern id="dashPattern" patternUnits="userSpaceOnUse" width="20" height="4">
-                      <rect width="20" height="4" fill="url(#underlineGradient)" opacity="0.3"/>
-                    </pattern>
                   </defs>
                   
-                  {/* Background glow layer */}
+                  {/* Background glow layer for diagonal line */}
                   <path
-                    d={`M0 ${Math.max(Math.round(phraseHeight * 0.3), 8)} L${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.3), 8)}`}
+                    d={`M0 ${Math.max(Math.round(phraseHeight * 0.4), 12)} L${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.1), 4)}`}
                     fill="none"
-                    stroke="url(#underlineGradient)"
-                    strokeWidth="16"
+                    stroke="url(#diagonalGradient)"
+                    strokeWidth="18"
                     strokeLinecap="round"
-                    opacity="0.2"
-                    filter="url(#glowEffect)"
+                    opacity="0.15"
+                    filter="url(#diagonalGlow)"
                   />
                   
-                  {/* Main underline with enhanced gradient */}
+                  {/* Main diagonal underline */}
                   <path
                     ref={underlinePathRef}
-                    id="underlinePath"
-                    d={`M0 ${Math.max(Math.round(phraseHeight * 0.3), 8)} L${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.3), 8)}`}
+                    id="diagonalPath"
+                    d={`M0 ${Math.max(Math.round(phraseHeight * 0.4), 12)} L${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.1), 4)}`}
                     fill="none"
-                    stroke="url(#underlineGradient)"
-                    strokeWidth="10"
+                    stroke="url(#diagonalGradient)"
+                    strokeWidth="8"
                     strokeLinecap="round"
-                    filter="url(#underlineShadow)"
-                    strokeDasharray="1000"
-                    strokeDashoffset="1000"
-                    className="animate-draw-line"
+                    filter="url(#diagonalShadow)"
+                    strokeDasharray="1200"
+                    strokeDashoffset="1200"
+                    className="animate-draw-diagonal"
                   />
                   
-                  {/* Accent line */}
+                  {/* Accent diagonal line */}
                   <path
-                    d={`M0 ${Math.max(Math.round(phraseHeight * 0.25), 6)} L${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.25), 6)}`}
+                    d={`M0 ${Math.max(Math.round(phraseHeight * 0.35), 10)} L${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.15), 6)}`}
                     fill="none"
-                    stroke="url(#underlineGradient2)"
-                    strokeWidth="4"
+                    stroke="url(#diagonalGradient2)"
+                    strokeWidth="3"
                     strokeLinecap="round"
-                    opacity="0.8"
-                    filter="url(#innerGlow)"
+                    opacity="0.7"
+                    filter="url(#diagonalInnerGlow)"
                   />
                   
-                  {/* Decorative dots */}
-                  <circle cx={phraseWidth * 0.1} cy={Math.max(Math.round(phraseHeight * 0.3), 8)} r="3" fill="url(#underlineGradient)" opacity="0.6"/>
-                  <circle cx={phraseWidth * 0.5} cy={Math.max(Math.round(phraseHeight * 0.3), 8)} r="2" fill="url(#underlineGradient2)" opacity="0.8"/>
-                  <circle cx={phraseWidth * 0.9} cy={Math.max(Math.round(phraseHeight * 0.3), 8)} r="3" fill="url(#underlineGradient)" opacity="0.6"/>
+                  {/* Decorative elements along diagonal */}
+                  <circle cx={phraseWidth * 0.2} cy={Math.max(Math.round(phraseHeight * 0.35), 10)} r="2" fill="url(#diagonalGradient)" opacity="0.8" className="diagonal-dot"/>
+                  <circle cx={phraseWidth * 0.5} cy={Math.max(Math.round(phraseHeight * 0.25), 8)} r="3" fill="url(#diagonalGradient2)" opacity="0.9" className="diagonal-dot"/>
+                  <circle cx={phraseWidth * 0.8} cy={Math.max(Math.round(phraseHeight * 0.2), 6)} r="2" fill="url(#diagonalGradient)" opacity="0.8" className="diagonal-dot"/>
+                  
+                  {/* Corner accent dots */}
+                  <circle cx="0" cy={Math.max(Math.round(phraseHeight * 0.4), 12)} r="4" fill="url(#diagonalGradient)" opacity="0.6" className="diagonal-dot"/>
+                  <circle cx={phraseWidth} cy={Math.max(Math.round(phraseHeight * 0.1), 4)} r="4" fill="url(#diagonalGradient2)" opacity="0.6" className="diagonal-dot"/>
                 </svg>
                 </span>
               </motion.div>
