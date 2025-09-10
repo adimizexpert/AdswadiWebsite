@@ -238,19 +238,75 @@ const Hero: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-fuchsia-600/8 to-purple-800/10 blur-2xl rounded-full transform scale-150"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/8 via-indigo-600/8 to-purple-700/8 blur-xl rounded-full transform scale-125 rotate-12"></div>
               
-              {/* First Line with Enhanced 3D Effects */}
+              {/* First Line with Pencil Underline */}
               <motion.div
                 className="relative z-10 mb-4"
                 variants={{ hidden: { y: 30, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
-                <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg relative group text-glow-hover">
-                  Unlock
-                </span>
-                <span className="inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 bg-clip-text text-transparent drop-shadow-lg ml-4 relative group text-glow-hover">
-                  Greater
-                </span>
-                <span className="inline-block bg-gradient-to-r from-pink-600 via-rose-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg ml-4 relative group text-glow-hover">
-                  Profits
+                <span className="relative group">
+                  <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg relative text-glow-hover">
+                    Unlock
+                  </span>
+                  <span className="inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 bg-clip-text text-transparent drop-shadow-lg ml-4 relative text-glow-hover">
+                    Greater
+                  </span>
+                  <span className="inline-block bg-gradient-to-r from-pink-600 via-rose-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg ml-4 relative text-glow-hover">
+                    Profits
+                  </span>
+                  
+                  {/* Pencil Drawing Underline for First Line */}
+                  <svg
+                    width="100%"
+                    height="20"
+                    viewBox="0 0 100 20"
+                    className="absolute left-0 -bottom-2 overflow-visible"
+                  >
+                    <defs>
+                      <linearGradient id="pencilGradient1" x1="0" x2="1" y1="0" y2="0">
+                        <stop offset="0%" stopColor="#8b5cf6" />
+                        <stop offset="25%" stopColor="#a855f7" />
+                        <stop offset="50%" stopColor="#ec4899" />
+                        <stop offset="75%" stopColor="#f59e0b" />
+                        <stop offset="100%" stopColor="#8b5cf6" />
+                      </linearGradient>
+                      <filter id="pencilShadow1" x="-50%" y="-50%" width="200%" height="200%">
+                        <feDropShadow dx="1" dy="2" stdDeviation="2" floodColor="#000000" floodOpacity="0.2"/>
+                      </filter>
+                      <filter id="pencilGlow1" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+                        <feMerge> 
+                          <feMergeNode in="coloredBlur"/>
+                          <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                      </filter>
+                    </defs>
+                    
+                    {/* Pencil stroke path for first line */}
+                    <path
+                      d="M0 12 Q10 8 20 12 T40 10 T60 12 T80 8 T100 12"
+                      fill="none"
+                      stroke="url(#pencilGradient1)"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      filter="url(#pencilShadow1)"
+                      strokeDasharray="200"
+                      strokeDashoffset="200"
+                      className="animate-pencil-draw-first"
+                    />
+                    
+                    {/* Subtle pencil pressure variation for first line */}
+                    <path
+                      d="M0 12 Q10 8 20 12 T40 10 T60 12 T80 8 T100 12"
+                      fill="none"
+                      stroke="url(#pencilGradient1)"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      opacity="0.6"
+                      filter="url(#pencilGlow1)"
+                    />
+                  </svg>
                 </span>
               </motion.div>
               

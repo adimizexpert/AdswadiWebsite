@@ -222,6 +222,34 @@
     }
   }
 
+  /* Pencil drawing animation for first line */
+  .animate-pencil-draw-first {
+    animation: pencilDrawFirst 2.5s ease-in-out 0.8s forwards;
+  }
+
+  @keyframes pencilDrawFirst {
+    0% {
+      stroke-dashoffset: 200;
+      opacity: 0.8;
+      stroke-width: 2;
+    }
+    25% {
+      stroke-width: 3.5;
+    }
+    50% {
+      opacity: 1;
+      stroke-width: 3;
+    }
+    75% {
+      stroke-width: 2.5;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+      stroke-width: 3;
+    }
+  }
+
 
   /* Text glow animation on hover */
   .text-glow-hover {
