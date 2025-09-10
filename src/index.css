@@ -194,19 +194,6 @@
     }
   }
 
-  /* Diagonal underline drawing animation */
-  .animate-draw-diagonal {
-    animation: drawDiagonal 2.5s ease-in-out 1s forwards;
-  }
-
-  @keyframes drawDiagonal {
-    from {
-      stroke-dashoffset: 1200;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
 
   /* Text glow animation on hover */
   .text-glow-hover {
@@ -249,25 +236,6 @@
     }
   }
 
-  /* Diagonal dots animation */
-  .diagonal-dot {
-    animation: diagonalDotPulse 2s ease-in-out infinite alternate;
-  }
-
-  .diagonal-dot:nth-child(1) { animation-delay: 0s; }
-  .diagonal-dot:nth-child(2) { animation-delay: 0.3s; }
-  .diagonal-dot:nth-child(3) { animation-delay: 0.6s; }
-
-  @keyframes diagonalDotPulse {
-    from {
-      opacity: 0.6;
-      transform: scale(0.8);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1.2);
-    }
-  }
 }
 
 /* Blog Content Styling */

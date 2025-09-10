@@ -20,41 +20,8 @@ const useFallbackAnimation = () => {
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const phraseRef = useRef<HTMLSpanElement>(null);
-  const underlinePathRef = useRef<SVGPathElement>(null);
-  const [phraseWidth, setPhraseWidth] = useState<number>(0);
-  const [phraseHeight, setPhraseHeight] = useState<number>(0);
-  const [dash, setDash] = useState<number>(0);
   const isLoaded = useFallbackAnimation();
 
-  // Measure the "For More Profit" phrase to size the underline
-  useLayoutEffect(() => {
-    const update = () => {
-      const rect = phraseRef.current?.getBoundingClientRect();
-      if (!rect) return;
-      setPhraseWidth(rect.width);
-      setPhraseHeight(rect.height);
-    };
-    update();
-    window.addEventListener('resize', update);
-    return () => window.removeEventListener('resize', update);
-  }, []);
-
-  // GSAP DrawSVG animation for the underline (right to left)
-  useEffect(() => {
-    if (!underlinePathRef.current || !phraseWidth) return;
-    
-    // Reset the path
-    // gsap.set(underlinePathRef.current, { drawSVG: "100% 100%" }); // This line is removed as per the new_code
-    
-    // Animate the path drawing from right to left
-    // gsap.to(underlinePathRef.current, { // This line is removed as per the new_code
-    //   drawSVG: "0% 100%",
-    //   duration: 1.5,
-    //   ease: "power2.out",
-    //   delay: 0.6
-    // });
-  }, [phraseWidth, phraseHeight]);
 
   // Advanced text splitting animation - disabled for now to fix visibility
   useEffect(() => {
@@ -271,102 +238,13 @@ const Hero: React.FC = () => {
                 </span>
               </motion.div>
               
-              {/* Second Line with Enhanced Underline and 3D Effects */}
+              {/* Second Line */}
               <motion.div
                 className="relative z-10 inline-block"
                 variants={{ hidden: { y: 30, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
-                <span ref={phraseRef} className="relative group">
                 <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg relative text-glow-hover">
                   from Every Ad
-                </span>
-                
-                {/* Diagonal Animated Underline - Corner to Corner */}
-                <svg
-                  key={phraseWidth}
-                  width={phraseWidth}
-                  height={Math.max(Math.round(phraseHeight * 0.8), 30)}
-                  viewBox={`0 0 ${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.6), 20)}`}
-                  className="absolute left-0 -bottom-6 overflow-visible"
-                >
-                  <defs>
-                    <linearGradient id="diagonalGradient" x1="0" x2="1" y1="0" y2="0">
-                      <stop offset="0%" stopColor="#a855f7" />
-                      <stop offset="25%" stopColor="#7c3aed" />
-                      <stop offset="50%" stopColor="#ec4899" />
-                      <stop offset="75%" stopColor="#8b5cf6" />
-                      <stop offset="100%" stopColor="#f59e0b" />
-                    </linearGradient>
-                    <linearGradient id="diagonalGradient2" x1="0" x2="1" y1="0" y2="0">
-                      <stop offset="0%" stopColor="#3b82f6" />
-                      <stop offset="50%" stopColor="#8b5cf6" />
-                      <stop offset="100%" stopColor="#ec4899" />
-                    </linearGradient>
-                    <filter id="diagonalShadow" x="-50%" y="-50%" width="200%" height="200%">
-                      <feDropShadow dx="2" dy="4" stdDeviation="4" floodColor="#000000" floodOpacity="0.3"/>
-                    </filter>
-                    <filter id="diagonalGlow" x="-50%" y="-50%" width="200%" height="200%">
-                      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                      <feMerge> 
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                      </feMerge>
-                    </filter>
-                    <filter id="diagonalInnerGlow" x="-50%" y="-50%" width="200%" height="200%">
-                      <feGaussianBlur stdDeviation="1.5" result="innerBlur"/>
-                      <feMerge> 
-                        <feMergeNode in="innerBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                      </feMerge>
-                    </filter>
-                  </defs>
-                  
-                  {/* Background glow layer for diagonal line */}
-                  <path
-                    d={`M0 ${Math.max(Math.round(phraseHeight * 0.4), 12)} L${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.1), 4)}`}
-                    fill="none"
-                    stroke="url(#diagonalGradient)"
-                    strokeWidth="18"
-                    strokeLinecap="round"
-                    opacity="0.15"
-                    filter="url(#diagonalGlow)"
-                  />
-                  
-                  {/* Main diagonal underline */}
-                  <path
-                    ref={underlinePathRef}
-                    id="diagonalPath"
-                    d={`M0 ${Math.max(Math.round(phraseHeight * 0.4), 12)} L${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.1), 4)}`}
-                    fill="none"
-                    stroke="url(#diagonalGradient)"
-                    strokeWidth="8"
-                    strokeLinecap="round"
-                    filter="url(#diagonalShadow)"
-                    strokeDasharray="1200"
-                    strokeDashoffset="1200"
-                    className="animate-draw-diagonal"
-                  />
-                  
-                  {/* Accent diagonal line */}
-                  <path
-                    d={`M0 ${Math.max(Math.round(phraseHeight * 0.35), 10)} L${phraseWidth} ${Math.max(Math.round(phraseHeight * 0.15), 6)}`}
-                    fill="none"
-                    stroke="url(#diagonalGradient2)"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    opacity="0.7"
-                    filter="url(#diagonalInnerGlow)"
-                  />
-                  
-                  {/* Decorative elements along diagonal */}
-                  <circle cx={phraseWidth * 0.2} cy={Math.max(Math.round(phraseHeight * 0.35), 10)} r="2" fill="url(#diagonalGradient)" opacity="0.8" className="diagonal-dot"/>
-                  <circle cx={phraseWidth * 0.5} cy={Math.max(Math.round(phraseHeight * 0.25), 8)} r="3" fill="url(#diagonalGradient2)" opacity="0.9" className="diagonal-dot"/>
-                  <circle cx={phraseWidth * 0.8} cy={Math.max(Math.round(phraseHeight * 0.2), 6)} r="2" fill="url(#diagonalGradient)" opacity="0.8" className="diagonal-dot"/>
-                  
-                  {/* Corner accent dots */}
-                  <circle cx="0" cy={Math.max(Math.round(phraseHeight * 0.4), 12)} r="4" fill="url(#diagonalGradient)" opacity="0.6" className="diagonal-dot"/>
-                  <circle cx={phraseWidth} cy={Math.max(Math.round(phraseHeight * 0.1), 4)} r="4" fill="url(#diagonalGradient2)" opacity="0.6" className="diagonal-dot"/>
-                </svg>
                 </span>
               </motion.div>
             </div>
