@@ -101,68 +101,14 @@ const Header: React.FC = () => {
               }}
             />
             
-            {/* New Different Animation Style */}
-            <motion.div className="flex">
-              {'ADSWADI'.split('').map((letter, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ 
-                    opacity: 1, 
-                    scale: 1,
-                    transition: {
-                      duration: 0.4,
-                      delay: index * 0.1,
-                      type: "spring",
-                      stiffness: 200
-                    }
-                  }}
-                  whileHover={{ 
-                    scale: 1.4,
-                    y: -8,
-                    transition: { 
-                      type: "spring",
-                      stiffness: 400,
-                      damping: 10
-                    }
-                  }}
-                  className="text-2xl font-black text-slate-900 cursor-pointer inline-block mx-1 relative overflow-hidden"
-                >
-                  {/* Main letter */}
-                  <span className="relative z-10">{letter}</span>
-                  
-                  {/* Rainbow trail effect */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 bg-clip-text text-transparent"
-                    initial={{ x: "-100%" }}
-                    animate={{ x: "100%" }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      delay: index * 0.2,
-                      ease: "easeInOut"
-                    }}
-                  >
-                    {letter}
-                  </motion.div>
-                  
-                  {/* Bounce effect on hover */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
-                    initial={{ opacity: 0 }}
-                    whileHover={{ 
-                      opacity: 1,
-                      scale: [1, 1.2, 1],
-                      transition: {
-                        duration: 0.6,
-                        ease: "easeInOut"
-                      }
-                    }}
-                  >
-                    {letter}
-                  </motion.div>
-                </motion.span>
-              ))}
+            {/* Professional Animated ADSWADI Logo */}
+            <motion.div 
+              className="animated-logo"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <span className="logo-text">ADSWADI</span>
             </motion.div>
           </motion.div>
 

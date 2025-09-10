@@ -255,6 +255,131 @@
     position: relative;
   }
 
+  /* Professional Animated ADSWADI Logo */
+  .animated-logo {
+    position: relative;
+    display: inline-block;
+  }
+
+  .logo-text {
+    font-size: 1.75rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    background: linear-gradient(
+      45deg,
+      #8b5cf6,
+      #a855f7,
+      #ec4899,
+      #f59e0b,
+      #8b5cf6
+    );
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 3s ease-in-out infinite;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .logo-text:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 8px rgba(139, 92, 246, 0.3));
+  }
+
+  /* Gradient flowing animation */
+  @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Alternative letter-by-letter animation (uncomment to use) */
+  .logo-text.letter-animation {
+    animation: none;
+    background: linear-gradient(45deg, #8b5cf6, #a855f7, #ec4899, #f59e0b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .logo-text.letter-animation span {
+    display: inline-block;
+    animation: letterBounce 0.6s ease-in-out;
+    animation-fill-mode: both;
+  }
+
+  .logo-text.letter-animation span:nth-child(1) { animation-delay: 0.1s; }
+  .logo-text.letter-animation span:nth-child(2) { animation-delay: 0.2s; }
+  .logo-text.letter-animation span:nth-child(3) { animation-delay: 0.3s; }
+  .logo-text.letter-animation span:nth-child(4) { animation-delay: 0.4s; }
+  .logo-text.letter-animation span:nth-child(5) { animation-delay: 0.5s; }
+  .logo-text.letter-animation span:nth-child(6) { animation-delay: 0.6s; }
+  .logo-text.letter-animation span:nth-child(7) { animation-delay: 0.7s; }
+
+  @keyframes letterBounce {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px) scale(0.8);
+    }
+    50% {
+      transform: translateY(-5px) scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Mobile responsive adjustments */
+  @media (max-width: 640px) {
+    .logo-text {
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo-text {
+      font-size: 1.25rem;
+    }
+  }
+
+  /* Subtle pulse effect for premium feel */
+  .animated-logo::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: linear-gradient(45deg, #8b5cf6, #a855f7, #ec4899, #f59e0b);
+    border-radius: 8px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    z-index: -1;
+    filter: blur(10px);
+    animation: subtleGlow 4s ease-in-out infinite;
+  }
+
+  @keyframes subtleGlow {
+    0%, 100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+    50% {
+      opacity: 0.1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
 
 
   /* Text glow animation on hover */
