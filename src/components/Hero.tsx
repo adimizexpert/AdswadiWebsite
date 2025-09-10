@@ -20,42 +20,8 @@ const useFallbackAnimation = () => {
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
   const isLoaded = useFallbackAnimation();
 
-  // Pencil underline animation trigger
-  useEffect(() => {
-    const titleElement = titleRef.current;
-    if (!titleElement) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Add animation class when element comes into view
-            const underline = entry.target.querySelector('.pencil-underline');
-            const underlineAccent = entry.target.querySelector('.pencil-underline-accent');
-            
-            if (underline && underlineAccent) {
-              underline.classList.add('pencil-underline');
-              underlineAccent.classList.add('pencil-underline-accent');
-            }
-            
-            // Disconnect observer after animation starts
-            observer.disconnect();
-          }
-        });
-      },
-      {
-        threshold: 0.3,
-        rootMargin: '0px 0px -10% 0px'
-      }
-    );
-
-    observer.observe(titleElement);
-
-    return () => observer.disconnect();
-  }, []);
 
   // Simple CSS-based animations instead of GSAP
   useEffect(() => {
@@ -221,8 +187,7 @@ const Hero: React.FC = () => {
           className="mb-12"
         >
           <motion.h1
-            ref={titleRef}
-            className="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black mb-8 leading-tight tracking-tight relative"
+            className="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black mb-8 leading-tight tracking-tight"
             initial="hidden"
             animate="show"
             variants={{
@@ -230,7 +195,7 @@ const Hero: React.FC = () => {
               show: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.2 } }
             }}
           >
-            {/* Main Title with Pencil Underline */}
+            {/* Main Title with Pencil Underlines */}
             <div className="relative">
               {/* Subtle Background Glow Effects */}
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-fuchsia-600/8 to-purple-800/10 blur-2xl rounded-full transform scale-150"></div>
@@ -244,11 +209,8 @@ const Hero: React.FC = () => {
                 <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg relative text-glow-hover">
                   Unlock
                 </span>
-                <span className="inline-block bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 bg-clip-text text-transparent drop-shadow-lg ml-4 relative text-glow-hover">
-                  Greater
-                </span>
-                <span className="inline-block bg-gradient-to-r from-pink-600 via-rose-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg ml-4 relative text-glow-hover">
-                  Profits
+                <span className="highlight bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 bg-clip-text text-transparent drop-shadow-lg ml-4 relative text-glow-hover">
+                  Greater Profits
                 </span>
               </motion.div>
               
@@ -257,64 +219,10 @@ const Hero: React.FC = () => {
                 className="relative z-10 inline-block"
                 variants={{ hidden: { y: 30, opacity: 0 }, show: { y: 0, opacity: 1 } }}
               >
-                <span className="inline-block bg-gradient-to-r from-purple-600 via-fuchsia-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg relative text-glow-hover">
+                <span className="highlight bg-gradient-to-r from-pink-600 via-rose-600 to-purple-800 bg-clip-text text-transparent drop-shadow-lg relative text-glow-hover">
                   from Every Ad
                 </span>
               </motion.div>
-              
-              {/* Pencil Underline Animation */}
-              <div className="absolute bottom-0 left-0 w-full h-6 overflow-hidden">
-                <svg
-                  className="w-full h-full"
-                  viewBox="0 0 100 20"
-                  preserveAspectRatio="none"
-                >
-                  <defs>
-                    <linearGradient id="pencilGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#8b5cf6" />
-                      <stop offset="25%" stopColor="#a855f7" />
-                      <stop offset="50%" stopColor="#ec4899" />
-                      <stop offset="75%" stopColor="#f59e0b" />
-                      <stop offset="100%" stopColor="#8b5cf6" />
-                    </linearGradient>
-                    <filter id="pencilShadow" x="-50%" y="-50%" width="200%" height="200%">
-                      <feDropShadow dx="1" dy="2" stdDeviation="1.5" floodColor="#000000" floodOpacity="0.3"/>
-                    </filter>
-                    <filter id="pencilGlow" x="-50%" y="-50%" width="200%" height="200%">
-                      <feGaussianBlur stdDeviation="0.8" result="coloredBlur"/>
-                      <feMerge> 
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                      </feMerge>
-                    </filter>
-                  </defs>
-                  
-                  {/* Hand-drawn wavy underline path */}
-                  <path
-                    d="M2 12 Q8 8 15 12 T30 10 T45 12 T60 8 T75 12 T90 10 T98 12"
-                    fill="none"
-                    stroke="url(#pencilGradient)"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    filter="url(#pencilShadow)"
-                    className="pencil-underline"
-                  />
-                  
-                  {/* Subtle pressure variation layer */}
-                  <path
-                    d="M2 12 Q8 8 15 12 T30 10 T45 12 T60 8 T75 12 T90 10 T98 12"
-                    fill="none"
-                    stroke="url(#pencilGradient)"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    opacity="0.7"
-                    filter="url(#pencilGlow)"
-                    className="pencil-underline-accent"
-                  />
-                </svg>
-              </div>
             </div>
           </motion.h1>
           
